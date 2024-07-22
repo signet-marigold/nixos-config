@@ -25,7 +25,7 @@
           ./hosts/AT20-CLEVELAND/modules/users.nix
           ./hosts/AT20-CLEVELAND/modules/slstatus.nix
           
-          ./modules/power-management.nix
+          #./modules/power-management.nix
           ./modules/opengl.nix
           #./modules/fingerprint-scanner.nix
           ./modules/sound.nix
@@ -62,6 +62,7 @@
           
           home-manager.nixosModules.home-manager {
             home-manager = {
+	      backupFileExtension = "backup";
               useGlobalPkgs = true;
               useUserPackages = true;
               users.anhack = import ./hosts/AT20-CLEVELAND/home.nix;

@@ -49,6 +49,7 @@
     # Extra packages tied to dwm (or tiling desktops in general)
     acpilight  # Backlight control (xbacklight)
     pulseaudio # Volume control (pactl)
+    arandr     # gui monitor settings
     qutebrowser
   ];
 }
