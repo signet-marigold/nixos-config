@@ -71,10 +71,13 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 
 // Brightness Commands
-static const char *brightness[2][4] = {{"xbacklight", "-inc", "2", NULL},{"xbacklight", "-dec", "2", NULL}};
+static const char *brightness[2][3] = {
+  {"hhst-backlight", "-i", NULL},
+  {"hhst-backlight", "-d", NULL}
+};
 
 // Volume Commands
-static const char *volume[3][5] = {
+static const char *volume[3][3] = {
   {"hhst-volume", "-i", NULL},
   {"hhst-volume", "-d", NULL},
   {"hhst-volume", "-m", NULL} 
