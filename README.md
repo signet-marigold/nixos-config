@@ -17,15 +17,17 @@ this is designed for *two* hosts (`at08-obama` & `at20-cleveland`) both with the
 │       ├── home.nix
 │       ├── modules
 │       │   └── <...>
-│       └── sls-headers
+│       └── sl-headers
 │           └── <...>
+├── users
+│   └── <USER NAME>.nix
 ├── modules
 │   ├── dmenu-patches
 │   │   └── <...>
 │   ├── dwm-patches
 │   │   └── <...>
 │   └── <...>
-└── sls-headers
+└── sl-headers
     └── <...>
 
 ```
