@@ -3,13 +3,10 @@
 {
   # Install suckless term emulator
   environment.systemPackages = with pkgs; [
-    # Require base package for system configuration
-    st
-
     # Build package override
     (st.overrideAttrs (oldAttrs: rec {
       # Build with custom config header file
-      configFile = writeText "config.def.h" (builtins.readFile ../sls-headers/st-config.h);
+      configFile = writeText "config.def.h" (builtins.readFile ../sl-headers/st-config.h);
       postPatch = "${oldAttrs.postPatch}\n cp ${configFile} config.def.h";
 
       # buildInputs are packages required by one or more patches
@@ -22,5 +19,7 @@
         })
       ];
     }))
+    # Require base package for system configuration
+    st
   ];
 }

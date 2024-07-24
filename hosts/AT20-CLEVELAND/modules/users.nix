@@ -55,6 +55,7 @@
       mandelbulber
       lutris
       dolphin-emu
+      audacity
     ];
   };
 

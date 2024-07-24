@@ -59,6 +59,9 @@
           ./modules/firewall.nix
           ./modules/dns.nix
           # ./modules/auto-upgrade.nix
+
+          # Hardware helper scripts
+	  ./packages/hhst.nix
           
           home-manager.nixosModules.home-manager {
             home-manager = {

@@ -75,9 +75,9 @@ static const char *brightness[2][4] = {{"xbacklight", "-inc", "2", NULL},{"xback
 
 // Volume Commands
 static const char *volume[3][5] = {
-  {"pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%",    NULL},
-  {"pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%",    NULL},
-  {"pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle", NULL} 
+  {"hhst-volume", "-i", NULL},
+  {"hhst-volume", "-d", NULL},
+  {"hhst-volume", "-m", NULL} 
 };
 
 static const Key keys[] = {

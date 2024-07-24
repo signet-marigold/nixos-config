@@ -1,14 +1,16 @@
 { pkgs, ... }:
-
+#let
+#
+#  volume = pkgs.writeShellScriptBin "volume.sh" (builtins.readFile ../scripts/hardware-hooks/volume.sh);
+#
+#in {
 {
   # Enable DWM
   services.xserver = {
     enable = true;
     autorun = true;
-    #layout = "no";
     windowManager.dwm = {
       enable = true;
-
     };
 
     # Enable light desktop manager (just for login)
@@ -28,9 +30,10 @@
         # Apply patches
         patches = [
           ./dwm-patches/dwm-alpha-20230401-348f655.diff
-        ];
+          #./dwm-patches/dwm-systray-20230922-9f88553.diff
+       ];
         # Inject custom c header
-        configFile = super.writeText "config.h" (builtins.readFile ../sls-headers/dwm-config.h);
+        configFile = super.writeText "config.h" (builtins.readFile ../sl-headers/dwm-config.h);
         postPatch = oldAttrs.postPatch or "" + "\necho 'Using own config file...'\n cp ${configFile} config.def.h";
       });
     })
@@ -51,5 +54,11 @@
     pulseaudio # Volume control (pactl)
     arandr     # gui monitor settings
     qutebrowser
+
+    # Hardware control scripts for managing backlight, volume, etc.
+    #hhst-backlight
   ];
+
+  # Inject custom scripts for managing hardware controls (screen brightness, volume, etc.)
+  #import = [ ../packages/hhst.nix ];
 }
