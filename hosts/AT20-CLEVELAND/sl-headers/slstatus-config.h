@@ -4,7 +4,7 @@
 const unsigned int interval = 1000;
 
 /* text to show if no value can be retrieved */
-static const char unknown_str[] = "n/a";
+static const char unknown_str[] = "#";
 
 /* maximum output string length */
 #define MAXLEN 2048
@@ -64,8 +64,14 @@ static const char unknown_str[] = "n/a";
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  */
 static const struct arg args[] = {
-  /* function format          argument */
-  { cpu_perc, " CPU %s%%",    NULL },
-  { ram_perc, " - RAM %s%%",  NULL },
-  { datetime, " - %s",        "%F %B %T %A" },
+  /* function          format              argument */
+  { netspeed_rx,       "[⬇%s",             "wlp3s0" },
+  { netspeed_tx,       " ⬆%s]",            "wlp3s0" },
+  { wifi_essid,        "[ %s]",           "wlp3s0" },
+  { cpu_perc,          "[CPU %s%%]",       NULL },
+  { ram_perc,          "[RAM %s%%]",       NULL },
+  { battery_state,     "[%s",              "BAT1" },
+  { battery_perc,      " %s%% ",           "BAT1" },
+  { battery_remaining, "%s]",              "BAT1" },
+  { datetime,          " %s",              "%F %T" },
 };
