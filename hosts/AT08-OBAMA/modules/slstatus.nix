@@ -6,7 +6,7 @@
     (self: super: {
       slstatus = super.slstatus.overrideAttrs (oldAttrs: rec {
         # Override header file in build
-        configFile = super.writeText "config.h" (builtins.readFile ../sls-headers/slstatus-config.h);
+        configFile = super.writeText "config.h" (builtins.readFile ../sl-headers/slstatus-config.h);
         postPatch = oldAttrs.postPatch or "" + "\necho 'Using own config file...'\n cp ${configFile} config.def.h";
       });
     })
