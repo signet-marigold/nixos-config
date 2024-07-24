@@ -16,13 +16,14 @@
       AT20-CLEVELAND = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
+          ./users/anhack.nix
+
           ./hosts/AT20-CLEVELAND/configuration.nix
           ./hosts/AT20-CLEVELAND/hardware-configuration.nix
           
           ./hosts/AT20-CLEVELAND/modules/mac-randomize.nix
           ./hosts/AT20-CLEVELAND/modules/open-ssh.nix
           ./hosts/AT20-CLEVELAND/modules/networking.nix
-          ./hosts/AT20-CLEVELAND/modules/users.nix
           ./hosts/AT20-CLEVELAND/modules/slstatus.nix
           
           #./modules/power-management.nix
@@ -79,12 +80,13 @@
       AT08-OBAMA = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
+          ./users/anhack.nix
+
           ./hosts/AT08-OBAMA/configuration.nix
           ./hosts/AT08-OBAMA/hardware-configuration.nix
           
           ./hosts/AT08-OBAMA/modules/open-ssh.nix
           ./hosts/AT08-OBAMA/modules/networking.nix
-          ./hosts/AT08-OBAMA/modules/users.nix
           ./hosts/AT08-OBAMA/modules/slstatus.nix
           
           ./modules/nvidia.nix
