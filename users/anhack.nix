@@ -56,6 +56,8 @@
       lutris
       dolphin-emu
       audacity
+      signal-desktop
+      ksnip
     ];
   };
 
