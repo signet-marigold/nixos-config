@@ -22,11 +22,11 @@ if [[ $LIGHT < 1 ]]; then
   LIGHT=1
 fi
 
-# Show the volume notification
+# Show the backlight notification
 dunstify -a "changeBacklight" -u low -h string:x-dunst-stack-tag:$MSGTAG \
   -h int:value:"$LIGHT" "Backlight: ${LIGHT}%"
 
-# Play the volume changed sound
+# Play the backlight changed sound
 if [[ $SOUNDPATH != "" ]]; then
   paplay --d=@DEFAULT_SINK@ ${SOUNDPATH}
 fi

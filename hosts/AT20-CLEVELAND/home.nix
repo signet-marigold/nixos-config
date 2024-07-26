@@ -24,16 +24,18 @@
       extraConfig = {
         init = {
           defaultBranch = "main";
-	};
-	credential = {
-	  helper = "store";
-	};
-	pull = {
-	  rebase = true;
-	};
+        };
+        credential = {
+          helper = "store";
+        };
+        pull = {
+          rebase = true;
+        };
       };
     };
     gitui.enable = true;
     lazygit.enable = true;
   };
+
+  services.dunst.enable = true;
 }

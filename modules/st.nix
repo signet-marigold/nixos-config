@@ -12,11 +12,11 @@
       # buildInputs are packages required by one or more patches
       buildInputs = oldAttrs.buildInputs ++ [ harfbuzz ];
       patches = [
-        #./path/to/local.diff
-        (fetchpatch {
-          url = "https://st.suckless.org/patches/ligatures/0.8.3/st-ligatures-20200430-0.8.3.diff";
-          sha256 = "sha256-vKiYU0Va/iSLhhT9IoUHGd62xRD/XtDDjK+08rSm1KE=";
-        })
+        #./st-patches/st-boxdraw_v2-0.8.5.diff
+        ./st-patches/st-ligatures-20200430-0.8.3.diff
+        #./st-patches/st-scrollback-ringbuffer-0.8.5.diff
+        #./st-patches/st-scrollback-reflow-0.8.5.diff
+        #./st-patches/st-scrollback-mouse-20220127-2c5edf2.diff
       ];
     }))
     # Require base package for system configuration

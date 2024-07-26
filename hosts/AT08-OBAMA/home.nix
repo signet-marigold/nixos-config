@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   home.username = "anhack";
@@ -36,4 +36,6 @@
     gitui.enable = true;
     lazygit.enable = true;
   };
+
+  services.dunst.enable = true;
 }

@@ -6,14 +6,16 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     rust-overlay.url = "github:oxalica/rust-overlay";
+    stylix.url = "github:danth/stylix";
   };
 
-  outputs = { nixpkgs, home-manager, ... } @ inputs:
+  outputs = { nixpkgs, home-manager, ... }@inputs:
   {
     nixosConfigurations = {
 
 
       AT20-CLEVELAND = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
           ./users/anhack.nix
@@ -62,22 +64,25 @@
           # ./modules/auto-upgrade.nix
 
           # Hardware helper scripts
-	  ./packages/hhst.nix
-          
+	      ./packages/hhst.nix
+
           home-manager.nixosModules.home-manager {
             home-manager = {
-	      backupFileExtension = "backup";
+	          backupFileExtension = "backup";
               useGlobalPkgs = true;
               useUserPackages = true;
               users.anhack = import ./hosts/AT20-CLEVELAND/home.nix;
               extraSpecialArgs = {};
             };
           }
+
+          inputs.stylix.nixosModules.stylix
         ];
       };
 
 
       AT08-OBAMA = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
           ./users/anhack.nix
@@ -136,6 +141,8 @@
               extraSpecialArgs = {};
             };
           }
+
+          inputs.stylix.nixosModules.stylix
         ];
       };
 

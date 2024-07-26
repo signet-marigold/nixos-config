@@ -58,6 +58,7 @@
       audacity
       signal-desktop
       ksnip
+      superfile
     ];
   };
 
