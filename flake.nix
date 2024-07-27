@@ -1,5 +1,5 @@
 {
-  description = "anhack's NixOS Configuration";
+  description = "Alexs System Flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -53,6 +53,7 @@
           ./modules/virtualisation.nix
           ./modules/programming-languages.nix
           ./modules/lsp.nix
+          ./modules/neovim.nix
           ./modules/rust.nix
           ./modules/wasm.nix
           ./modules/info-fetchers.nix
@@ -71,7 +72,7 @@
 	          backupFileExtension = "backup";
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.anhack = import ./hosts/AT20-CLEVELAND/home.nix;
+              users.anhack = import ./users/anhack-home.nix;
               extraSpecialArgs = {};
             };
           }
@@ -119,6 +120,7 @@
           ./modules/virtualisation.nix
           ./modules/programming-languages.nix
           ./modules/lsp.nix
+          ./modules/neovim.nix
           ./modules/rust.nix
           ./modules/wasm.nix
           ./modules/info-fetchers.nix
@@ -128,6 +130,7 @@
           ./modules/firewall.nix
           ./modules/dns.nix
           # ./modules/auto-upgrade.nix
+          #./modules/firefox.nix
 
           # Hardware helper scripts
           ./packages/hhst.nix
@@ -137,7 +140,7 @@
               backupFileExtension = "backup";
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.anhack = import ./hosts/AT08-OBAMA/home.nix;
+              users.anhack = import ./users/anhack-home.nix;
               extraSpecialArgs = {};
             };
           }

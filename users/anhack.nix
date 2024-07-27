@@ -12,7 +12,7 @@
       discord
       tdesktop
       vscodium
-      neovim
+      #neovim
       firefox
       kdePackages.kate
       kdePackages.kdenlive
@@ -59,6 +59,9 @@
       signal-desktop
       ksnip
       superfile
+      zip
+      unzip
+      desmume
     ];
   };
 

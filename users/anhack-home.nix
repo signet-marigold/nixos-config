@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   home.username = "anhack";
@@ -38,4 +38,6 @@
   };
 
   services.dunst.enable = true;
+
+  #imports = [ ../home-manager/modules/firefox.nix ];
 }
