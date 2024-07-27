@@ -72,7 +72,7 @@
 	          backupFileExtension = "backup";
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.anhack = import ./users/anhack-home.nix;
+              users.anhack = import ./home-manager/anhack-home.nix;
               extraSpecialArgs = {};
             };
           }
@@ -140,7 +140,7 @@
               backupFileExtension = "backup";
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.anhack = import ./users/anhack-home.nix;
+              users.anhack = import ./home-manager/anhack-home.nix;
               extraSpecialArgs = {};
             };
           }
