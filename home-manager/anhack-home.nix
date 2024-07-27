@@ -39,5 +39,5 @@
 
   services.dunst.enable = true;
 
-  #imports = [ ../home-manager/modules/firefox.nix ];
+  #imports = [ ./modules/firefox.nix ];
 }
