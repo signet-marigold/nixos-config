@@ -30,10 +30,11 @@
           url = "https://dl.suckless.org/dwm/${pname}-${version}.tar.gz";
           hash = "sha256-Ideev6ny+5MUGDbCZmy4H0eExp1k5/GyNS+blwuglyk=";
         };
+        # Dependencies
+        #buildInputs = oldAttrs.buildInputs ++ [  ];
         # Apply patches
         patches = [
-          ./dwm-patches/dwm-alpha-20230401-348f655.diff
-          #./dwm-patches/dwm-systray-20230922-9f88553.diff
+          ./dwm-patches/dwm-6.5-combinedpatch-20240801-anhack.diff
         ];
         # Inject custom config
         configFile = super.writeText "config.h" (builtins.readFile ../sl-headers/dwm-config.h);

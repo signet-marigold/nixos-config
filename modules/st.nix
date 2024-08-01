@@ -11,14 +11,11 @@
         url = "https://dl.suckless.org/st/${pname}-${version}.tar.gz";
         hash = "sha256-ayFdT0crIdYjLzDyIRF6d34kvP7miVXd77dCZGf5SUs=";
       };
+      # Dependencies
       buildInputs = oldAttrs.buildInputs ++ [ harfbuzz ];
       # Apply patches
       patches = [
-        #./st-patches/st-boxdraw_v2-0.8.5.diff
-        ./st-patches/st-ligatures-20200430-0.8.3.diff
-        #./st-patches/st-scrollback-ringbuffer-0.8.5.diff
-        #./st-patches/st-scrollback-reflow-0.8.5.diff
-        #./st-patches/st-scrollback-mouse-20220127-2c5edf2.diff
+        ./st-patches/st-0.9.2-combinedpatch-20240801-anhack.diff
       ];
       # Inject custom config
       configFile = writeText "config.def.h" (builtins.readFile ../sl-headers/st-config.h);

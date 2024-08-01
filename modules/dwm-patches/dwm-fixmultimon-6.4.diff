@@ -1,0 +1,87 @@
+From e8f792e8a482e461f9512ac8057d630284a47014 Mon Sep 17 00:00:00 2001
+From: Christopher Lang <christopher.lang.256@gmail.com>
+Date: Wed, 2 Aug 2023 16:02:15 +0100
+Subject: [dwm][patch] Stop input focus on pointers unselected monitor
+
+When the pointer is on an unselected monitor and is not moving, it
+should not interfere what window is selected/focused.
+
+1:
+
+From  https://tronche.com/gui/x/xlib/events/input-focus/normal-and-grabbed.html:
+When the focus moves from window A to window B, A is an inferior of B,
+and the pointer is in window P, the X server does the following:
+It generates a FocusOut event on window A...
+It generates a FocusOut event on each win...
+It generates a FocusIn event on window B,...
+If window P is an inferior of window B but window P is not window A or
+an inferior or ancestor of window A, it generates a FocusIn event on
+each window below window B, down to and including window P, with the
+detail member of each XFocusInEvent structure set to NotifyPointer.
+
+If focusmon selects a monitor with no clients then XSetInputFocus is
+called on the root window. Due to the above rules, an FocusIn event is sent
+to the window under the pointer which may be on another monitor. Now a
+window on one monitor is getting our keyboard input but another monitor
+is selected. In this undesirable state, a killclient shortcut (for
+example) will not destroy the window that is accepting input.
+
+We fix this by focusing on the bar window instead of root when an empty
+monitor is selected. Windows on other monitors are not a children of the
+bar window so they will not be focused by a NotifyPointer event.
+
+2:
+
+If a window is moved from the selected monitor to the monitor under the
+pointer and the rearrangement of windows on the second monitor causes a
+different window to be under the pointer, then an enternotify event is
+sent for that window. This causes that window to be focused and the
+second monitor to be selected. If the arrangement on the second monitor
+did not cause the pointer to be under a different window then the
+selected monitor would not change (very unpredictable behaviour!).
+
+We fix this by suppressing all enternotify events at the end of an
+arrange(NULL) call.
+---
+ dwm.c | 11 ++++++++---
+ 1 file changed, 8 insertions(+), 3 deletions(-)
+
+diff --git a/dwm.c b/dwm.c
+index f1d86b2..5b71b33 100644
+--- a/dwm.c
++++ b/dwm.c
+@@ -382,6 +382,7 @@ applysizehints(Client *c, int *x, int *y, int *w, int *h, int interact)
+ void
+ arrange(Monitor *m)
+ {
++	XEvent ev;
+ 	if (m)
+ 		showhide(m->stack);
+ 	else for (m = mons; m; m = m->next)
+@@ -389,8 +390,12 @@ arrange(Monitor *m)
+ 	if (m) {
+ 		arrangemon(m);
+ 		restack(m);
+-	} else for (m = mons; m; m = m->next)
+-		arrangemon(m);
++	} else {
++		for (m = mons; m; m = m->next)
++			arrangemon(m);
++		XSync(dpy, False);
++		while (XCheckMaskEvent(dpy, EnterWindowMask, &ev));
++	}
+ }
+ 
+ void
+@@ -804,7 +809,7 @@ focus(Client *c)
+ 		XSetWindowBorder(dpy, c->win, scheme[SchemeSel][ColBorder].pixel);
+ 		setfocus(c);
+ 	} else {
+-		XSetInputFocus(dpy, root, RevertToPointerRoot, CurrentTime);
++		XSetInputFocus(dpy, selmon->barwin, RevertToPointerRoot, CurrentTime);
+ 		XDeleteProperty(dpy, root, netatom[NetActiveWindow]);
+ 	}
+ 	selmon->sel = c;
+-- 
+2.41.0
+

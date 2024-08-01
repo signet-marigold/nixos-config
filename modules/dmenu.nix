@@ -13,12 +13,7 @@
       };
       # Apply patches
       patches = [
-        #./dmenu-patches/dmenu-alpha-20230110-5.2.diff
-        ./dmenu-patches/dmenu-border-20230512-0fe460d.diff
-        ./dmenu-patches/dmenu-center-5.2.diff
-        #./dmenu-patches/dmenu-fuzzyhighlight-caseinsensitive-4.9.diff
-        ./dmenu-patches/dmenu-grid-4.9.diff
-        ./dmenu-patches/dmenu-gridnav-5.2.diff
+        ./dmenu-patches/dmenu-5.3-combinedpatch-20240801-anhack.diff
       ];
       # Inject custom config
       configFile = writeText "config.def.h" (builtins.readFile ../sl-headers/dmenu-config.h);
