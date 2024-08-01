@@ -61,7 +61,8 @@
       superfile
       zip
       unzip
-      desmume
+      tinc
+      nb
     ];
   };
 

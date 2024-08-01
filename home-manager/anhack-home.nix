@@ -35,6 +35,13 @@
     };
     gitui.enable = true;
     lazygit.enable = true;
+
+    qutebrowser = {
+      enable = true;
+      extraConfig = ''
+        c.tabs.padding = {'top': 2, 'bottom': 4, 'right': 0, 'left': 0}
+      '';
+    };
   };
 
   services.dunst.enable = true;

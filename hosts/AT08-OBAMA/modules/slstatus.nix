@@ -1,18 +1,24 @@
 { pkgs, ... }:
 
 {
-  # Install suckless status bar
+  # Mod slstatus package
   nixpkgs.overlays = [
     (self: super: {
       slstatus = super.slstatus.overrideAttrs (oldAttrs: rec {
-        # Override header file in build
+        # Lock version
+        pname = "slstatus";
+        version = "1.0";
+        src = pkgs.fetchurl {
+          url = "https://dl.suckless.org/tools/${pname}-${version}.tar.gz";
+          hash = "sha256-bW0KFsCN2dIRFywwxHIHASZ6P0DNyTjbPzhvaits/1Q=";
+        };
+        # Inject custom config
         configFile = super.writeText "config.h" (builtins.readFile ../sl-headers/slstatus-config.h);
         postPatch = oldAttrs.postPatch or "" + "\necho 'Using own config file...'\n cp ${configFile} config.def.h";
       });
     })
   ];
 
-  # Require package
   environment.systemPackages = with pkgs; [
     slstatus
   ];
