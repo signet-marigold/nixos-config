@@ -5,69 +5,10 @@
   users.users.anhack = {
     isNormalUser = true;
     description = "anhack";
-    initialPassword = "hashbrowns";
+    initialPassword = "hashbrownzebrastripes";
     extraGroups = [ "networkmanager" "input" "wheel" "video" "audio" "tss" ];
     shell = pkgs.fish;
     packages = with pkgs; [
-      discord
-      tdesktop
-      vscodium
-      #neovim
-      firefox
-      kdePackages.kate
-      kdePackages.kdenlive
-      #imv
-      mpv
-      #zathura
-      deluge
-      tutanota-desktop
-      heroic
-      qownnotes
-      r2modman
-      modrinth-app
-      bitwarden-desktop
-      bottles
-      tor-browser
-      gnuradio
-      gqrx
-      tlf
-      libreoffice
-      stellarium
-      looking-glass-client
-      hexchat
-      darktable
-      calibre
-      gparted
-      element-desktop
-      qdirstat
-      qcad
-      pspp
-      gretl
-      kdePackages.kasts
-      vscodium
-      peazip
-      sonic-visualiser
-      tauon
-      shortwave
-      ardour
-      surge-XT
-      muse
-      mandelbulber
-      lutris
-      dolphin-emu
-      audacity
-      signal-desktop
-      ksnip
-      superfile
-      zip
-      unzip
-      nb
-      hugo
-      wordgrinder
-      gotop
-      xclip
-      pqiv
-      pidgin
     ];
   };
 
