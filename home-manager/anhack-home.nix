@@ -46,5 +46,8 @@
 
   services.dunst.enable = true;
 
-  #imports = [ ./modules/firefox.nix ];
+  imports = [
+    #./modules/firefox.nix
+    ./modules/piper-tts
+  ];
 }

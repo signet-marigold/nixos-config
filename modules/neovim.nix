@@ -4,7 +4,7 @@
   programs.neovim = {
     enable = true;
     defaultEditor = true;
-    viAlias = true;
+    viAlias = false;
     vimAlias = true;
     configure = {
       customRC = builtins.readFile ./config/init.vim;

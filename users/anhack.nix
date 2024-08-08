@@ -61,8 +61,13 @@
       superfile
       zip
       unzip
-      tinc
       nb
+      hugo
+      wordgrinder
+      gotop
+      xclip
+      pqiv
+      pidgin
     ];
   };
 

@@ -44,8 +44,8 @@
       offload = {
         #enable = true;
         #enableOffloadCmd = true;
-	enable = false;
-	enableOffloadCmd = false;
+        enable = false;
+        enableOffloadCmd = false;
       };
 
       # FIXME: Change the following values to the correct Bus ID values for your system!

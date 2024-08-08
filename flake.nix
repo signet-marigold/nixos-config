@@ -131,6 +131,7 @@
           ./modules/dns.nix
           # ./modules/auto-upgrade.nix
           #./modules/firefox.nix
+          ./modules/clamav-scanner.nix
 
           # Hardware helper scripts
           ./packages/hhst.nix
