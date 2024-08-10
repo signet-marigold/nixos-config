@@ -31,7 +31,7 @@
     ripgrep # recursively searches directories for a regex pattern
     jq # A lightweight and flexible command-line JSON processor
     yq-go # yaml processor https://github.com/mikefarah/yq
-    eza # A modern replacement for ‘ls’
+    eza # A modern replacement for `ls`
     fzf # A command-line fuzzy finder
 
     qdirstat # visual disk usage
@@ -42,7 +42,7 @@
 
     # networking tools
     mtr # A network diagnostic tool
-    iperf3
+    iperf3 # speed test
     dnsutils # `dig` + `nslookup`
     ldns # replacement of `dig`, it provide the command `drill`
     aria2 # A lightweight multi-protocol & multi-source command-line download utility
@@ -79,6 +79,9 @@
     gotop # yet another top
     iotop # io monitoring
     iftop # network monitoring
+    nvtopPackages.full # nvidia, amd & intel gpus
+    #radeontop # amd gpu utilization
+
 
     # system call monitoring
     strace # system call monitoring

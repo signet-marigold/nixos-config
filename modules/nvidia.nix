@@ -1,10 +1,21 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 
 {
+  # Extra options to try and fix no tty on desktop (prevents vertual console dm like tuigreet)
+  # Nothing is working...
+  boot.kernelParams = [ "module_blacklist=amdgpu" ]; # blacklist integrated gpu
+  boot.blacklistedKernelModules = [ "i915" ];
+  nixpkgs.config.allowUnfree = pkgs.lib.mkForce true;
+  boot.initrd.kernelModules = [ "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ];
+  boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
+
+
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
+
+    #nvidiaPersistenced = true;
 
     # Modesetting is required.
     modesetting.enable = true;
@@ -13,7 +24,7 @@
     # Enable this if you have graphical corruption issues or application crashes after waking
     # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead
     # of just the bare essentials.
-    powerManagement.enable = true;
+    powerManagement.enable = false;
 
     # Fine-grained power management. Turns off GPU when not in use.
     # Experimental and only works on modern Nvidia GPUs (Turing or newer).
@@ -33,7 +44,7 @@
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.production;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
 
     # Nvidia Optimus PRIME. It is a technology developed by Nvidia to optimize
     # the power consumption and performance of laptops equipped with their GPUs.

@@ -13,9 +13,11 @@ else
   in="$1"
 fi
 # Remove extra spaces
-in=$(echo $in | xargs echo -n)
-# Remove capital letters
-in=$(echo $in | tr '[:upper:]' '[:lower:]')
+#in=$(echo $in | xargs echo -n)
+# Remove extra spaces, Remove capital letters
+in=$(echo $in | tr -s " " | tr '[:upper:]' '[:lower:]')
+# Remove non ascii characters
+#in=$(echo $in | iconv -f utf-8 -t ascii)
 
 length=${#in}
 timeout=$((length*65+5000))

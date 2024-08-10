@@ -19,6 +19,16 @@
     };
   };
 
+  #services.greetd = {
+  #  enable = true;
+  #  settings = {
+  #    default_session = {
+  #      command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --time-format '%Y-%m-%d %H:%M:%S' --cmd 'dwm'";
+  #      user = "greeter";
+  #    };
+  #  };
+  #};
+
   # Mod dwm package
   nixpkgs.overlays = [
     (self: super: {

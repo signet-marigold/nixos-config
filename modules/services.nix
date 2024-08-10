@@ -38,18 +38,20 @@
     imagemagick
     swappy
     ffmpeg_6-full
-    wl-screenrec
-    wl-clipboard
-    wl-clip-persist
+    #wl-screenrec
+    #wl-clipboard
+    #wl-clip-persist
     cliphist
     xdg-utils
-    wtype
-    wlrctl
-    waybar
+    #wtype
+    #wlrctl
+    #waybar
     #rofi-wayland
     dunst
     avizo
-    wlogout
+    #wlogout
     gifsicle
   ];
+
+  imports = [ ./slock.nix ];
 }

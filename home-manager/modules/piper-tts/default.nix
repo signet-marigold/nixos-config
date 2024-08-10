@@ -21,6 +21,8 @@
   home.packages = with pkgs; [
     piper-tts
     alsa-utils
+    xclip
+    dunst
     (writeShellScriptBin "tts-selection" (builtins.readFile ./tts-selection.sh))
   ];
 }

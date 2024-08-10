@@ -29,7 +29,9 @@
           ./hosts/AT20-CLEVELAND/modules/slstatus.nix
           
           #./modules/power-management.nix
-          ./modules/opengl.nix
+          ./modules/opengl-with-intel.nix
+          #./modules/display-manager.nix
+          ./modules/internationalisation.nix
           #./modules/fingerprint-scanner.nix
           ./modules/sound.nix
           ./modules/usb.nix
@@ -65,7 +67,9 @@
           # ./modules/auto-upgrade.nix
 
           # Hardware helper scripts
-	      ./packages/hhst.nix
+	      ./packages/hhst
+	      # Desktop helper scripts
+          ./packages/dhst
 
           home-manager.nixosModules.home-manager {
             home-manager = {
@@ -97,6 +101,8 @@
           
           ./modules/nvidia.nix
           ./modules/opengl.nix
+          #./modules/display-manager.nix
+          ./modules/internationalisation.nix
           #./modules/fingerprint-scanner.nix
           ./modules/sound.nix
           ./modules/usb.nix
@@ -106,7 +112,7 @@
           ./modules/nix-settings.nix
           ./modules/nixpkgs.nix
           ./modules/gc.nix
-          ./modules/linux-kernel.nix
+          #./modules/linux-kernel.nix
           ./modules/screen.nix
           ./modules/theme.nix
           ./modules/fonts.nix
@@ -134,7 +140,9 @@
           ./modules/clamav-scanner.nix
 
           # Hardware helper scripts
-          ./packages/hhst.nix
+          ./packages/hhst
+          # Desktop helper scripts
+          ./packages/dhst
           
           home-manager.nixosModules.home-manager {
             home-manager = {
