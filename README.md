@@ -1,6 +1,6 @@
 # ANHACK's Nixos Config
 
-based loosly on [xnm1's config](https://github.com/XNM1/linux-nixos-hyprland-config-dotfiles)
+loosely based on [xnm1's config](https://github.com/XNM1/linux-nixos-hyprland-config-dotfiles)
 
 - WM: dwm
 - Bar: slstatus
