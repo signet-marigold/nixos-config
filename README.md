@@ -1,47 +1,51 @@
-# anhack's nixos config
+# ANHACK's Nixos Config
+
+based loosly on [xnm1's config](https://github.com/XNM1/linux-nixos-hyprland-config-dotfiles)
 
 - WM: dwm
 - Bar: slstatus
-- DM: lightdm
 
-this is designed for *two* hosts (`at08-obama` & `at20-cleveland`) both with the username `anhack`
+this is designed for *two* hosts (`AT08-OBAMA` & `AT20-CLEVELAND`) both with the username `anhack`
 
+## Structure
 ```
 .
-├── flake.lock
-├── flake.nix
 ├── hosts
-│   └── <HOST NAME>
-│       ├── configuration.nix
-│       ├── hardware-configuration.nix
-│       ├── home.nix
-│       ├── modules
-│       │   └── <...>
-│       └── sl-headers
-│           └── <...>
-├── users
-│   └── <USER NAME>.nix
+│   ├── AT20-CLEVELAND
+│   │   └── modules
+│   │       └── slstatus
+│   └── AT08-OBAMA
+│       └── modules
+│           └── slstatus
 ├── modules
-│   ├── dmenu-patches
-│   │   └── <...>
-│   ├── dwm-patches
-│   │   └── <...>
-│   └── <...>
-└── sl-headers
-    └── <...>
-
+│   ├── desktop
+│   │   ├── dmenu
+│   │   │   └── patches
+│   │   ├── st
+│   │   │   └── patches
+│   │   ├── dwm
+│   │   │   └── patches
+│   │   └── targets
+│   │       └── dwm-desktop
+│   │           └── packages
+│   │               ├── hhst
+│   │               └── dhst
+│   ├── editors
+│   │   └── neovim
+│   │       └── config
+│   ├── hardware
+│   │   └── graphics
+│   ├── development
+│   ├── login
+│   ├── base
+│   └── system
+├── home-manager
+│   └── modules
+│       ├── piper-tts
+│       └── browsers
+└── users
 ```
 
-flake.nix defines both hostnames and what modules are loaded
+## Screenshots
 
-and per host a home-manager hook loads settings from `hosts/<HOST NAME>/home.nix`
-
-most of the work is being done by the module files
-
----
-
-the user is set up at 
-
-`hosts/<HOST NAME>/modules/user.nix`  
-and  
-`hosts/<HOST NAME>/home.nix`
+![everything](.github/assets/screenshot1.png)

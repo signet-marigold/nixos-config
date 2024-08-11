@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 {
-  # Enable Display Manager
   services.greetd = {
     enable = true;
     settings = {
@@ -11,8 +10,4 @@
       };
     };
   };
-
-  #environment.systemPackages = with pkgs; [
-  #  greetd.tuigreet
-  #];
 }

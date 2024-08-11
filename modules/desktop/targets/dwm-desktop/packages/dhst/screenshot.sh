@@ -1,5 +1,5 @@
 SOUNDPATH=""
-SCREENSHOT_DIR="$HOME/screenshot"
+SCREENSHOT_DIR="$HOME/Screenshots"
 FILENAME="$SCREENSHOT_DIR/$(date +%Y-%m-%d_%I-%M-%S)_ksnip.png"
 
 ksnip --rectarea --saveto "$FILENAME"

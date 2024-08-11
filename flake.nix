@@ -1,5 +1,5 @@
 {
-  description = "Alexs System Flake";
+  description = "Alex's System Flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -12,138 +12,11 @@
   outputs = { nixpkgs, home-manager, ... }@inputs:
   {
     nixosConfigurations = {
-
-
       AT20-CLEVELAND = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          ./users/anhack.nix
-
-          ./hosts/AT20-CLEVELAND/configuration.nix
-          ./hosts/AT20-CLEVELAND/hardware-configuration.nix
-          
-          ./hosts/AT20-CLEVELAND/modules/mac-randomize.nix
-          ./hosts/AT20-CLEVELAND/modules/open-ssh.nix
-          ./hosts/AT20-CLEVELAND/modules/networking.nix
-          ./hosts/AT20-CLEVELAND/modules/slstatus.nix
-          
-          #./modules/power-management.nix
-          ./modules/opengl-with-intel.nix
-          #./modules/display-manager.nix
-          ./modules/internationalisation.nix
-          #./modules/fingerprint-scanner.nix
-          ./modules/sound.nix
-          ./modules/usb.nix
-          ./modules/time.nix
-          ./modules/swap.nix
-          ./modules/bootloader.nix
-          ./modules/nix-settings.nix
-          ./modules/nixpkgs.nix
-          ./modules/gc.nix
-          ./modules/linux-kernel.nix
-          ./modules/screen.nix
-          ./modules/theme.nix
-          ./modules/fonts.nix
-          ./modules/security-services.nix
-          ./modules/services.nix
-          ./modules/printing.nix
-          ./modules/dwm.nix
-          ./modules/dmenu.nix
-          ./modules/st.nix
-          ./modules/bluetooth.nix
-          ./modules/virtualisation.nix
-          ./modules/programming-languages.nix
-          ./modules/lsp.nix
-          ./modules/neovim.nix
-          ./modules/rust.nix
-          ./modules/wasm.nix
-          ./modules/info-fetchers.nix
-          ./modules/utils.nix
-          ./modules/terminal-utils.nix
-          ./modules/steam.nix
-          ./modules/firewall.nix
-          ./modules/dns.nix
-          # ./modules/auto-upgrade.nix
-
-          # Hardware helper scripts
-	      ./packages/hhst
-	      # Desktop helper scripts
-          ./packages/dhst
-
-          home-manager.nixosModules.home-manager {
-            home-manager = {
-	          backupFileExtension = "backup";
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.anhack = import ./home-manager/anhack-home.nix;
-              extraSpecialArgs = {};
-            };
-          }
-
           inputs.stylix.nixosModules.stylix
-        ];
-      };
-
-
-      AT08-OBAMA = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./users/anhack.nix
-
-          ./hosts/AT08-OBAMA/configuration.nix
-          ./hosts/AT08-OBAMA/hardware-configuration.nix
-          
-          ./hosts/AT08-OBAMA/modules/open-ssh.nix
-          ./hosts/AT08-OBAMA/modules/networking.nix
-          ./hosts/AT08-OBAMA/modules/slstatus.nix
-          
-          ./modules/nvidia.nix
-          ./modules/opengl.nix
-          #./modules/display-manager.nix
-          ./modules/internationalisation.nix
-          #./modules/fingerprint-scanner.nix
-          ./modules/sound.nix
-          ./modules/usb.nix
-          ./modules/time.nix
-          ./modules/swap.nix
-          ./modules/bootloader.nix
-          ./modules/nix-settings.nix
-          ./modules/nixpkgs.nix
-          ./modules/gc.nix
-          #./modules/linux-kernel.nix
-          ./modules/screen.nix
-          ./modules/theme.nix
-          ./modules/fonts.nix
-          ./modules/security-services.nix
-          ./modules/services.nix
-          #./modules/printing.nix
-          ./modules/dwm.nix
-          ./modules/dmenu.nix
-          ./modules/st.nix
-          ./modules/bluetooth.nix
-          ./modules/virtualisation.nix
-          ./modules/programming-languages.nix
-          ./modules/lsp.nix
-          ./modules/neovim.nix
-          ./modules/rust.nix
-          ./modules/wasm.nix
-          ./modules/info-fetchers.nix
-          ./modules/utils.nix
-          ./modules/terminal-utils.nix
-          ./modules/steam.nix
-          ./modules/firewall.nix
-          ./modules/dns.nix
-          # ./modules/auto-upgrade.nix
-          #./modules/firefox.nix
-          ./modules/clamav-scanner.nix
-
-          # Hardware helper scripts
-          ./packages/hhst
-          # Desktop helper scripts
-          ./packages/dhst
-          
           home-manager.nixosModules.home-manager {
             home-manager = {
               backupFileExtension = "backup";
@@ -153,12 +26,77 @@
               extraSpecialArgs = {};
             };
           }
-
-          inputs.stylix.nixosModules.stylix
+          ./users/anhack.nix
+          ./hosts/AT20-CLEVELAND
+          ./modules/base
+          ./modules/system
+          ./modules/desktop/targets/dwm-desktop
+          ./modules/login/lightgreet.nix
+          ./modules/hardware/graphics/opengl-with-intel.nix
+          ./modules/hardware/bluetooth.nix
+          #./modules/hardware/fingerprint-scanner.nix
+          # ./modules/hardware/power-management.nix
+          ./modules/hardware/screen.nix
+          ./modules/hardware/sound.nix
+          ./modules/hardware/usb.nix
+          #./modules/hardware/yubikey.nix
+          ./modules/editors/neovim
+          ./modules/development/lsp.nix
+          ./modules/development/programming-languages.nix
+          ./modules/development/work.nix
+          ./modules/development/utils.nix
+          ./modules/development/rust.nix
+          ./modules/development/wasm.nix
+          ./modules/info-fetchers.nix
+          ./modules/terminal-utils.nix
+          ./modules/virtualisation.nix
+          ./modules/vpn.nix
+          ./modules/steam.nix
         ];
       };
-
-
+      AT08-OBAMA = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          inputs.stylix.nixosModules.stylix
+          home-manager.nixosModules.home-manager {
+            home-manager = {
+              backupFileExtension = "backup";
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.anhack = import ./home-manager/anhack-home.nix;
+              extraSpecialArgs = {};
+            };
+          }
+          ./users/anhack.nix
+          ./hosts/AT08-OBAMA
+          ./modules/base
+          ./modules/system
+          ./modules/desktop/targets/dwm-desktop
+          ./modules/login/lightgreet.nix
+          ./modules/hardware/graphics/nvidia.nix
+          ./modules/hardware/graphics/opengl.nix
+          ./modules/hardware/bluetooth.nix
+          #./modules/hardware/fingerprint-scanner.nix
+          # ./modules/hardware/power-management.nix
+          ./modules/hardware/screen.nix
+          ./modules/hardware/sound.nix
+          ./modules/hardware/usb.nix
+          #./modules/hardware/yubikey.nix
+          ./modules/editors/neovim
+          ./modules/development/lsp.nix
+          ./modules/development/programming-languages.nix
+          ./modules/development/work.nix
+          ./modules/development/utils.nix
+          ./modules/development/rust.nix
+          ./modules/development/wasm.nix
+          ./modules/info-fetchers.nix
+          ./modules/terminal-utils.nix
+          ./modules/virtualisation.nix
+          ./modules/vpn.nix
+          ./modules/steam.nix
+        ];
+      };
     };
   };
 }

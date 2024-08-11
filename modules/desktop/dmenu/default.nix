@@ -13,10 +13,10 @@
       };
       # Apply patches
       patches = [
-        ./dmenu-patches/dmenu-5.3-combinedpatch-20240801-anhack.diff
+        ./patches/dmenu-5.3-combinedpatch-20240801-anhack.diff
       ];
       # Inject custom config
-      configFile = writeText "config.def.h" (builtins.readFile ../sl-headers/dmenu-config.h);
+      configFile = writeText "config.def.h" (builtins.readFile ./dmenu-config.h);
       postPatch = "${oldAttrs.postPatch}\n cp ${configFile} config.def.h";
     }))
 

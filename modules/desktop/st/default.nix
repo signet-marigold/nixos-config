@@ -15,10 +15,10 @@
       buildInputs = oldAttrs.buildInputs ++ [ harfbuzz ];
       # Apply patches
       patches = [
-        ./st-patches/st-0.9.2-combinedpatch-20240801-anhack.diff
+        ./patches/st-0.9.2-combinedpatch-20240801-anhack.diff
       ];
       # Inject custom config
-      configFile = writeText "config.def.h" (builtins.readFile ../sl-headers/st-config.h);
+      configFile = writeText "config.def.h" (builtins.readFile ./st-config.h);
       postPatch = "${oldAttrs.postPatch}\n cp ${configFile} config.def.h";
     }))
 

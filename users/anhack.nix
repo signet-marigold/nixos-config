@@ -5,9 +5,9 @@
   users.users.anhack = {
     isNormalUser = true;
     description = "anhack";
+    shell = pkgs.fish;
     initialPassword = "hashbrownzebrastripes";
     extraGroups = [ "networkmanager" "input" "wheel" "video" "audio" "tss" "render" ];
-    shell = pkgs.fish;
     packages = with pkgs; [
     ];
   };

@@ -8,26 +8,7 @@
     windowManager.dwm = {
       enable = true;
     };
-
-    # Enable light desktop manager (just for login)
-    displayManager = {
-      lightdm = {
-        enable = true;
-        autoLogin.timeout = 3;
-        greeter.enable = true;
-      };
-    };
   };
-
-  #services.greetd = {
-  #  enable = true;
-  #  settings = {
-  #    default_session = {
-  #      command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --time-format '%Y-%m-%d %H:%M:%S' --cmd 'dwm'";
-  #      user = "greeter";
-  #    };
-  #  };
-  #};
 
   # Mod dwm package
   nixpkgs.overlays = [
@@ -44,10 +25,10 @@
         #buildInputs = oldAttrs.buildInputs ++ [  ];
         # Apply patches
         patches = [
-          ./dwm-patches/dwm-6.5-combinedpatch-20240801-anhack.diff
+          ./patches/dwm-6.5-combinedpatch-20240801-anhack.diff
         ];
         # Inject custom config
-        configFile = super.writeText "config.h" (builtins.readFile ../sl-headers/dwm-config.h);
+        configFile = super.writeText "config.h" (builtins.readFile ./dwm-config.h);
         postPatch = oldAttrs.postPatch or "" + "\necho 'Using own config file...'\n cp ${configFile} config.def.h";
       });
     })

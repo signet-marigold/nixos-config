@@ -12,6 +12,6 @@
     automatic = true;
     dates = "weekly";
     randomizedDelaySec = "14m";
-    options = "--delete-older-than 10d";
+    options = "--delete-older-than 14d";
   };
 }

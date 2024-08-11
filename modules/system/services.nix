@@ -52,6 +52,4 @@
     #wlogout
     gifsicle
   ];
-
-  imports = [ ./slock.nix ];
 }
