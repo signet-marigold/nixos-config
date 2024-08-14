@@ -3,6 +3,10 @@
 result
 result-*
 
+# Misc
+.config
+.direnv
+
 # Editors
 
 # Vim #

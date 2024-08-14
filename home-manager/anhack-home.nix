@@ -24,7 +24,7 @@
 
     # code editors
     vscodium
-    kdePackages.kate
+    #kdePackages.kate
 
     # photo editors
     gimp # photoshop style editor
@@ -61,6 +61,7 @@
     modrinth-app # minecraft launcher with mod support
     lutris # flexible game launcher
     dolphin-emu # gamecube / wii emulator
+    prismlauncher # open source minecraft launcher
 
     # data viewers
     pspp # statistical analysis of sampled data

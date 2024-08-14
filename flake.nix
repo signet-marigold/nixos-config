@@ -7,6 +7,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     rust-overlay.url = "github:oxalica/rust-overlay";
     stylix.url = "github:danth/stylix";
+    nvim.url = "git+https://codeberg.org/signet-marigold/neovim"; # My neovim config
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:
@@ -16,6 +17,7 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
+          { _module.args = inputs; }
           inputs.stylix.nixosModules.stylix
           home-manager.nixosModules.home-manager {
             home-manager = {
@@ -40,7 +42,8 @@
           ./modules/hardware/sound.nix
           ./modules/hardware/usb.nix
           #./modules/hardware/yubikey.nix
-          ./modules/editors/neovim
+          ./modules/editors/neovim.nix
+          ./modules/editors/kate.nix
           ./modules/development/lsp.nix
           ./modules/development/programming-languages.nix
           ./modules/development/work.nix
@@ -58,6 +61,7 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
+          { _module.args = inputs; }
           inputs.stylix.nixosModules.stylix
           home-manager.nixosModules.home-manager {
             home-manager = {
@@ -83,7 +87,8 @@
           ./modules/hardware/sound.nix
           ./modules/hardware/usb.nix
           #./modules/hardware/yubikey.nix
-          ./modules/editors/neovim
+          ./modules/editors/neovim.nix
+          ./modules/editors/kate.nix
           ./modules/development/lsp.nix
           ./modules/development/programming-languages.nix
           ./modules/development/work.nix

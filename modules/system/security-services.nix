@@ -24,8 +24,23 @@
     ];
   };
   services.fail2ban.enable = true;
-  security.pam.services.hyprlock = {};
-  # security.polkit.enable = true;
+  #security.pam.services.hyprlock = {};
+  security.polkit.enable = true;
+  systemd = {
+    user.services.polkit-gnome-authentication-agent-1 = {
+      description = "polkit-gnome-authentication-agent-1";
+      wantedBy = [ "graphical-session.target" ];
+      wants = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+        Restart = "on-failure";
+        RestartSec = 1;
+        TimeoutStopSec = 10;
+      };
+    };
+  };
   programs.browserpass.enable = true;
   #services.clamav = {
   #  daemon.enable = true;
@@ -59,7 +74,7 @@
         profile = "${pkgs.firejail}/etc/firejail/slack.profile";
       };
       telegram-desktop = {
-        executable = "${lib.getBin pkgs.tdesktop}/bin/telegram-desktop";
+        executable = "${lib.getBin pkgs.telegram-desktop}/bin/telegram-desktop";
         profile = "${pkgs.firejail}/etc/firejail/telegram-desktop.profile";
       };
       brave = {
