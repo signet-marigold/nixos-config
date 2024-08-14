@@ -20,7 +20,7 @@
     telegram-desktop
 
     # internet browsers
-    tor-browser # onion firefox
+    tor-browser # onion router firefox
 
     # code editors
     vscodium
