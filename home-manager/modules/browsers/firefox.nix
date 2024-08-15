@@ -152,9 +152,9 @@ in {
           "browser.compactmode.show" = true;
           "browser.cache.disk.enable" = false; # Be kind to hard drive
 
-          "mousewheel.default.delta_multiplier_x" = 400;
-          "mousewheel.default.delta_multiplier_y" = 400;
-          "mousewheel.default.delta_multiplier_z" = 400;
+          "mousewheel.default.delta_multiplier_x" = 300;
+          "mousewheel.default.delta_multiplier_y" = 300;
+          "mousewheel.default.delta_multiplier_z" = 300;
 
           # Firefox 75+ remembers the last workspace it was opened on as part of its session management.
           # This is annoying, because I can have a blank workspace, click Firefox from the launcher, and

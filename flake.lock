@@ -362,11 +362,11 @@
         "plugins-which-key": "plugins-which-key"
       },
       "locked": {
-        "lastModified": 1723647249,
-        "narHash": "sha256-1U7ih37ZTwbGo5qUTarIBdmQs/BSGUpQ0JVUTgeFih8=",
+        "lastModified": 1723650715,
+        "narHash": "sha256-xXNanwjCvUsrzxr6Ygjtp6dK3ZQ+YES72suoprJr3X8=",
         "ref": "refs/heads/main",
-        "rev": "58bf5e8613434baa4429ab893284267e6b74aac8",
-        "revCount": 43,
+        "rev": "0ea8651e0f9619ad4a4b8926bf713486fb9cebde",
+        "revCount": 45,
         "type": "git",
         "url": "https://codeberg.org/signet-marigold/neovim"
       },
