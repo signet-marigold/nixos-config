@@ -1,9 +1,7 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    slock
-  ];
+  programs.slock.enable = true;
 
   systemd.user.services.slock = {
     description = "Suckless Lock";

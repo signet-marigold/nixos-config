@@ -7,7 +7,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     rust-overlay.url = "github:oxalica/rust-overlay";
     stylix.url = "github:danth/stylix";
-    nvim.url = "git+https://codeberg.org/signet-marigold/neovim"; # My neovim config
+    nvim.url = "git+https://codeberg.org/signet-marigold/neovim";
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:

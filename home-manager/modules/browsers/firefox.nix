@@ -15,6 +15,8 @@ in {
   programs.firefox = {
     enable = true;
 
+    #languagePacks = [ "en-US" "es-ES" ];
+
     /* ---- POLICIES ---- */
     # Check about:policies#documentation for options.
     policies = {
@@ -105,18 +107,23 @@ in {
             (extension "bitwarden-password-manager" "{446900e4-71c2-419f-a6a7-df9c091e268b}")
             (extension "youtube-shorts-block" "{34daeb50-c2d2-4f14-886a-7160b24d66a4}")
             (extension "sponsorBlocker@ajay.app" "sponsorblock")
-            (extension "nicothin-dark-theme" "{99c277af-d778-4a0b-9faa-b1d8165f0a55}")
-            (extension "nicothin-space" "{22b0eca1-8c02-4c0d-a5d7-6604ddd9836e}")
+            #(extension "nicothin-dark-theme" "{99c277af-d778-4a0b-9faa-b1d8165f0a55}")
+            #(extension "nicothin-space" "{22b0eca1-8c02-4c0d-a5d7-6604ddd9836e}")
+            #(extension "tree-style-tab" "treestyletab@piro.sakura.ne.jp")
+            #(extension "tabliss" "extension@tabliss.io")
+            #(extension "umatrix" "uMatrix@raymondhill.net")
+            (extension "libredirect" "7esoorv3@alefvanoon.anonaddy.me")
+            (extension "clearurls" "{74145f27-f039-47ce-a470-a662b129930a}")
           ];
 
       /* ---- PREFERENCES ---- */
       # Check about:config for options.
       Preferences = {
-        "browser.theme.content-theme" = "dark";
         "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
-        "browser.contentblocking.category" = { Value = "strict"; Status = "locked"; };
         "extensions.pocket.enabled" = lock-false;
         "extensions.screenshots.disabled" = lock-true;
+        "browser.theme.content-theme" = "Dark space";
+        "browser.contentblocking.category" = { Value = "strict"; Status = "locked"; };
         "browser.topsites.contile.enabled" = lock-false;
         "browser.formfill.enable" = lock-false;
         "browser.search.suggest.enabled" = lock-false;
@@ -135,6 +142,10 @@ in {
         "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
       };
     };
+    /* ---- PROFILES ---- */
+    # Switch profiles via about:profiles page.
+    # For options that are available in Home-Manager see
+    # https://nix-community.github.io/home-manager/options.html#opt-programs.firefox.profiles
     profiles = {
       home = {
         id = 0;
@@ -142,6 +153,9 @@ in {
         isDefault = true;
 
         settings = {
+          #"extensions.activeThemeID" = "22b0eca1-8c02-4c0d-a5d7-6604ddd9836e";
+
+
           # "browser.startup.homepage" = "https://duckduckgo.com";
           "browser.search.defaultenginename" = "DuckDuckGo";
           "browser.search.order.1" = "DuckDuckGo";
@@ -152,9 +166,9 @@ in {
           "browser.compactmode.show" = true;
           "browser.cache.disk.enable" = false; # Be kind to hard drive
 
-          "mousewheel.default.delta_multiplier_x" = 300;
-          "mousewheel.default.delta_multiplier_y" = 300;
-          "mousewheel.default.delta_multiplier_z" = 300;
+          "mousewheel.default.delta_multiplier_x" = 320;
+          "mousewheel.default.delta_multiplier_y" = 320;
+          "mousewheel.default.delta_multiplier_z" = 320;
 
           # Firefox 75+ remembers the last workspace it was opened on as part of its session management.
           # This is annoying, because I can have a blank workspace, click Firefox from the launcher, and

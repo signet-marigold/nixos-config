@@ -48,7 +48,6 @@
     pulseaudio # Volume control (pactl)
 
     arandr     # gui monitor settings
-    qutebrowser
   ];
 
   # Inject custom scripts for managing hardware controls (screen brightness, volume, etc.)
