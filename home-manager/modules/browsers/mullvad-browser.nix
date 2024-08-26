@@ -1,5 +1,7 @@
+{ pkgs, ... }:
+
 {
-  programs.mullvad-browser = {
-    enable = true;
-  };
+  home.packages = with pkgs; [
+    mullvad-browser
+  ];
 }
