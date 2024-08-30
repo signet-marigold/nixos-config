@@ -7,6 +7,10 @@
     # - Employing a VPN (Virtual Private Network) to encrypt internet traffic.
     # - Utilizing Encrypted DNS, with DNS over HTTPS (DoH) to encrypt communication with the DNS server and mask DNS traffic under HTTPS.
 
+  environment.systemPackages = with pkgs; [
+    macchanger
+  ];
+
   # Enable MAC Randomize
   systemd.services.macchanger = {
     enable = true;
