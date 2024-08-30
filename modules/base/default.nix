@@ -7,7 +7,6 @@
     ./linux-kernel.nix
     ./nix-settings.nix
     ./nixpkgs.nix
-    ./printing.nix
     ./time.nix
   ];
 }

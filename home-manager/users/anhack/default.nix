@@ -45,6 +45,7 @@
 
     # media consumption
     mpv # video player
+    vlc # general media player
     tauon # audio player
     shortwave # internet radio
     kdePackages.kasts # podcasts
@@ -78,6 +79,7 @@
     deluge # torrent
     looking-glass-client # box emulator
     bottles # local software packager
+    qalculate-gtk # simple desktop calculator
 
     # productivity
     hugo # static website generator

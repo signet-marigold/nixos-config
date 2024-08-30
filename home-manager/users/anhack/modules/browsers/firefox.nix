@@ -188,4 +188,14 @@ in {
       };
     };
   };
+  services.devilspie2 = {
+    enable = true;
+    config = ''
+      if (get_window_name()=="Save As") then
+        print("Setting window on top")
+        focus()
+      end
+    '';
+  };
+  nixpkgs.config.firefox.enablePlasmaBrowserIntegration = true;
 }

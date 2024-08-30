@@ -24,7 +24,7 @@
               backupFileExtension = "backup";
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.anhack = import ./home-manager/anhack-home.nix;
+              users.anhack = import ./home-manager/hosts/AT20-CLEVELAND;
               extraSpecialArgs = {};
             };
           }
@@ -68,7 +68,7 @@
               backupFileExtension = "backup";
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.anhack = import ./home-manager/anhack-home.nix;
+              users.anhack = import ./home-manager/hosts/AT08-OBAMA;
               extraSpecialArgs = {};
             };
           }
