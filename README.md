@@ -40,12 +40,22 @@ this is designed for *two* hosts (`AT08-OBAMA` & `AT20-CLEVELAND`) both with the
 │   ├── base
 │   └── system
 ├── home-manager
-│   └── modules
-│       ├── piper-tts
-│       └── browsers
-└── users
+│   ├── users
+│   │   └── modules
+│   │       ├── piper-tts
+│   │       └── browsers
+│   └── hosts
+│       ├── AT20-CLEVELAND
+│       │   └── modules
+│       │       └── conky
+│       └── AT08-OBAMA
+│           └── modules
+│               └── conky
+└── users ─ anhack.nix
 ```
 
 ## Screenshots
 
 ![everything](.github/assets/screenshot1.png)
+
+![minimal](.github/assets/screenshot2.png)
