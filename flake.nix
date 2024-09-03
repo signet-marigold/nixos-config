@@ -8,6 +8,9 @@
     rust-overlay.url = "github:oxalica/rust-overlay";
     stylix.url = "github:danth/stylix";
     nvim.url = "git+https://codeberg.org/signet-marigold/neovim";
+    agenix.url = "github:ryantm/agenix";
+    pia.url = "git+https://git.sr.ht/~rprospero/nixos-pia?ref=development";
+    pia.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:
@@ -63,6 +66,8 @@
         modules = [
           { _module.args = inputs; }
           inputs.stylix.nixosModules.stylix
+          inputs.agenix.nixosModules.default
+          inputs.pia.nixosModule
           home-manager.nixosModules.home-manager {
             home-manager = {
               backupFileExtension = "backup";
