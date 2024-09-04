@@ -61,7 +61,7 @@
           ./modules/info-fetchers.nix
           ./modules/terminal-utils.nix
           ./modules/virtualisation.nix
-          ./modules/vpn.nix
+          #./modules/vpn.nix
           ./modules/steam.nix
         ];
       };
@@ -111,7 +111,7 @@
           ./modules/info-fetchers.nix
           ./modules/terminal-utils.nix
           ./modules/virtualisation.nix
-          ./modules/vpn.nix
+          #./modules/vpn.nix
           ./modules/steam.nix
         ];
       };
