@@ -36,7 +36,6 @@
           ./modules/base
           ./modules/system
           ./modules/desktop/targets/dwm-desktop
-          ./modules/login/lightgreet.nix
           ./modules/hardware/graphics/opengl-with-intel.nix
           ./modules/hardware/bluetooth.nix
           #./modules/hardware/fingerprint-scanner.nix
@@ -81,8 +80,7 @@
           ./hosts/AT08-OBAMA
           ./modules/base
           ./modules/system
-          ./modules/desktop/targets/dwm-desktop
-          ./modules/login/lightgreet.nix
+          ./modules/desktop/targets/gnome-desktop
           ./modules/hardware/graphics/nvidia.nix
           ./modules/hardware/graphics/opengl.nix
           ./modules/hardware/bluetooth.nix

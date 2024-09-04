@@ -5,9 +5,7 @@
   services.xserver = {
     enable = true;
     autorun = true;
-    windowManager.dwm = {
-      enable = true;
-    };
+    windowManager.dwm.enable = true;
   };
 
   # Mod dwm package

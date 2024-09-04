@@ -2,9 +2,9 @@
 
 {
   # Systemd services setup
-  systemd.packages = with pkgs; [
-    auto-cpufreq
-  ];
+  #systemd.packages = with pkgs; [
+  #  auto-cpufreq
+  #];
   
   # Enable Services
   services.geoclue2.enable = true;
@@ -22,7 +22,7 @@
   programs.xfconf.enable = true;
   services.tumbler.enable = true; 
   services.fwupd.enable = true;
-  services.auto-cpufreq.enable = true;
+  #services.auto-cpufreq.enable = true;
   # services.gnome.core-shell.enable = true;
   # services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
 

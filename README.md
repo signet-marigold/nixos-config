@@ -50,8 +50,9 @@ and so we have a *mostly* mirrored desktop for any and all devices i want
 │   │       │   └── packages
 │   │       │       ├── hhst
 │   │       │       └── dhst
-│   │       ├── gnome-desktop.nix
-│   │       └── hyprland-desktop.nix
+│   │       ├── gnome-desktop
+│   │       ├── kde-desktop
+│   │       └── hyprland-desktop
 │   ├── editors
 │   │   └── neovim
 │   │       └── config
