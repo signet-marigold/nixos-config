@@ -22,6 +22,8 @@
         modules = [
           { _module.args = inputs; }
           inputs.stylix.nixosModules.stylix
+          inputs.agenix.nixosModules.default
+          #inputs.pia.nixosModule
           home-manager.nixosModules.home-manager {
             home-manager = {
               backupFileExtension = "backup";
@@ -36,6 +38,7 @@
           ./modules/base
           ./modules/system
           ./modules/desktop/targets/dwm-desktop
+
           ./modules/hardware/graphics/opengl-with-intel.nix
           ./modules/hardware/bluetooth.nix
           #./modules/hardware/fingerprint-scanner.nix
@@ -44,14 +47,17 @@
           ./modules/hardware/sound.nix
           ./modules/hardware/usb.nix
           #./modules/hardware/yubikey.nix
+
           ./modules/editors/neovim.nix
           ./modules/editors/kate.nix
+
           ./modules/development/lsp.nix
           ./modules/development/programming-languages.nix
           ./modules/development/work.nix
           ./modules/development/utils.nix
           ./modules/development/rust.nix
           ./modules/development/wasm.nix
+
           ./modules/info-fetchers.nix
           ./modules/terminal-utils.nix
           ./modules/virtualisation.nix
@@ -66,7 +72,7 @@
           { _module.args = inputs; }
           inputs.stylix.nixosModules.stylix
           inputs.agenix.nixosModules.default
-          inputs.pia.nixosModule
+          #inputs.pia.nixosModule
           home-manager.nixosModules.home-manager {
             home-manager = {
               backupFileExtension = "backup";
@@ -80,7 +86,8 @@
           ./hosts/AT08-OBAMA
           ./modules/base
           ./modules/system
-          ./modules/desktop/targets/gnome-desktop
+          ./modules/desktop/targets/dwm-desktop
+
           ./modules/hardware/graphics/nvidia.nix
           ./modules/hardware/graphics/opengl.nix
           ./modules/hardware/bluetooth.nix
@@ -90,14 +97,17 @@
           ./modules/hardware/sound.nix
           ./modules/hardware/usb.nix
           #./modules/hardware/yubikey.nix
+
           ./modules/editors/neovim.nix
           ./modules/editors/kate.nix
+
           ./modules/development/lsp.nix
           ./modules/development/programming-languages.nix
           ./modules/development/work.nix
           ./modules/development/utils.nix
           ./modules/development/rust.nix
           ./modules/development/wasm.nix
+
           ./modules/info-fetchers.nix
           ./modules/terminal-utils.nix
           ./modules/virtualisation.nix
