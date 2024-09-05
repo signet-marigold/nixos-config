@@ -2,7 +2,7 @@
   imports = [
     #./auto-upgrade.nix
     ./bootloader.nix
-    ./gc.nix
+    ./garbage-collection.nix
     ./internationalisation.nix
     ./linux-kernel.nix
     ./nix-settings.nix

@@ -32,6 +32,8 @@
 
     # video editors
     kdePackages.kdenlive
+    # video record
+    obs-studio
 
     # cad editors
     qcad
@@ -47,6 +49,7 @@
     mpv # video player
     vlc # general media player
     tauon # audio player
+    picard # music tag editor
     shortwave # internet radio
     kdePackages.kasts # podcasts
     calibre # ebook viewer
@@ -80,6 +83,7 @@
     looking-glass-client # box emulator
     bottles # local software packager
     qalculate-gtk # simple desktop calculator
+    scanmem # live system memory editor
 
     # productivity
     hugo # static website generator
@@ -95,10 +99,11 @@
   services.dunst.enable = true;
 
   imports = [
-    ./modules/base.nix
-    ./modules/browsers
-    ./modules/piper-tts
-    ./modules/shell.nix
-    ./modules/git.nix
+    ../../modules/base.nix
+    ../../modules/browsers
+    ../../modules/piper-tts
+    ../../modules/shell.nix
+    ../../modules/git.nix
+    ./default-applications.nix
   ];
 }

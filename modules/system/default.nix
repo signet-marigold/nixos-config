@@ -10,5 +10,6 @@
     ./services.nix
     ./swap.nix
     ./theme.nix
+    ./agenix.nix
   ];
 }

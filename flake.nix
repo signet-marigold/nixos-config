@@ -9,11 +9,12 @@
     stylix.url = "github:danth/stylix";
     nvim.url = "git+https://codeberg.org/signet-marigold/neovim";
     agenix.url = "github:ryantm/agenix";
+    agenix.inputs.nixpkgs.follows = "nixpkgs";
     pia.url = "git+https://git.sr.ht/~rprospero/nixos-pia?ref=development";
     pia.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs:
+  outputs = { nixpkgs, home-manager, stylix, agenix, pia, ... }@inputs:
   {
     nixosConfigurations = {
       AT20-CLEVELAND = nixpkgs.lib.nixosSystem {
@@ -21,9 +22,10 @@
         specialArgs = { inherit inputs; };
         modules = [
           { _module.args = inputs; }
-          inputs.stylix.nixosModules.stylix
-          inputs.agenix.nixosModules.default
-          #inputs.pia.nixosModule
+
+          stylix.nixosModules.stylix
+          agenix.nixosModules.default
+          pia.nixosModule
           home-manager.nixosModules.home-manager {
             home-manager = {
               backupFileExtension = "backup";
@@ -33,6 +35,7 @@
               extraSpecialArgs = {};
             };
           }
+
           ./users/anhack.nix
           ./hosts/AT20-CLEVELAND
           ./modules/base
@@ -70,9 +73,10 @@
         specialArgs = { inherit inputs; };
         modules = [
           { _module.args = inputs; }
-          inputs.stylix.nixosModules.stylix
-          inputs.agenix.nixosModules.default
-          #inputs.pia.nixosModule
+
+          stylix.nixosModules.stylix
+          agenix.nixosModules.default
+          pia.nixosModule
           home-manager.nixosModules.home-manager {
             home-manager = {
               backupFileExtension = "backup";
@@ -82,6 +86,7 @@
               extraSpecialArgs = {};
             };
           }
+
           ./users/anhack.nix
           ./hosts/AT08-OBAMA
           ./modules/base
@@ -113,6 +118,8 @@
           ./modules/virtualisation.nix
           #./modules/vpn.nix
           ./modules/steam.nix
+          ./modules/proxychains.nix
+          ./modules/i2p.nix
         ];
       };
     };

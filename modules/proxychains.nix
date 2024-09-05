@@ -1,13 +1,15 @@
+{ pkgs, ... }:
+
 {
   programs.proxychains = {
     enable = true;
     localnet = "127.0.0.0/255.0.0.0";
-    package = proxychains-ng;
+    package = pkgs.proxychains;
     proxies = {
-      myproxy = {
-        type = "socks4";
-        host = "127.0.0.1";
-        port = 1337;
+      singapore1 = {
+        type = "https";
+        host = "104.248.98.31";
+        port = 3128;
       };
     };
     proxyDNS = true;
