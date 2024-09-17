@@ -66,6 +66,7 @@
           ./modules/virtualisation.nix
           #./modules/vpn.nix
           ./modules/steam.nix
+          ./modules/tmux.nix
         ];
       };
       AT08-OBAMA = nixpkgs.lib.nixosSystem {
@@ -120,6 +121,7 @@
           ./modules/steam.nix
           ./modules/proxychains.nix
           ./modules/i2p.nix
+          ./modules/tmux.nix
         ];
       };
     };

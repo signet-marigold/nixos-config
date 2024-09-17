@@ -1,8 +1,8 @@
 { pkgs, config, ... }:
 let
-  #theme = "${pkgs.base16-schemes}/share/themes/horizon-dark.yaml";
+  theme = "${pkgs.base16-schemes}/share/themes/horizon-dark.yaml";
   #theme = "${pkgs.base16-schemes}/share/themes/tomorrow.yaml";
-  theme = "${pkgs.base16-schemes}/share/themes/tomorrow-night.yaml";
+  #theme = "${pkgs.base16-schemes}/share/themes/tomorrow-night.yaml";
 in {
   stylix = {
     enable = true;
