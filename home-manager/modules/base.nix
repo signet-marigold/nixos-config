@@ -12,6 +12,7 @@
     gparted # visual partition manager
     ksnip # screenshot utility
     xclip # cli clipboard manager
+    zathura # simple pdf viewer
     pqiv # simple image viewer
 
     # archives

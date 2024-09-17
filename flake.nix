@@ -14,7 +14,7 @@
     pia.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, home-manager, stylix, agenix, pia, ... }@inputs:
+  outputs = { nixpkgs, home-manager, stylix, agenix, pia, ... } @ inputs:
   {
     nixosConfigurations = {
       AT20-CLEVELAND = nixpkgs.lib.nixosSystem {

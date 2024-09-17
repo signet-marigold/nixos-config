@@ -8,8 +8,7 @@
     shell = pkgs.fish;
     initialPassword = "hashbrownzebrastripes";
     extraGroups = [ "networkmanager" "input" "wheel" "video" "audio" "tss" "render" ];
-    packages = with pkgs; [
-    ];
+    packages = with pkgs; [];
   };
 
   # Change runtime directory size

@@ -21,8 +21,6 @@
     helix
 
     qutebrowser
-    zathura
-    mpv
     imv
   ];
 }
