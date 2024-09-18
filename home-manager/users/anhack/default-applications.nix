@@ -26,11 +26,19 @@
       zathura = {
         name = "Zathura";
         exec = "${pkgs.zathura}/bin/zathura";
-      };
+      }; # pdf viewer
       pqiv = {
         name = "PQIV";
         exec = "${pkgs.pqiv}/bin/pqiv";
-      };
+      }; # image viewer
+      peazip = {
+        name = "Peazip";
+        exec = "${pkgs.peazip}/bin/peazip";
+      }; # archive manager
+      ksnip = {
+        name = "Ksnip";
+        exec = "${pkgs.ksnip}/bin/ksnip";
+      }; # Screenshot utility
       kate = {
         name = "Kate";
         exec = "${pkgs.kdePackages.kate}/bin/kate";
@@ -50,10 +58,6 @@
       java = {
         name = "Java";
         exec = "${pkgs.jdk}/bin/java -jar";
-      };
-      peazip = {
-        name = "Peazip";
-        exec = "${pkgs.peazip}/bin/peazip";
       };
       libreoffice-writer = {
         name = "LibreOffice Writer";
@@ -132,15 +136,15 @@
         exec = "${pkgs.audacity}/bin/audacity";
       };
       mpv = {
-        name = "MPV";
+        name = "MPV Media Player";
         exec = "${pkgs.mpv}/bin/mpv";
       }; # general media player
       vlc = {
-        name = "VLC";
+        name = "VLC Media Player";
         exec = "${pkgs.vlc}/bin/vlc";
       }; # general media player
       tauon = {
-        name = "Tauon";
+        name = "Tauon Music Player";
         exec = "${pkgs.tauon}/bin/tauon";
       }; # audio player
       calibre = {
@@ -148,7 +152,7 @@
         exec = "${pkgs.calibre}/bin/calibre";
       }; # ebook viewer
       gqrx = {
-        name = "GQRX";
+        name = "GQRX radio";
         exec = "${pkgs.gqrx}/bin/gqrx";
       };
       pspp = {
@@ -164,11 +168,11 @@
         exec = "${pkgs.sonic-visualiser}/bin/sonic-visualiser";
       }; # waveform analysis
       deluge = {
-        name = "Deluge";
+        name = "Deluge torrent";
         exec = "${pkgs.deluge}/bin/deluge";
       }; # torrent
       glow = {
-        name = "Glow Markdown";
+        name = "Glow markdown";
         exec = "${pkgs.glow}/bin/glow";
       }; # markdown previewer in terminal
       qownnotes = {
@@ -176,7 +180,7 @@
         exec = "${pkgs.qownnotes}/bin/qownnotes";
       }; # markdown note editor
       nb = {
-        name = "NB Markdown";
+        name = "NB markdown";
         exec = "${pkgs.nb}/bin/nb";
       }; # markdown note editor
       wordgrinder = {
@@ -199,8 +203,8 @@
         # Book, Document
         "application/vnd.amazon.ebook" = "calibre.desktop"; # .azw (Amazon Kindle)
         "application/epub+zip"     = "calibre.desktop"; # .epub (Electronic publication)
-        "application/pdf"          = "zathura.desktop"; # .pdf (Adobe Portable Document Format)
         "application/book"         = "calibre.desktop"; # .book .boo
+        "application/pdf"          = ["zathura.desktop" "librewolf.desktop"]; # .pdf (Adobe Portable Document Format)
 
         # Office
         "application/vnd.oasis.opendocument.spreadsheet"                            = "libreoffice-calc.desktop";    # .ods  (OpenDocument spreadsheet document)
@@ -216,7 +220,7 @@
         "application/vnd.openxmlformats-officedocument.wordprocessingml.document"   = "libreoffice-writer.desktop";  # .docx (Microsoft Word (OpenXML))
 
         # Application specific
-        "application/ogg"          = [ "mpv.desktop" "vlc.desktop" ]; # .ogx (Ogg)
+        "application/ogg"          = ["mpv.desktop" "vlc.desktop"]; # .ogx (Ogg)
         "application/vnd.visio"    = "inkscape.desktop"; # .vsd (Microsoft Visio)
         "text/calendar"            = "kate.desktop"; # .ics (iCalendar format)
         "application/java-archive" = "java.desktop"; # .jar (Java Archive)
@@ -247,74 +251,74 @@
         "application/octet-stream" = ""; # Any kind of binary data
 
         # Image
-        "image/gif"                = "pqiv.desktop"; # .gif
-        "image/x-icon"             = "pqiv.desktop"; # .ico
-        "image/jpeg"               = "pqiv.desktop"; # .jpeg .jpg
-        "image/png"                = "pqiv.desktop"; # .png
-        "image/apng"               = "pqiv.desktop"; # .apng
-        "image/svg+xml"            = "pqiv.desktop"; # .svg
-        "image/tiff"               = "pqiv.desktop"; # .tiff .tif
-        "image/webp"               = "pqiv.desktop"; # .webp (WEBP image)
-        "image/avif"               = "pqiv.desktop"; # .avif
-        "image/bmp"                = "pqiv.desktop"; # .bmp .bm
-        "image/fif"                = "pqiv.desktop"; # .fif
-        "image/ief"                = "pqiv.desktop"; # .ief iefs
-        "image/vasa"               = "pqiv.desktop"; # .mcf
-        "image/naplps"             = "pqiv.desktop"; # .naplps .nap
-        "image/pict"               = "pqiv.desktop"; # .pict .pic
-        "image/cmu-raster"         = "pqiv.desktop"; # .rast .ras
-        "image/florian"            = "pqiv.desktop"; # .turbot
-        "image/vnd.wap.wbmp"       = "pqiv.desktop"; # .wbmp
-        "image/xbm"                = "pqiv.desktop"; # .xbm
-        "image/vnd.xiff"           = "pqiv.desktop"; # .xif
-        "image/x-dwg"              = "pqiv.desktop"; # .dwg
-        "image/x-jps"              = "pqiv.desktop"; # .jps
-        "image/x-niff"             = "pqiv.desktop"; # .niff .nif
-        "image/x-portable-bitmap"  = "pqiv.desktop"; # .pbm
-        "image/x-pict"             = "pqiv.desktop"; # .pct
-        "image/x-pcx"              = "pqiv.desktop"; # .pct .pcx
-        "image/x-portable-graymap" = "pqiv.desktop"; # .pgm
-        "image/x-xpixmap"          = "pqiv.desktop"; # .pm
-        "image/x-portable-anymap"  = "pqiv.desktop"; # .pnm
-        "image/x-portable-pixmap"  = "pqiv.desktop"; # .ppm
-        "image/x-quicktime"        = "pqiv.desktop"; # .qif .qti .qtif
-        "image/x-rgb"              = "pqiv.desktop"; # .rgb
+        "image/gif"                = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .gif
+        "image/x-icon"             = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .ico
+        "image/jpeg"               = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .jpeg .jpg
+        "image/png"                = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .png
+        "image/apng"               = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .apng
+        "image/svg+xml"            = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .svg
+        "image/tiff"               = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .tiff .tif
+        "image/webp"               = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .webp (WEBP image)
+        "image/avif"               = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .avif
+        "image/bmp"                = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .bmp .bm
+        "image/fif"                = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .fif
+        "image/ief"                = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .ief iefs
+        "image/vasa"               = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .mcf
+        "image/naplps"             = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .naplps .nap
+        "image/pict"               = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .pict .pic
+        "image/cmu-raster"         = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .rast .ras
+        "image/florian"            = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .turbot
+        "image/vnd.wap.wbmp"       = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .wbmp
+        "image/xbm"                = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .xbm
+        "image/vnd.xiff"           = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .xif
+        "image/x-dwg"              = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .dwg
+        "image/x-jps"              = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .jps
+        "image/x-niff"             = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .niff .nif
+        "image/x-portable-bitmap"  = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .pbm
+        "image/x-pict"             = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .pct
+        "image/x-pcx"              = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .pct .pcx
+        "image/x-portable-graymap" = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .pgm
+        "image/x-xpixmap"          = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .pm
+        "image/x-portable-anymap"  = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .pnm
+        "image/x-portable-pixmap"  = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .ppm
+        "image/x-quicktime"        = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .qif .qti .qtif
+        "image/x-rgb"              = ["pqiv.desktop" "ksnip.desktop" "gimp.desktop"]; # .rgb
 
         # Video
-        "video/msvideo"            = [ "mpv.desktop" "vlc.desktop" ]; # .avi
-        "video/x-msvideo"          = [ "mpv.desktop" "vlc.desktop" ]; # .avi
-        "video/avi"                = [ "mpv.desktop" "vlc.desktop" ]; # .avi
-        "video/mpeg"               = [ "mpv.desktop" "vlc.desktop" ]; # .m1v .m2v .mp2 .mp3 .mpa .mpeg .mpg
-        "video/x-motion-jpeg"      = [ "mpv.desktop" "vlc.desktop" ]; # .mjpg
-        "video/x-matroska"         = [ "mpv.desktop" "vlc.desktop" ]; # .mkv (Matroska video)
-        "video/quicktime"          = [ "mpv.desktop" "vlc.desktop" ]; # .mov .moov (Quicktime)
-        "video/x-qtc"              = [ "mpv.desktop" "vlc.desktop" ]; # .qtc
-        "video/x-sgi-movie"        = [ "mpv.desktop" "vlc.desktop" ]; # .movie .mv
-        "video/mp4"                = [ "mpv.desktop" "vlc.desktop" ]; # .mp4
-        "video/vnd.rn-realvideo"   = [ "mpv.desktop" "vlc.desktop" ]; # .rv
-        "video/x-scm"              = [ "mpv.desktop" "vlc.desktop" ]; # .scm
-        "video/mp2t"               = [ "mpv.desktop" "vlc.desktop" ]; # .ts (MPEG transport stream)
-        "video/vdo"                = [ "mpv.desktop" "vlc.desktop" ]; # .vdo
-        "video/vivo"               = [ "mpv.desktop" "vlc.desktop" ]; # .vivo .viv
-        "video/vosaic"             = [ "mpv.desktop" "vlc.desktop" ]; # .vos
-        "video/webm"               = [ "mpv.desktop" "vlc.desktop" ]; # .webm (WEBM video)
-        "video/ogg"                = [ "mpv.desktop" "vlc.desktop" ]; # .ogv (Ogg video)
-        "video/vnd.dlna.mpeg-tts"  = [ "mpv.desktop" "vlc.desktop" ]; # .ts?
-        "video/3gpp"               = [ "mpv.desktop" "vlc.desktop" ]; # .3gpp .3gp (Third Generation Partnership Project)
-        "video/3gpp2"              = [ "mpv.desktop" "vlc.desktop" ]; # .3gpp2 .3gp2 .3g2 (Third Generation Partnership Project)
+        "video/msvideo"            = ["mpv.desktop" "vlc.desktop" "kdenlive.desktop"]; # .avi
+        "video/x-msvideo"          = ["mpv.desktop" "vlc.desktop" "kdenlive.desktop"]; # .avi
+        "video/avi"                = ["mpv.desktop" "vlc.desktop" "kdenlive.desktop"]; # .avi
+        "video/mpeg"               = ["mpv.desktop" "vlc.desktop" "kdenlive.desktop"]; # .m1v .m2v .mp2 .mp3 .mpa .mpeg .mpg
+        "video/x-motion-jpeg"      = ["mpv.desktop" "vlc.desktop" "kdenlive.desktop"]; # .mjpg
+        "video/x-matroska"         = ["mpv.desktop" "vlc.desktop" "kdenlive.desktop"]; # .mkv (Matroska video)
+        "video/quicktime"          = ["mpv.desktop" "vlc.desktop" "kdenlive.desktop"]; # .mov .moov (Quicktime)
+        "video/x-qtc"              = ["mpv.desktop" "vlc.desktop" "kdenlive.desktop"]; # .qtc
+        "video/x-sgi-movie"        = ["mpv.desktop" "vlc.desktop" "kdenlive.desktop"]; # .movie .mv
+        "video/mp4"                = ["mpv.desktop" "vlc.desktop" "kdenlive.desktop"]; # .mp4
+        "video/vnd.rn-realvideo"   = ["mpv.desktop" "vlc.desktop" "kdenlive.desktop"]; # .rv
+        "video/x-scm"              = ["mpv.desktop" "vlc.desktop" "kdenlive.desktop"]; # .scm
+        "video/mp2t"               = ["mpv.desktop" "vlc.desktop" "kdenlive.desktop"]; # .ts (MPEG transport stream)
+        "video/vdo"                = ["mpv.desktop" "vlc.desktop" "kdenlive.desktop"]; # .vdo
+        "video/vivo"               = ["mpv.desktop" "vlc.desktop" "kdenlive.desktop"]; # .vivo .viv
+        "video/vosaic"             = ["mpv.desktop" "vlc.desktop" "kdenlive.desktop"]; # .vos
+        "video/webm"               = ["mpv.desktop" "vlc.desktop" "kdenlive.desktop"]; # .webm (WEBM video)
+        "video/ogg"                = ["mpv.desktop" "vlc.desktop" "kdenlive.desktop"]; # .ogv (Ogg video)
+        "video/vnd.dlna.mpeg-tts"  = ["mpv.desktop" "vlc.desktop" "kdenlive.desktop"]; # .ts?
+        "video/3gpp"               = ["mpv.desktop" "vlc.desktop" "kdenlive.desktop"]; # .3gpp .3gp (Third Generation Partnership Project)
+        "video/3gpp2"              = ["mpv.desktop" "vlc.desktop" "kdenlive.desktop"]; # .3gpp2 .3gp2 .3g2 (Third Generation Partnership Project)
 
         # Audio
-        "audio/aac"                = [ "mpv.desktop" "vlc.desktop" ]; # .aac (AAC audio)
-        "audio/mpeg"               = [ "mpv.desktop" "vlc.desktop" ]; # .mp3 (MP3 audio)
-        "audio/midi"               = [ "mpv.desktop" "vlc.desktop" ]; # .midi .mid (Musical Instrument Digital Interface)
-        "audio/x-matroska"         = [ "mpv.desktop" "vlc.desktop" ]; # .mka (Matroska audio)
-        "audio/ogg"                = [ "mpv.desktop" "vlc.desktop" ]; # .oga .opus (Ogg audio)
-        "audio/wav"                = [ "mpv.desktop" "vlc.desktop" ]; # .wav (Waveform Audio Format)
-        "audio/x-wav"              = [ "mpv.desktop" "vlc.desktop" ]; # .wav (Waveform Audio Format)
-        "audio/webm"               = [ "mpv.desktop" "vlc.desktop" ]; # .weba (WEBM audio)
-        "application/x-cdf"        = [ "mpv.desktop" "vlc.desktop" ]; # .cda (CD audio)
-        "audio/3gpp"               = [ "mpv.desktop" "vlc.desktop" ]; # .3gpp .3gp (Third Generation Partnership Project)
-        "audio/3gpp2"              = [ "mpv.desktop" "vlc.desktop" ]; # .3gpp2 .3gp2 .3g2 (Third Generation Partnership Project)
+        "audio/aac"                = ["mpv.desktop" "vlc.desktop" "tauon.desktop" "audacity.desktop" "sonic-visualiser.desktop"]; # .aac (AAC audio)
+        "audio/mpeg"               = ["mpv.desktop" "vlc.desktop" "tauon.desktop" "audacity.desktop" "sonic-visualiser.desktop"]; # .mp3 (MP3 audio)
+        "audio/midi"               = ["mpv.desktop" "vlc.desktop" "tauon.desktop" "audacity.desktop" "sonic-visualiser.desktop"]; # .midi .mid (Musical Instrument Digital Interface)
+        "audio/x-matroska"         = ["mpv.desktop" "vlc.desktop" "tauon.desktop" "audacity.desktop" "sonic-visualiser.desktop"]; # .mka (Matroska audio)
+        "audio/ogg"                = ["mpv.desktop" "vlc.desktop" "tauon.desktop" "audacity.desktop" "sonic-visualiser.desktop"]; # .oga .opus (Ogg audio)
+        "audio/wav"                = ["mpv.desktop" "vlc.desktop" "tauon.desktop" "audacity.desktop" "sonic-visualiser.desktop"]; # .wav (Waveform Audio Format)
+        "audio/x-wav"              = ["mpv.desktop" "vlc.desktop" "tauon.desktop" "audacity.desktop" "sonic-visualiser.desktop"]; # .wav (Waveform Audio Format)
+        "audio/webm"               = ["mpv.desktop" "vlc.desktop" "tauon.desktop" "audacity.desktop" "sonic-visualiser.desktop"]; # .weba (WEBM audio)
+        "application/x-cdf"        = ["mpv.desktop" "vlc.desktop" "tauon.desktop" "audacity.desktop" "sonic-visualiser.desktop"]; # .cda (CD audio)
+        "audio/3gpp"               = ["mpv.desktop" "vlc.desktop" "tauon.desktop" "audacity.desktop" "sonic-visualiser.desktop"]; # .3gpp .3gp (Third Generation Partnership Project)
+        "audio/3gpp2"              = ["mpv.desktop" "vlc.desktop" "tauon.desktop" "audacity.desktop" "sonic-visualiser.desktop"]; # .3gpp2 .3gp2 .3g2 (Third Generation Partnership Project)
 
         # Archive
         "application/x-bzip"       = "peazip.desktop"; # .bz (BZip archive)
