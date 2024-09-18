@@ -42,8 +42,20 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
-	{ NULL,      NULL,     NULL,           0,         0,          0,          0,        -1 },
+	/* class         instance  title       tags mask     isfloating  isterminal  noswallow  monitor */
+	{ "librewolf",   NULL,     NULL,       1,            False,      False,      False,    -1 },
+	{ "firefox",     NULL,     NULL,       1,            False,      False,      False,    -1 },
+	{ "st",          NULL,     NULL,       1,            False,      False,      False,    -1 },
+	{ "kate",        NULL,     NULL,       1 << 1,       False,      False,      False,    -1 },
+	{ "mpv",         NULL,     NULL,       1 << 3,       False,      False,      False,    -1 },
+	{ NULL,          NULL,     "nvim",     1 << 4,       False,      False,      False,    -1 },
+	{ "tauon",       NULL,     NULL,       1 << 4,       False,      False,      False,    -1 },
+	{ "element",     NULL,     NULL,       1 << 5,       False,      False,      False,    -1 },
+	{ "discord",     NULL,     NULL,       1 << 6,       False,      False,      False,    -1 },
+	{ "libreoffice", NULL,     NULL,       1 << 7,       False,      False,      False,    -1 },
+	{ "steam",       NULL,     NULL,       1 << 7,       False,      False,      False,    -1 },
+	{ "heroic",      NULL,     NULL,       1 << 7,       False,      False,      False,    -1 },
+	{ "bitwarden",   NULL,     NULL,       1 << 8,       False,      False,      False,    -1 },
 };
 
 /* layout(s) */
