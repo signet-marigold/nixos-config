@@ -28,6 +28,7 @@
 
     # photo editors
     gimp # photoshop style editor
+    inkscape # vector graphics
     darktable # lightroom style editor
 
     # video editors
@@ -84,6 +85,7 @@
     bottles # local software packager
     qalculate-gtk # simple desktop calculator
     scanmem # live system memory editor
+    jdk # java
 
     # productivity
     hugo # static website generator
