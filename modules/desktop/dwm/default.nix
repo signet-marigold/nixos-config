@@ -47,7 +47,7 @@
 
     arandr     # gui monitor settings
 
-    paperview  # wallpaper setting
+    #paperview  # wallpaper setting
   ];
 
   # Inject custom scripts for managing hardware controls (screen brightness, volume, etc.)

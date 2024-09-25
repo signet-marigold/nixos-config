@@ -13,4 +13,8 @@
 
   # Change runtime directory size
   services.logind.extraConfig = "RuntimeDirectorySize=8G";
+
+  imports = [
+    ./spring-cleaning.nix
+  ];
 }

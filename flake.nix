@@ -36,7 +36,7 @@
             };
           }
 
-          ./users/anhack.nix
+          ./users/anhack
           ./hosts/AT20-CLEVELAND
           ./modules/base
           ./modules/system
@@ -61,12 +61,9 @@
           ./modules/development/rust.nix
           ./modules/development/wasm.nix
 
-          ./modules/info-fetchers.nix
-          ./modules/terminal-utils.nix
           ./modules/virtualisation.nix
           #./modules/vpn.nix
           ./modules/steam.nix
-          ./modules/tmux.nix
         ];
       };
       AT08-OBAMA = nixpkgs.lib.nixosSystem {
@@ -88,7 +85,7 @@
             };
           }
 
-          ./users/anhack.nix
+          ./users/anhack
           ./hosts/AT08-OBAMA
           ./modules/base
           ./modules/system
@@ -114,14 +111,11 @@
           ./modules/development/rust.nix
           ./modules/development/wasm.nix
 
-          ./modules/info-fetchers.nix
-          ./modules/terminal-utils.nix
           ./modules/virtualisation.nix
           #./modules/vpn.nix
           ./modules/steam.nix
           ./modules/proxychains.nix
           ./modules/i2p.nix
-          ./modules/tmux.nix
         ];
       };
     };

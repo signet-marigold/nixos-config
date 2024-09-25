@@ -267,9 +267,6 @@
           echo (set_color black;echo black;set_color blue;echo blue;set_color cyan;echo cyan;set_color green;echo green;set_color magenta;echo magenta;set_color red;echo red;set_color white;echo white;set_color yellow;echo yellow;set_color normal;echo normal) && echo (set_color black;echo █████;set_color blue;echo ████;set_color cyan;echo ████;set_color green;echo █████;set_color magenta;echo ███████;set_color red;echo ███;set_color white;echo █████;set_color yellow;echo ██████;set_color normal;echo ██████) && echo (set_color brblack;echo brblack;set_color brblue;echo brblue;set_color brcyan;echo brcyan;set_color brgreen;echo brgreen;set_color brmagenta;echo brmagenta;set_color brred;echo brred;set_color brwhite;echo brwhite;set_color bryellow;echo bryellow) && echo (set_color brblack;echo ███████;set_color brblue;echo ██████;set_color brcyan;echo ██████;set_color brgreen;echo ███████;set_color brmagenta;echo █████████;set_color brred;echo █████;set_color brwhite;echo ███████;set_color bryellow;echo ████████)
         '';
       };
-
-
-
     };
   };
 }

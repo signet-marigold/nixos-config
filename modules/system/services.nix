@@ -18,9 +18,17 @@
     gnome2.GConf
   ];
   services.mpd.enable = true;
-  programs.thunar.enable = true;
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs.xfce; [
+      thunar-archive-plugin
+      thunar-volman
+      thunar-media-tags-plugin
+    ];
+  };
   programs.xfconf.enable = true;
-  services.tumbler.enable = true; 
+  services.tumbler.enable = true;
+  services.gvfs.enable = true;
   services.fwupd.enable = true;
   #services.auto-cpufreq.enable = true;
   # services.gnome.core-shell.enable = true;

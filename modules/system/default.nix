@@ -11,5 +11,8 @@
     ./swap.nix
     ./theme.nix
     ./agenix.nix
+    ./terminal-utils.nix
+    ./tmux.nix
+    ./info-fetchers.nix
   ];
 }
