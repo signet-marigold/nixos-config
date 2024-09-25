@@ -45,7 +45,7 @@
       };
       #neovim = {
       #  name = "Neovim";
-      #  exec = "${pkgs.st}/bin/st ${nvim}.defaultPackage.${pkgs.system}/bin/nvim";
+      #  exec = "${pkgs.st}/bin/st -e ${pkgs.neovim}/bin/nvim";
       #};
       vscodium = {
         name = "VSCodium";
@@ -233,15 +233,15 @@
         "application/vnd.apple.installer+xml" = ""; # .mpkg (Apple Installer Package)
 
         # Editable text format
-        "text/plain"               = "kate.desktop"; # .txt Text
+        "text/plain"               = "kate.desktop"; # .txt (Text)
         "application/rtf"          = "kate.desktop"; # .rtf (Rich Text Format)
         "application/x-sh"         = "kate.desktop"; # .sh (bourne SHell script)
         "application/x-csh"        = "kate.desktop"; # .csh (C-Shell script)
         "text/css"                 = "kate.desktop"; # .css (Cascading Style Sheets)
         "application/x-httpd-php"  = "kate.desktop"; # .php (Hypertext Preprocessor (Personal Home Page))
-        "application/xml"          = "kate.desktop"; # .xml
-        "text/xml"                 = "kate.desktop"; # .xml
-        "application/vnd.mozilla.xul+xml" = "kate.desktop"; # .xul
+        "application/xml"          = "kate.desktop"; # .xml (eXtensible Markup Language)
+        "text/xml"                 = "kate.desktop"; # .xml (eXtensible Markup Language)
+        "application/vnd.mozilla.xul+xml" = "kate.desktop"; # .xul (User Interface Markup Language)
         "application/javascript"   = "kate.desktop"; # .js .mjs (ECMAScript/JavaScript)
         "application/json"         = "kate.desktop"; # .json (JavaScript Object Notation Format)
         "application/ld+json"      = "kate.desktop"; # .jsonld (JavaScript Object Notation Linked Data)

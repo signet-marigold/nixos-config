@@ -18,6 +18,7 @@
     element-desktop # matrix
     signal-desktop
     telegram-desktop
+    slack
 
     # internet browsers
     # >in imports below
@@ -47,8 +48,8 @@
     audacity
 
     # media consumption
-    mpv # video player
-    vlc # general media player
+    mpv # media player
+    vlc # media player
     tauon # audio player
     picard # music tag editor
     shortwave # internet radio
@@ -63,10 +64,10 @@
     # gaming
     heroic # epic games launcher
     r2modman # mod loader with a wide support of games
-    modrinth-app # minecraft launcher with mod support
+    #modrinth-app # minecraft launcher with mod support
+    prismlauncher # open source minecraft launcher
     lutris # flexible game launcher
     dolphin-emu # gamecube / wii emulator
-    prismlauncher # open source minecraft launcher
 
     # data viewers
     pspp # statistical analysis of sampled data

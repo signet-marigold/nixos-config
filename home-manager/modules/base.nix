@@ -4,23 +4,40 @@
   home.packages = with pkgs; [
     # utils
     ripgrep # recursively searches directories for a regex pattern
-    jq # A lightweight and flexible command-line JSON processor
-    yq-go # yaml processor https://github.com/mikefarah/yq
-    eza # A modern replacement for `ls`
     fzf # A command-line fuzzy finder
-    qdirstat # visual disk usage
-    gparted # visual partition manager
+    grc # generic colouriser for the command line
+    eza # A modern replacement for `ls`
+
+    file
+    which
+    gnused
+    gawk
+    gnupg
+    #tree
+    erdtree # file-tree visualizer and disk usage analyzer
+
+    qdirstat # visual disk usage analyzer
+    gparted # visual disk partition manager
+
     ksnip # screenshot utility
     xclip # cli clipboard manager
+
+    jq # A lightweight and flexible command-line JSON processor
+    yq-go # yaml processor https://github.com/mikefarah/yq
+
     zathura # simple pdf viewer
     pqiv # simple image viewer
+    feh # simple image viewer
 
     # archives
     zip
     xz
     unzip
+    gzip
     p7zip
     peazip
+    gnutar
+    zstd
 
     # networking tools
     mtr # A network diagnostic tool
@@ -34,14 +51,8 @@
 
     # misc
     cowsay
-    file
-    which
-    tree
-    gnused
-    gnutar
-    gawk
-    zstd
-    gnupg
+    yt-dlp # command-line audio/video downloader
+    wget # network downloader
 
     # nix related
     #

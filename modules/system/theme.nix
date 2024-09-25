@@ -1,13 +1,17 @@
 { pkgs, config, ... }:
 let
-  theme = "${pkgs.base16-schemes}/share/themes/horizon-dark.yaml";
+  #theme = "${pkgs.base16-schemes}/share/themes/horizon-dark.yaml";
   #theme = "${pkgs.base16-schemes}/share/themes/tomorrow.yaml";
   #theme = "${pkgs.base16-schemes}/share/themes/tomorrow-night.yaml";
+  theme = "${pkgs.base16-schemes}/share/themes/tarot.yaml";
+
+  #wallpaper = config.lib.stylix.pixel "base00";
+  wallpaper = ../../wallpapers/background.png;
 in {
   stylix = {
     enable = true;
-    polarity = "dark";
-    image = config.lib.stylix.pixel "base00";
+    #polarity = "dark";
+    image = wallpaper;
     base16Scheme = theme;
     fonts = {
       serif = {
