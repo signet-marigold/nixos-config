@@ -8,7 +8,7 @@ let
 
   # Custom theme
   theme = {
-    base00 = "212121"; # ----- Background
+    base00 = "191919"; # ----- Background
     base01 = "2c2e30"; # ----
     base02 = "424b54"; # ---
     base03 = "646d75"; # --
