@@ -6,7 +6,7 @@
     #xkb.layout = "us,ua,ru";
     xkb.layout = "us";
     #xkb.options = "grp:alt_shift_toggle";
-    xkb.options = "caps:escape";
+    xkb.options = "caps:alt, alt:none";
   };
 
   console.useXkbConfig = true; # Extend X keyboard keymap to console, which affects virtual consoles such as `tty`
