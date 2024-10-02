@@ -28,6 +28,7 @@
 
   ## DOESNT ACTUALLY FIX ##
   ## DONT KNOW WHY ##
+  # command runs as user but still lag from dmenu_run
   systemd.user.services."dmenu-path-load" = {
     description = "dmenu-path-load";
     script = ''

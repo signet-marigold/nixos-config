@@ -8,23 +8,32 @@ let
 
   # Custom theme
   theme = {
-    base00 = "212121";
-    base01 = "323537";
-    base02 = "3f4448";
-    base03 = "515960";
-    base04 = "98969d";
-    base05 = "b2b1b5";
-    base06 = "cdccce";
-    base07 = "e9e8e8";
-    base08 = "d85052";
-    base09 = "ff8c35";
-    base0A = "bec450"; #"ccd345";
-    base0B = "51ba55"; #"35d83a";
-    base0C = "4ccecc";
-    base0D = "5096d8"; #"8c73ff";
-    base0E = "d87db4"; #"d850a2";
-    base0F = "ad5b49";
+    base00 = "212121"; # ----- Background
+    base01 = "323537"; # ----
+    base02 = "3f4448"; # ---
+    base03 = "515960"; # --
+    base04 = "98969d"; # ++
+    base05 = "b2b1b5"; # +++
+    base06 = "cdccce"; # ++++
+    base07 = "e9e8e8"; # +++++ Foreground
+    base08 = "c85b56"; # Red
+    base09 = "f59a66"; # Orange
+    base0A = "f5ca66"; # Yellow
+    base0B = "22c95c"; # Green
+    base0C = "49a796"; # Cyan
+    base0D = "3c80b4"; # Blue
+    base0E = "ca65cd"; # Magenta
+    base0F = "a3572e"; # Brown
   };
+
+  #base08 = "d85052";
+  #base09 = "ff8c35";
+  #base0A = "bec450";
+  #base0B = "51ba55";
+  #base0C = "4ccecc";
+  #base0D = "5096d8";
+  #base0E = "d87db4";
+  #base0F = "ad5b49";
 
   #theme = {
   #  base00 = "222222";
