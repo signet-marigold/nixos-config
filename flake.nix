@@ -77,7 +77,7 @@
           pia.nixosModule
           home-manager.nixosModules.home-manager {
             home-manager = {
-              backupFileExtension = "backup45";
+              backupFileExtension = "backup47";
               useGlobalPkgs = true;
               useUserPackages = true;
               users.anhack = import ./home-manager/hosts/AT08-OBAMA;

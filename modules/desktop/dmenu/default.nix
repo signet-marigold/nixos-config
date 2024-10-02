@@ -22,4 +22,18 @@
 
     dmenu
   ];
+
+  # This fixes the 'dmenu lag after reboot' issue
+  # Preload the path required by dmenu_run
+
+  ## DOESNT ACTUALLY FIX ##
+  ## DONT KNOW WHY ##
+  systemd.user.services."dmenu-path-load" = {
+    description = "dmenu-path-load";
+    script = ''
+      ${pkgs.dmenu}/bin/dmenu_path
+    '';
+    wantedBy = [ "graphical-session.target" ]; # starts after login
+  };
 }
+
