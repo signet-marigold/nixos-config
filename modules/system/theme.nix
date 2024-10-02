@@ -9,11 +9,11 @@ let
   # Custom theme
   theme = {
     base00 = "212121"; # ----- Background
-    base01 = "323537"; # ----
-    base02 = "3f4448"; # ---
-    base03 = "515960"; # --
-    base04 = "98969d"; # ++
-    base05 = "b2b1b5"; # +++
+    base01 = "2c2e30"; # ----
+    base02 = "424b54"; # ---
+    base03 = "646d75"; # --
+    base04 = "919aa3"; # ++
+    base05 = "b2bcc4"; # +++
     base06 = "cdccce"; # ++++
     base07 = "e9e8e8"; # +++++ Foreground
     base08 = "c85b56"; # Red
