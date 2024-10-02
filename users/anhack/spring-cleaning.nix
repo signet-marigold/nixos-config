@@ -1,3 +1,11 @@
+#
+#  This will create two systemd timers that will periodically move
+#  files from the Downloads folder to a trash folder.
+#  Old files from the trash folder will be auto deleted after some time.
+#
+#  18 days after a new file is downloaded, if not moved, that file will be deleted
+#
+
 { pkgs, ... }:
 
 {
@@ -18,7 +26,7 @@
     };
   };
 
-  # Move files modified older than 3 days into trash
+  # Move files into trash if last modified date is more than 3 days ago
   systemd.services."clean-downloads" = {
     script = ''
       set -eu
@@ -32,7 +40,7 @@
       User = "root";
     };
   };
-  # Delete files last change older than 15 days from trash
+  # Delete files from trash if last changed date is more than 15 days ago
   systemd.services."clean-trash" = {
     script = ''
       set -eu

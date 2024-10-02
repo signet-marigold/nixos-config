@@ -65,6 +65,7 @@
         executable = "${lib.getBin pkgs.zathura}/bin/zathura";
         profile = "${pkgs.firejail}/etc/firejail/zathura.profile";
       };
+
       discord = {
         executable = "${lib.getBin pkgs.discord}/bin/discord";
         profile = "${pkgs.firejail}/etc/firejail/discord.profile";
@@ -77,6 +78,7 @@
         executable = "${lib.getBin pkgs.telegram-desktop}/bin/telegram-desktop";
         profile = "${pkgs.firejail}/etc/firejail/telegram-desktop.profile";
       };
+
       brave = {
         executable = "${lib.getBin pkgs.brave}/bin/brave";
         profile = "${pkgs.firejail}/etc/firejail/brave.profile";
@@ -85,6 +87,7 @@
         executable = "${lib.getBin pkgs.qutebrowser}/bin/qutebrowser";
         profile = "${pkgs.firejail}/etc/firejail/qutebrowser.profile";
       };
+
       thunar = {
         executable = "${lib.getBin pkgs.xfce.thunar}/bin/thunar";
         profile = "${pkgs.firejail}/etc/firejail/thunar.profile";

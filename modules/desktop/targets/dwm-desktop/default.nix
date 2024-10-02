@@ -1,4 +1,6 @@
 {
+  services.picom.enable = true; # A compositor for transparency and other effects
+
   imports = [
     ../../dwm
     ../../dmenu

@@ -55,6 +55,7 @@
     shortwave # internet radio
     kdePackages.kasts # podcasts
     calibre # ebook viewer
+    freetube # free youtube frontend client
 
     # amature radio
     gnuradio # software defined radio server
@@ -65,7 +66,7 @@
     heroic # epic games launcher
     r2modman # mod loader with a wide support of games
     #modrinth-app # minecraft launcher with mod support
-    prismlauncher # open source minecraft launcher
+    prismlauncher # open source minecraft launcher with mod support
     lutris # flexible game launcher
     dolphin-emu # gamecube / wii emulator
 
@@ -99,7 +100,7 @@
 
   programs.home-manager.enable = true;
 
-  services.dunst.enable = true;
+
 
   imports = [
     ../../modules/base.nix
@@ -107,6 +108,7 @@
     ../../modules/piper-tts
     ../../modules/shell.nix
     ../../modules/git.nix
+    ../../modules/dunst.nix
     ./default-applications.nix
   ];
 }

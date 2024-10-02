@@ -8,7 +8,7 @@
       echo "Welcome to fish the friendly interactive shell"
       echo -n The current time is (set_color yellow; date +%T; set_color normal)
       echo -n on host" "
-      echo -s (set_color magenta; echo "$USER"; set_color normal) @ (set_color white; echo "$hostname"; set_color normal)
+      echo -s (set_color yellow; echo "$USER"; set_color normal) @ (set_color white; echo "$hostname"; set_color normal)
       echo " "
     end
     '';
