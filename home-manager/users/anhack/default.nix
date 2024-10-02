@@ -88,6 +88,7 @@
     qalculate-gtk # simple desktop calculator
     scanmem # live system memory editor
     jdk # java
+    solaar # logitech unifying driver and management
 
     # productivity
     hugo # static website generator
