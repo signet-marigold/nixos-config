@@ -19,7 +19,7 @@ esac
 VOLUME=$( pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '\d+(?=%)' | head -n 1 )
 MUTE=$( pactl get-sink-mute @DEFAULT_SINK@ | sed -n -e 's/^.*ute: //p' )
 
-if [[ "$MUTE" == "yes" ]]; then
+if [[ "$MUTE" != "no" ]]; then
   # Show the sound muted notification
   dunstify -a "changeVolume" -u low -i audio-volume-muted -h string:x-dunst-stack-tag:$MSGTAG "Volume muted"
 else
