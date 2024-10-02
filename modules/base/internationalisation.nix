@@ -6,7 +6,10 @@
     #xkb.layout = "us,ua,ru";
     xkb.layout = "us";
     #xkb.options = "grp:alt_shift_toggle";
+    xkb.options = "caps:escape";
   };
+
+  console.useXkbConfig = true; # Extend X keyboard keymap to console, which affects virtual consoles such as `tty`
   
   i18n.supportedLocales = [
     "en_US.UTF-8/UTF-8"
