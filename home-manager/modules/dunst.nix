@@ -2,19 +2,19 @@
 let
   theme = {
     urgency_low = {
-      background = "#222222"; # "#f7ca52"
-      foreground = "#dddddd"; # "#261f1e"
-      border = "#334455";
+      background = "#222222e6"; # "#f7ca52"
+      foreground = "#ddddddff"; # "#261f1e"
+      border = "#334455ff";
     };
     urgency_normal = {
-      background = "#222222"; # "#79cb31"
-      foreground = "#dddddd"; # "#222824"
-      border = "#005577";
+      background = "#222222e6"; # "#79cb31"
+      foreground = "#ddddddff"; # "#222824"
+      border = "#005577ff";
     };
     urgency_critical = {
-      background = "#aa1144";
-      foreground = "#dddddd";
-      border = "#444444";
+      background = "#aa1144e6";
+      foreground = "#ddddddff";
+      border = "#444444ff";
     };
   };
 in {
@@ -55,9 +55,9 @@ in {
         sort = "yes";
         idle_threshold = 120;
         #font = "UbuntuMono Nerd Font Mono 17";
-        line_height = 2;
+        line_height = 0;
         markup = "full";
-        format = "<b><u>%s</u></b>\n%b\n";
+        format = "<small><tt>[<u>%a</u>]</tt></small>\\n<b>%s</b> %p\\n<small>%b</small>";
         alignment = "left";
         vertical_alignment = "top";
         show_age_threshold = 60;
@@ -80,7 +80,7 @@ in {
         always_run_script = "true";
         title = "Dunst";
         class = "Dunst";
-        corner_radius = 0;
+        corner_radius = 4;
         ignore_dbusclose = "false";
         force_xwayland = "false";
         force_xinerama = "false";
