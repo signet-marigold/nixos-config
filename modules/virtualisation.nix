@@ -41,12 +41,18 @@
     # lazydocker
     # docker-credential-helpers
 
-    virtualbox
+    # virtualbox
   ];
 
+  # Virt Manager
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
 
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "anhack" ];
+  # VirtualBox
+  #virtualisation.virtualbox.host.enable = true;
+  #virtualisation.virtualbox.host.enableExtensionPack = true;
+
+  # Settings if this host is running as a guest inside virtualbox
+  #virtualisation.virtualbox.guest.enable = true;
+  #virtualisation.virtualbox.guest.draganddrop = true;
 }
