@@ -7,7 +7,7 @@
     description = "anhack";
     shell = pkgs.fish;
     initialPassword = "hashbrownzebrastripes";
-    extraGroups = [ "networkmanager" "input" "wheel" "video" "audio" "tss" "render" ]; # "vboxusers" ];
+    extraGroups = [ "networkmanager" "input" "wheel" "video" "audio" "tss" "render" "libvirtd" ]; # "vboxusers" ];
     packages = with pkgs; [];
   };
 

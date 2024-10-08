@@ -44,9 +44,11 @@
     # virtualbox
   ];
 
-  # Virt Manager
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
+
+  # Enable USB redirection
+  virtualisation.spiceUSBRedirection.enable = true;
 
   # VirtualBox
   #virtualisation.virtualbox.host.enable = true;
