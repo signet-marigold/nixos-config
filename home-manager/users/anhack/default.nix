@@ -108,6 +108,7 @@
     ../../modules/browsers
     ../../modules/piper-tts
     ../../modules/shell.nix
+    ../../modules/theme.nix
     ../../modules/git.nix
     ../../modules/dunst.nix
     ./default-applications.nix
