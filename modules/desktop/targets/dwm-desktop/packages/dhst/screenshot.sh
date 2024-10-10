@@ -1,10 +1,15 @@
 SOUNDPATH=""
-SCREENSHOT_DIR="$HOME/Screenshots"
+SCREENSHOT_DIR="$HOME/Pictures/Screenshots"
 FILENAME="$SCREENSHOT_DIR/$(date +%Y-%m-%d_%I-%M-%S)_ksnip.png"
 
-ksnip --rectarea --saveto "$FILENAME"
+KSNIP_RET=$(ksnip --rectarea --saveto "$FILENAME")
 
-# Play the backlight changed sound
+# Exit early if no screenshot was taken
+if [[ $KSNIP_RET == "" ]]; then
+  exit
+fi
+
+# Play the screenshot taken sound
 if [[ $SOUNDPATH != "" ]]; then
   paplay --d=@DEFAULT_SINK@ ${SOUNDPATH}
 fi
@@ -16,4 +21,3 @@ case "$DUNST_ACTION" in
            pqiv --hide-info-box "$FILENAME"
      ;;
 esac
-

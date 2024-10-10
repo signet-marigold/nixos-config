@@ -174,14 +174,10 @@
       glow = {
         name = "Glow markdown";
         exec = "${pkgs.glow}/bin/glow";
-      }; # markdown previewer in terminal
+      }; # markdown previewer cli
       qownnotes = {
         name = "QOwnNotes";
         exec = "${pkgs.qownnotes}/bin/qownnotes";
-      }; # markdown note editor
-      nb = {
-        name = "NB markdown";
-        exec = "${pkgs.nb}/bin/nb";
       }; # markdown note editor
       wordgrinder = {
         name = "WordGrinder";
@@ -220,7 +216,7 @@
         "application/vnd.openxmlformats-officedocument.wordprocessingml.document"   = "libreoffice-writer.desktop";  # .docx (Microsoft Word (OpenXML))
 
         # Application specific
-        "application/ogg"          = ["mpv.desktop" "vlc.desktop"]; # .ogx (Ogg)
+        "application/ogg"          = ["vlc.desktop" "mpv.desktop"]; # .ogx (Ogg)
         "application/vnd.visio"    = "inkscape.desktop"; # .vsd (Microsoft Visio)
         "text/calendar"            = "kate.desktop"; # .ics (iCalendar format)
         "application/java-archive" = "java.desktop"; # .jar (Java Archive)
@@ -245,7 +241,7 @@
         "application/javascript"   = "kate.desktop"; # .js .mjs (ECMAScript/JavaScript)
         "application/json"         = "kate.desktop"; # .json (JavaScript Object Notation Format)
         "application/ld+json"      = "kate.desktop"; # .jsonld (JavaScript Object Notation Linked Data)
-        "text/markdown"            = "nb.desktop"; # .md (Markdown)
+        "text/markdown"            = "kate.desktop"; # .md (Markdown)
 
         # Generic
         "application/octet-stream" = ""; # Any kind of binary data
@@ -308,17 +304,18 @@
         "video/3gpp2"              = ["mpv.desktop" "vlc.desktop" "kdenlive.desktop"]; # .3gpp2 .3gp2 .3g2 (Third Generation Partnership Project)
 
         # Audio
-        "audio/aac"                = ["mpv.desktop" "vlc.desktop" "tauon.desktop" "audacity.desktop" "sonic-visualiser.desktop"]; # .aac (AAC audio)
-        "audio/mpeg"               = ["mpv.desktop" "vlc.desktop" "tauon.desktop" "audacity.desktop" "sonic-visualiser.desktop"]; # .mp3 (MP3 audio)
-        "audio/midi"               = ["mpv.desktop" "vlc.desktop" "tauon.desktop" "audacity.desktop" "sonic-visualiser.desktop"]; # .midi .mid (Musical Instrument Digital Interface)
-        "audio/x-matroska"         = ["mpv.desktop" "vlc.desktop" "tauon.desktop" "audacity.desktop" "sonic-visualiser.desktop"]; # .mka (Matroska audio)
-        "audio/ogg"                = ["mpv.desktop" "vlc.desktop" "tauon.desktop" "audacity.desktop" "sonic-visualiser.desktop"]; # .oga .opus (Ogg audio)
-        "audio/wav"                = ["mpv.desktop" "vlc.desktop" "tauon.desktop" "audacity.desktop" "sonic-visualiser.desktop"]; # .wav (Waveform Audio Format)
-        "audio/x-wav"              = ["mpv.desktop" "vlc.desktop" "tauon.desktop" "audacity.desktop" "sonic-visualiser.desktop"]; # .wav (Waveform Audio Format)
-        "audio/webm"               = ["mpv.desktop" "vlc.desktop" "tauon.desktop" "audacity.desktop" "sonic-visualiser.desktop"]; # .weba (WEBM audio)
-        "application/x-cdf"        = ["mpv.desktop" "vlc.desktop" "tauon.desktop" "audacity.desktop" "sonic-visualiser.desktop"]; # .cda (CD audio)
-        "audio/3gpp"               = ["mpv.desktop" "vlc.desktop" "tauon.desktop" "audacity.desktop" "sonic-visualiser.desktop"]; # .3gpp .3gp (Third Generation Partnership Project)
-        "audio/3gpp2"              = ["mpv.desktop" "vlc.desktop" "tauon.desktop" "audacity.desktop" "sonic-visualiser.desktop"]; # .3gpp2 .3gp2 .3g2 (Third Generation Partnership Project)
+        "audio/aac"                = ["vlc.desktop" "audacity.desktop" "tauon.desktop" "sonic-visualiser.desktop"]; # .aac (AAC audio)
+        "audio/mpeg"               = ["vlc.desktop" "audacity.desktop" "tauon.desktop" "sonic-visualiser.desktop"]; # .mp3 (MP3 audio)
+        "audio/midi"               = ["vlc.desktop" "audacity.desktop" "tauon.desktop" "sonic-visualiser.desktop"]; # .midi .mid (Musical Instrument Digital Interface)
+        "audio/x-matroska"         = ["vlc.desktop" "audacity.desktop" "tauon.desktop" "sonic-visualiser.desktop"]; # .mka (Matroska audio)
+        "audio/ogg"                = ["vlc.desktop" "audacity.desktop" "tauon.desktop" "sonic-visualiser.desktop"]; # .oga .opus (Ogg audio)
+        "audio/wav"                = ["vlc.desktop" "audacity.desktop" "tauon.desktop" "sonic-visualiser.desktop"]; # .wav (Waveform Audio Format)
+        "audio/x-wav"              = ["vlc.desktop" "audacity.desktop" "tauon.desktop" "sonic-visualiser.desktop"]; # .wav (Waveform Audio Format)
+        "audio/webm"               = ["vlc.desktop" "audacity.desktop" "tauon.desktop" "sonic-visualiser.desktop"]; # .weba (WEBM audio)
+        "application/x-cdf"        = ["vlc.desktop" "audacity.desktop" "tauon.desktop" "sonic-visualiser.desktop"]; # .cda (CD audio)
+        "audio/3gpp"               = ["vlc.desktop" "audacity.desktop" "tauon.desktop" "sonic-visualiser.desktop"]; # .3gpp .3gp (Third Generation Partnership Project)
+        "audio/3gpp2"              = ["vlc.desktop" "audacity.desktop" "tauon.desktop" "sonic-visualiser.desktop"]; # .3gpp2 .3gp2 .3g2 (Third Generation Partnership Project)
+        "audio/flac"               = ["vlc.desktop" "audacity.desktop" "tauon.desktop" "sonic-visualiser.desktop"]; # .flac (Free Lossless Audio Codec)
 
         # Archive
         "application/x-bzip"       = "peazip.desktop"; # .bz (BZip archive)

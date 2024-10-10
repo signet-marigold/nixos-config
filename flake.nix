@@ -26,6 +26,7 @@
           stylix.nixosModules.stylix
           agenix.nixosModules.default
           pia.nixosModule
+
           home-manager.nixosModules.home-manager {
             home-manager = {
               backupFileExtension = "backup";
@@ -75,9 +76,10 @@
           stylix.nixosModules.stylix
           agenix.nixosModules.default
           pia.nixosModule
+
           home-manager.nixosModules.home-manager {
             home-manager = {
-              backupFileExtension = "backup48";
+              backupFileExtension = "backup53";
               useGlobalPkgs = true;
               useUserPackages = true;
               users.anhack = import ./home-manager/hosts/AT08-OBAMA;
