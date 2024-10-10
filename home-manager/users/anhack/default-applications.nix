@@ -232,6 +232,7 @@
         "text/plain"               = "kate.desktop"; # .txt (Text)
         "application/rtf"          = "kate.desktop"; # .rtf (Rich Text Format)
         "application/x-sh"         = "kate.desktop"; # .sh (bourne SHell script)
+        "application/sh"           = "kate.desktop"; # .sh (bourne SHell script)
         "application/x-csh"        = "kate.desktop"; # .csh (C-Shell script)
         "text/css"                 = "kate.desktop"; # .css (Cascading Style Sheets)
         "application/x-httpd-php"  = "kate.desktop"; # .php (Hypertext Preprocessor (Personal Home Page))

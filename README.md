@@ -73,7 +73,7 @@ and so we have a *mostly* mirrored desktop for any and all devices i want
 ## More info
 (ps) i could not recomend trying to run this config without heavy modification
 
-but if you do here are some things to keep in mind:
+### but if you do here are some things to keep in mind:
 
 1. main user is `anhack`
 so change that name everywhere; just make sure it matches the primary user when you installed nixos.
@@ -82,7 +82,13 @@ so change that name everywhere; just make sure it matches the primary user when 
 then you will not be able to load nixos because it will try to use the wrong drives.
 i have messed that up myself a few times
 
-in the `nixos-config` directory run `sudo nixos-rebuild switch --flake .#<HOST>` e.g. `sudo nixos-rebuild switch --flake .#AT08-OBAMA`
+## Install
+
+1. in the `nixos-config` directory run `sudo nixos-rebuild switch --flake .#<HOST>` e.g. `sudo nixos-rebuild switch --flake .#AT08-OBAMA`
+
+1. run `inital-setup.sh`, this helper script sets up the home directory tree for the default user and sets the nixos channel
+
+### Notes:
 
 i've had a few systemd targets fail when installing everything. rerunning the command overcame the error
 

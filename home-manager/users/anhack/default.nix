@@ -5,10 +5,6 @@
   home.homeDirectory = "/home/anhack";
   home.stateVersion = "24.11";
 
-  home.activation.homeSetup = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    bash home-setup.sh
-  '';
-
   #xresources.properties = {
   #  "Xcursor.size" = 24;
   #  "Xft.dpi" = 92;
