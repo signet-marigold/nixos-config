@@ -46,6 +46,10 @@ mkdir -p "${HOME_DIR}/Meshes"
 mkdir -p "${HOME_DIR}/Repos"
 echo -e "\e[1;32mDone\e[0m"
 
+echo -e "\e[1;34m1-\e[0m Virtual service autostart (Requires elevated privileges)"
+sudo virsh net-autostart default
+echo -e "\e[1;32mDone\e[0m"
+
 echo -e "\n\e[30;44m*-\e[0m If you haven't already now would be a good time to rebuild using this config"
 echo -e "Run \e[1;36msudo nixos-rebuild switch --flake .#{HOST_NAME}\e[0m from this directory"
 echo -e "Available host names are in the file \"\e[1;34mflake.nix\e[0m\" in this directory under \"\e[1;34mnixosConfigurations\e[0m\""
