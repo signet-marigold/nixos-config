@@ -3,14 +3,20 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
     rust-overlay.url = "github:oxalica/rust-overlay";
+
     stylix.url = "github:danth/stylix";
+
     nvim.url = "git+https://codeberg.org/signet-marigold/neovim";
-    agenix.url = "github:ryantm/agenix";
-    agenix.inputs.nixpkgs.follows = "nixpkgs";
-    pia.url = "git+https://git.sr.ht/~rprospero/nixos-pia?ref=development";
+
+    sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    pia.url = "github:Fuwn/pia.nix";
     pia.inputs.nixpkgs.follows = "nixpkgs";
   };
 
@@ -24,8 +30,8 @@
           { _module.args = inputs; }
 
           stylix.nixosModules.stylix
-          agenix.nixosModules.default
-          pia.nixosModule
+          sops-nix.nixosModules.sops
+          pia.nixosModules.${"x86_64-linux"}.default
 
           home-manager.nixosModules.home-manager {
             home-manager = {
@@ -74,12 +80,12 @@
           { _module.args = inputs; }
 
           stylix.nixosModules.stylix
-          agenix.nixosModules.default
-          pia.nixosModule
+          sops-nix.nixosModules.sops
+          pia.nixosModules.${"x86_64-linux"}.default
 
           home-manager.nixosModules.home-manager {
             home-manager = {
-              backupFileExtension = "backup53";
+              backupFileExtension = "backup";
               useGlobalPkgs = true;
               useUserPackages = true;
               users.anhack = import ./home-manager/hosts/AT08-OBAMA;

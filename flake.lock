@@ -193,6 +193,24 @@
         "type": "github"
       }
     },
+    "flake-utils_2": {
+      "inputs": {
+        "systems": "systems_3"
+      },
+      "locked": {
+        "lastModified": 1726560853,
+        "narHash": "sha256-X6rJYSESBVr3hBoH0WbKE5KvhPU5bloyZ2L4K60/fPQ=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "c1dfcf08411b08f6b8615f7d8971a2bfa81d5e8a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "fromYaml": {
       "flake": false,
       "locked": {
@@ -443,23 +461,23 @@
     },
     "pia": {
       "inputs": {
+        "flake-utils": "flake-utils_2",
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1687263775,
-        "narHash": "sha256-sSVNT3o+4RcdnUqdVloPc3UvM3LancTY6htyzAHrC0w=",
-        "ref": "development",
-        "rev": "190f8040cc4837fb6b3c43032711e1536ef2270b",
-        "revCount": 10,
-        "type": "git",
-        "url": "https://git.sr.ht/~rprospero/nixos-pia"
+        "lastModified": 1728995857,
+        "narHash": "sha256-5mTEJ1TrfJO883w/iuJSXbxEtC6/8z/kGx20Qeb6UAM=",
+        "owner": "Fuwn",
+        "repo": "pia.nix",
+        "rev": "eb178bb5b0b7a0793892d4ec3d12cffd164dcfb9",
+        "type": "github"
       },
       "original": {
-        "ref": "development",
-        "type": "git",
-        "url": "https://git.sr.ht/~rprospero/nixos-pia"
+        "owner": "Fuwn",
+        "repo": "pia.nix",
+        "type": "github"
       }
     },
     "plugins-cmp-buffer": {
@@ -1250,6 +1268,21 @@
       }
     },
     "systems_2": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_3": {
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",

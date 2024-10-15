@@ -45,6 +45,10 @@ static const Rule rules[] = {
 	/* class           instance  title       tags mask     isfloating  isterminal  noswallow  monitor */
 
 	{ "st",            NULL,     NULL,       0,            False,      False,      False,    -1 },
+	/* Text Editors */
+	{ "kate",          NULL,     NULL,       1 << 1,       False,      False,      False,    -1 },
+	{ "vscodium",      NULL,     NULL,       1 << 1,       False,      False,      False,    -1 },
+	{ NULL,            NULL,     "nvim",     1 << 1,       False,      True,       False,    -1 },
 	/* Browsers */
 	{ "qutebrowser",   NULL,     NULL,       1 << 2,       False,      False,      False,    -1 },
 	{ "librewolf",     NULL,     NULL,       1 << 2,       False,      False,      False,    -1 },
@@ -52,41 +56,17 @@ static const Rule rules[] = {
 	{ "mullvad-browser", NULL,   NULL,       1 << 2,       False,      False,      False,    -1 },
 	{ "tor-browser",   NULL,     NULL,       1 << 2,       False,      False,      False,    -1 },
 	/* Chat programs */
-	{ "discord",       NULL,     NULL,       1 << 3,       False,      False,      False,    -1 },
+/*	{ "discord",       NULL,     NULL,       1 << 3,       False,      False,      False,    -1 },
 	{ "hexchat",       NULL,     NULL,       1 << 3,       False,      False,      False,    -1 },
 	{ "pidgin",        NULL,     NULL,       1 << 3,       False,      False,      False,    -1 },
 	{ "element",       NULL,     NULL,       1 << 3,       False,      False,      False,    -1 },
 	{ "signal",        NULL,     NULL,       1 << 3,       False,      False,      False,    -1 },
 	{ "telegram",      NULL,     NULL,       1 << 3,       False,      False,      False,    -1 },
-	{ "slack",         NULL,     NULL,       1 << 3,       False,      False,      False,    -1 },
-	/* Text Editors */
-	{ "kate",          NULL,     NULL,       1 << 1,       False,      False,      False,    -1 },
-	{ "vscodium",      NULL,     NULL,       1 << 1,       False,      False,      False,    -1 },
-	{ NULL,            NULL,     "nvim",     1 << 1,       False,      True,       False,    -1 },
-	/* Editors */
-	{ "gimp",          NULL,     NULL,       1 << 7,       False,      False,      False,    -1 },
-	{ "inkscape",      NULL,     NULL,       1 << 7,       False,      False,      False,    -1 },
-	{ "darktable",     NULL,     NULL,       1 << 7,       False,      False,      False,    -1 },
-	{ "kdenlive",      NULL,     NULL,       1 << 7,       False,      False,      False,    -1 },
-	{ "obs-studio",    NULL,     NULL,       1 << 7,       False,      False,      False,    -1 },
-	{ "qcad",          NULL,     NULL,       1 << 7,       False,      False,      False,    -1 },
-	{ "blender",       NULL,     NULL,       1 << 7,       False,      False,      False,    -1 },
-	{ "ardour",        NULL,     NULL,       1 << 7,       False,      False,      False,    -1 },
-	{ "surge-XT",      NULL,     NULL,       1 << 7,       False,      False,      False,    -1 },
-	{ "muse",          NULL,     NULL,       1 << 7,       False,      False,      False,    -1 },
-	{ "audacity",      NULL,     NULL,       1 << 7,       False,      False,      False,    -1 },
-	/* Media players - content viewers */
-	{ "mpv",           NULL,     NULL,       1 << 5,       False,      False,      False,    -1 },
-	{ "vlc",           NULL,     NULL,       1 << 5,       False,      False,      False,    -1 },
-	{ "tauon",         NULL,     NULL,       1 << 5,       False,      False,      False,    -1 },
-	{ "picard",        NULL,     NULL,       1 << 5,       False,      False,      False,    -1 },
-	{ "shortwave",     NULL,     NULL,       1 << 5,       False,      False,      False,    -1 },
-	{ "kasts",         NULL,     NULL,       1 << 5,       False,      False,      False,    -1 },
-	{ "calibre",       NULL,     NULL,       1 << 5,       False,      False,      False,    -1 },
-	/* Radio - SDR */
-	{ "gnuradio",      NULL,     NULL,       1 << 7,       False,      False,      False,    -1 },
-	{ "gqrx",          NULL,     NULL,       1 << 7,       False,      False,      False,    -1 },
-	{ "tlf",           NULL,     NULL,       1 << 7,       False,      False,      False,    -1 },
+	{ "slack",         NULL,     NULL,       1 << 3,       False,      False,      False,    -1 },*/
+
+	/* Steam context menus */
+	{ "Web Content",   NULL,     NULL,       0,            True,       False,      False,    -1 },
+
 	/* Gaming */
 	{ "heroic",        NULL,     NULL,       1 << 8,       False,      False,      False,    -1 },
 	{ "steam",         NULL,     NULL,       1 << 8,       False,      False,      False,    -1 },
@@ -95,26 +75,6 @@ static const Rule rules[] = {
 	{ "modrinth",      NULL,     NULL,       1 << 8,       False,      False,      False,    -1 },
 	{ "r2modman",      NULL,     NULL,       1 << 8,       False,      False,      False,    -1 },
 	{ "prismlauncher", NULL,     NULL,       1 << 8,       False,      False,      False,    -1 },
-	/* Data viewers */
-	{ "pspp",          NULL,     NULL,       1 << 6,       False,      False,      False,    -1 },
-	{ "gretl",         NULL,     NULL,       1 << 6,       False,      False,      False,    -1 },
-	{ "sonic-visualiser", NULL,  NULL,       1 << 6,       False,      False,      False,    -1 },
-	{ "stellarium",    NULL,     NULL,       1 << 6,       False,      False,      False,    -1 },
-	/* Misc. */
-	{ "tutanota-desktop", NULL,  NULL,       1 << 6,       False,      False,      False,    -1 },
-	{ "Bitwarden",     NULL,     NULL,       1 << 6,       False,      False,      False,    -1 },
-	{ "deluge",        NULL,     NULL,       1 << 6,       False,      False,      False,    -1 },
-	{ "looking-glass-client", NULL, NULL,    1 << 6,       False,      False,      False,    -1 },
-	{ "bottles",       NULL,     NULL,       1 << 6,       False,      False,      False,    -1 },
-	{ "qalculate-gtk", NULL,     NULL,       0,            True,       False,      False,    -1 },
-	{ "scanmem",       NULL,     NULL,       1 << 6,       False,      False,      False,    -1 },
-	{ "GameConqueror", NULL,     NULL,       1 << 6,       False,      False,      False,    -1 },
-	/* Productivity */
-	{ "qownnotes",     NULL,     NULL,       1 << 2,       False,      False,      False,    -1 },
-	{ "libreoffice",   NULL,     NULL,       1 << 2,       False,      False,      False,    -1 },
-
-	/* Steam context menus */
-	{ "Web Content",   NULL,     NULL,       0,            True,       False,      False,    -1 },
 };
 
 /* layout(s) */

@@ -239,7 +239,7 @@
       };
 
       eat = {
-        description = "Swallow parent terminal emulator";
+        description = "Swallow parent terminal emulator on open";
         body = ''
           $argv &
           disown
