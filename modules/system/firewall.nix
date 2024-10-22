@@ -8,11 +8,12 @@
 
   # Tauon web play: 7590/TCP
 
+  # OpenVPN 1194/UDP 1198/UDP
+
   # Open ports in the firewall.
   networking.firewall.enable = true;
   networking.firewall.allowedTCPPorts = [ 7590 ];
-  # networking.firewall.allowedTCPPorts = [ 3000 ];
-  # networking.firewall.allowedUDPPorts = [ 3000 ];
+  networking.firewall.allowedUDPPorts = [ 1194 1198 1500 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 }

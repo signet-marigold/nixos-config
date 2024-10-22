@@ -95,3 +95,33 @@ i've had a few systemd targets fail when installing everything. rerunning the co
 oh and set the default channel. fish auto compleations don't work without
 
 `sudo nix-channel --update nixos`
+
+### Post install:
+
+#### Setup sops
+
+generate ssh key
+
+`ssh-keygen -t ed25519 -C "perad@sqwu.me"`
+
+use ssh key to make sops key
+
+`nix run nixpkgs#ssh-to-age -- -private-key -i ~/.ssh/id_ed25519 > ~/.config/sops/age/keys.txt`
+
+get public key from that sops key
+
+`nix shell nixpkgs#age -c age-keygen -y ~/.config/sops/age/keys.txt`
+
+will be a long string like this
+
+`ageXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX`
+
+place that string into .sops.yaml
+
+#### You are probably going to have to restart after all this
+
+### TODO:
+
+- vpn on wifi passthrough dns has no resolve; temp change resolv.conf to cloudflare/google to fix
+
+- tutanota email client cannot access secret storage; no workaround yet

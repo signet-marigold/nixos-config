@@ -101,8 +101,6 @@
 
   programs.home-manager.enable = true;
 
-
-
   imports = [
     ../../modules/base.nix
     ../../modules/browsers

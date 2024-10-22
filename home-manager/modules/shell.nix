@@ -22,6 +22,7 @@
       { name = "pisces";   src = pkgs.fishPlugins.pisces.src; }    # Auto complete matching pairs
       { name = "puffer";   src = pkgs.fishPlugins.puffer.src; }    # Text Expansions
     ];
+
     shellAliases = {
       ".."    = "cd ..";
       "..."   = "cd ../..";
@@ -60,6 +61,7 @@
       "vvlc"  = "vlc *";
       "webm"  = "vlc *.webm";
     };
+
     shellAbbrs = {
       # system control shortcuts
       displays = "arandr";

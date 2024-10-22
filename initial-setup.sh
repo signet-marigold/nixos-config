@@ -44,6 +44,7 @@ mkdir -p "${HOME_DIR}/Desktop"
 mkdir -p "${HOME_DIR}/Backups"
 mkdir -p "${HOME_DIR}/Meshes"
 mkdir -p "${HOME_DIR}/Repos"
+mkdir -p "${HOME_DIR}/.config/sops/age"
 echo -e "\e[1;32mDone\e[0m"
 
 echo -e "\e[1;34m1-\e[0m Virtual service autostart (Requires elevated privileges)"

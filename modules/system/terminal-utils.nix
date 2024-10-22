@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    doas
     upx
     git
     lazygit
@@ -52,5 +53,8 @@
     rsclock
     cava
     figlet
+
+    sops
+    age
   ];
 }

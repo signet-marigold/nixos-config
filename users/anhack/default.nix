@@ -7,17 +7,15 @@
     description = "anhack";
     shell = pkgs.fish;
     initialPassword = "hashbrownzebrastripes";
-    extraGroups = [ "networkmanager" "input" "wheel" "video" "audio" "tss" "render" "libvirtd" ]; # "vboxusers" ];
+    extraGroups = [ "networkmanager" "input" "wheel" "video" "audio" "tss" "render" "libvirtd" ];
     packages = with pkgs; [];
   };
-
-  # Add user to vboxusers
-  #users.extraGroups.vboxusers.members = [ "anhack" ];
 
   # Change runtime directory size
   services.logind.extraConfig = "RuntimeDirectorySize=8G";
 
   imports = [
+    #./sops.nix
     ./spring-cleaning.nix
   ];
 }

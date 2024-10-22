@@ -1,0 +1,11 @@
+keys:
+  - &users:
+    - &anhack age1sjc34nqdrz8yvhvmfjydpvpyrem7nz95s87wkjm2qhjsxmz3hagsks5aqr
+  - &hosts:
+    - &cleveland age1s6xg8938dyk85e2ngpv4fxwjrm94vggw93p0pz7v0u63azskc9nsv8lgyr
+creation_rules:
+  - path_regex: secrets.yaml$
+    key_groups:
+    - age:
+      - *anhack
+      - *cleveland

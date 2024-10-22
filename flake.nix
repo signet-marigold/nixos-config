@@ -13,14 +13,16 @@
 
     nvim.url = "git+https://codeberg.org/signet-marigold/neovim";
 
-    sops-nix.url = "github:Mic92/sops-nix";
-    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     pia.url = "github:Fuwn/pia.nix";
     pia.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, home-manager, stylix, agenix, pia, ... } @ inputs:
+  outputs = { nixpkgs, home-manager, stylix, sops-nix, pia, ... } @ inputs:
   {
     nixosConfigurations = {
       AT20-CLEVELAND = nixpkgs.lib.nixosSystem {
@@ -30,12 +32,11 @@
           { _module.args = inputs; }
 
           stylix.nixosModules.stylix
-          sops-nix.nixosModules.sops
           pia.nixosModules.${"x86_64-linux"}.default
 
           home-manager.nixosModules.home-manager {
             home-manager = {
-              backupFileExtension = "backup";
+              backupFileExtension = "backup8";
               useGlobalPkgs = true;
               useUserPackages = true;
               users.anhack = import ./home-manager/hosts/AT20-CLEVELAND;
@@ -69,7 +70,7 @@
           ./modules/development/wasm.nix
 
           ./modules/virtualisation.nix
-          #./modules/vpn.nix
+          ./modules/vpn.nix
           ./modules/steam.nix
         ];
       };
@@ -80,7 +81,6 @@
           { _module.args = inputs; }
 
           stylix.nixosModules.stylix
-          sops-nix.nixosModules.sops
           pia.nixosModules.${"x86_64-linux"}.default
 
           home-manager.nixosModules.home-manager {
@@ -120,7 +120,7 @@
           ./modules/development/wasm.nix
 
           ./modules/virtualisation.nix
-          #./modules/vpn.nix
+          ./modules/vpn.nix
           ./modules/steam.nix
           ./modules/proxychains.nix
           ./modules/i2p.nix
