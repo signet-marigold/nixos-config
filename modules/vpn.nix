@@ -1,9 +1,8 @@
 { config, ... }:
 {
-  sops.secrets = {
-    pia-username = { };
-    pia-password = { };
-  };
+  sops.secrets.pia-username = { };
+  sops.secrets.pia-password = { };
+
   services.pia = {
     enable = true;
     # Still waiting on a fix for 312283; https://github.com/NixOS/nixpkgs/issues/312283
