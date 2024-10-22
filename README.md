@@ -118,6 +118,22 @@ will be a long string like this
 
 place that string into .sops.yaml
 
+all together
+
+mkdir -p ~/.config/sops/age/ && nix --extra-experimental-features nix-command --extra-experimental-features flakes run nixpkgs#ssh-to-age -- -private-key -i ~/.ssh/id_ed25519 > ~/.config/sops/age/keys.txt && nix --extra-experimental-features nix-command --extra-experimental-features flakes shell nixpkgs#age -c age-keygen -y ~/.config/sops/age/keys.txt
+
+#### first command chain
+
+`mkdir -p Repos`
+
+`cd Repos`
+
+`nix-shell -p git --run "git clone https://codeberg.org/signet-marigold/nixos-config"`
+
+`cd nixos-config`
+
+`bash ./inital-setup.sh`
+
 #### You are probably going to have to restart after all this
 
 ### TODO:

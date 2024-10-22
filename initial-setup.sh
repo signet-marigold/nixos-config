@@ -5,15 +5,67 @@ echo "=========================="
 echo -e "   \e[1;34mInitial Setup Script\e[0m"
 echo "=========================="
 
+echo ""
+echo "hai !!"
+echo "Welcome to alex's init system helper script!"
+echo ""
+echo "First things first..."
+echo "What host is nixos being installed into?"
+
+# Get a list of hosts from the config
+HOSTS=$(for dir in hosts/*/; do echo "$dir" | sed 's/^hosts\///' | sed 's/\/$//'; done)
+
+echo -ne "\e[1;34m1-\e[0m Available Hostnames: "
+printf '%s ' ${HOSTS}
+echo ""
+
+echo "=========================="
+
+# Get user hostname selection
+read -p "Enter the Target Hostname : " TARGET_HOSTNAME
+
+# Check if user input is a host that exists
+if [[ " ${HOSTS[*]} " =~ [[:space:]]${TARGET_HOSTNAME}[[:space:]] ]]; then
+    echo -e "\n\e[30;44m*-\e[0m Running config with hostname \"${TARGET_HOSTNAME}\""
+    echo -e "\e[1;32mDone\e[0m"
+    echo ""
+else
+    echo -e "\n\e[30;44m*Hostname not found. Please run the configuration again\e[0m"
+    exit 1
+fi
+
+# Rebuilding in impure mode because of that secrets workaround for openvpn
+# requires reading from absolute directory path which i guess is not alowed normally
+REBUILD_COMMAND="nixos-rebuild switch --flake .#${TARGET_HOSTNAME} --impure"
+
+# Copy hardware config
+echo -e "\e[1;34m1-\e[0m Moving this hosts hardware config to the git tree"
+echo "[copy /etc/nixos/hardware-configuration.nix -> ./hosts/${TARGET_HOSTNAME}]"
+cp /etc/nixos/hardware-configuration.nix ./hosts/${TARGET_HOSTNAME}/
+echo -e "\e[1;32mDone\e[0m"
+echo ""
+
+echo "=========================="
+
+# NixOS rebuild
+echo -e "\e[1;34m1-\e[0m Rebuilding nixos (Requires elevated privileges)"
+nix-shell -p git --run "sudo ${REBUILD_COMMAND}"
+echo -e "\e[1;32mDone\e[0m"
+echo ""
+
 # Add default channel
 DEFAULT_CHANNEL="nixos-unstable"
 echo -e "\e[1;34m1-\e[0m Adding nix channel \"${DEFAULT_CHANNEL}\" as default"
 nix-channel --add https://nixos.org/channels/${DEFAULT_CHANNEL} nixos
 echo -e "\e[1;32mDone\e[0m"
+echo ""
+
+echo "=========================="
 
 echo -e "\e[1;34m1-\e[0m Updating that channel (Requires elevated privileges)"
 sudo nix-channel --update nixos
 echo -e "\e[1;32mDone\e[0m"
+echo ""
 
 # Build home directory structure
 HOME_DIR="/home/anhack"
@@ -44,13 +96,23 @@ mkdir -p "${HOME_DIR}/Desktop"
 mkdir -p "${HOME_DIR}/Backups"
 mkdir -p "${HOME_DIR}/Meshes"
 mkdir -p "${HOME_DIR}/Repos"
-mkdir -p "${HOME_DIR}/.config/sops/age"
 echo -e "\e[1;32mDone\e[0m"
+echo ""
 
-echo -e "\e[1;34m1-\e[0m Virtual service autostart (Requires elevated privileges)"
+echo "=========================="
+
+echo -e "\e[1;34m1-\e[0m Virtual network service autostart (Requires elevated privileges)"
 sudo virsh net-autostart default
 echo -e "\e[1;32mDone\e[0m"
+echo ""
 
-echo -e "\n\e[30;44m*-\e[0m If you haven't already now would be a good time to rebuild using this config"
-echo -e "Run \e[1;36msudo nixos-rebuild switch --flake .#{HOST_NAME}\e[0m from this directory"
-echo -e "Available host names are in the file \"\e[1;34mflake.nix\e[0m\" in this directory under \"\e[1;34mnixosConfigurations\e[0m\""
+echo "=========================="
+
+echo -e "\e[1;32mAll Done!\e[0m"
+echo "Thank you for using me, and have a great day!"
+echo ""
+echo "=========================="
+
+echo "Next step is to place the host's public ssh key into '.sops.yaml' and rebuild 'secrets.yaml' with the sops command"
+echo "and then run rebuild again"
+echo "( sudo ${REBUILD_COMMAND} )"
