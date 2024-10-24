@@ -140,4 +140,4 @@ mkdir -p ~/.config/sops/age/ && nix --extra-experimental-features nix-command --
 
 - vpn on wifi passthrough dns has no resolve; temp change resolv.conf to cloudflare/google to fix
 
-- tutanota email client cannot access secret storage; no workaround yet
+    - could be related to custom dns solution on home network

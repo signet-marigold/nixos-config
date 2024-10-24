@@ -28,8 +28,6 @@
     ntcp2.published = false;
     precomputation.elgamal = true;
 
-
-
     proto.http = {
       enable = true;
       address = "127.0.0.1";

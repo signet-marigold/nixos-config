@@ -42,7 +42,8 @@
     };
   };
 
-  services.passSecretService.enable = true;
+  # Add a keyring
+  services.gnome.gnome-keyring.enable = true;
 
   programs.browserpass.enable = true;
   #services.clamav = {
@@ -121,6 +122,7 @@
     passExtensions.pass-audit
     tomb
 
-    keepassxc
+    #keepassxc
+    authenticator # GUI OTP Authenticator
   ];
 }
