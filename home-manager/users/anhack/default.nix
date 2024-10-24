@@ -81,7 +81,7 @@
     nnn # terminal file manager
     superfile # more complicated terminal file manager
     tutanota-desktop # mail client
-    #bitwarden-desktop # password manager
+    bitwarden-desktop # password manager
     deluge # torrent
     looking-glass-client # box emulator
     bottles # local software packager

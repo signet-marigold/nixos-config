@@ -8,9 +8,7 @@
     shell = pkgs.fish;
     initialPassword = "hashbrownzebrastripes";
     extraGroups = [ "networkmanager" "input" "wheel" "video" "audio" "tss" "render" "libvirtd" ];
-    packages = with pkgs; [
-      bitwarden-desktop
-    ];
+    #packages = with pkgs; [];
   };
 
   # Change runtime directory size
