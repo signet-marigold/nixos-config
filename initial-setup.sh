@@ -54,7 +54,7 @@ echo -e "\e[1;32mDone\e[0m"
 echo ""
 
 # Add default channel
-DEFAULT_CHANNEL="nixos-unstable"
+DEFAULT_CHANNEL="nixos-24.05"
 echo -e "\e[1;34m1-\e[0m Adding nix channel \"${DEFAULT_CHANNEL}\" as default"
 nix-channel --add https://nixos.org/channels/${DEFAULT_CHANNEL} nixos
 echo -e "\e[1;32mDone\e[0m"

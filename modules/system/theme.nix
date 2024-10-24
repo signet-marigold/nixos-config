@@ -1,13 +1,13 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 let
-  #theme = "${pkgs.base16-schemes}/share/themes/horizon-dark.yaml";
-  #theme = "${pkgs.base16-schemes}/share/themes/tomorrow.yaml";
-  #theme = "${pkgs.base16-schemes}/share/themes/tomorrow-night.yaml";
-  #theme = "${pkgs.base16-schemes}/share/themes/tarot.yaml";
-  #theme = "${pkgs.base16-schemes}/share/themes/shapeshifter.yaml";
+  #themeColors = "${pkgs.base16-schemes}/share/themes/horizon-dark.yaml";
+  #themeColors = "${pkgs.base16-schemes}/share/themes/tomorrow.yaml";
+  #themeColors = "${pkgs.base16-schemes}/share/themes/tomorrow-night.yaml";
+  #themeColors = "${pkgs.base16-schemes}/share/themes/tarot.yaml";
+  #themeColors = "${pkgs.base16-schemes}/share/themes/shapeshifter.yaml";
 
   # Custom theme
-  theme = {
+  themeColors = {
     base00 = "191919"; # ----- Background
     base01 = "2c2e30"; # ----
     base02 = "424b54"; # ---
@@ -35,7 +35,7 @@ let
   #base0E = "d87db4";
   #base0F = "ad5b49";
 
-  #theme = {
+  #themeColors = {
   #  base00 = "222222";
   #  base01 = "333333";
   #  base02 = "444444";
@@ -61,7 +61,7 @@ in {
     enable = true;
     polarity = "dark";
     image = wallpaper;
-    base16Scheme = theme;
+    base16Scheme = themeColors;
     fonts = {
       serif = {
         package = pkgs.dejavu_fonts;
@@ -97,22 +97,22 @@ in {
   console = {
     earlySetup = true;
     colors = [
-      theme.base00
-      theme.base01
-      theme.base02
-      theme.base03
-      theme.base04
-      theme.base05
-      theme.base06
-      theme.base07
-      theme.base08
-      theme.base09
-      theme.base0A
-      theme.base0B
-      theme.base0C
-      theme.base0D
-      theme.base0E
-      theme.base0F
+      themeColors.base00
+      themeColors.base01
+      themeColors.base02
+      themeColors.base03
+      themeColors.base04
+      themeColors.base05
+      themeColors.base06
+      themeColors.base07
+      themeColors.base08
+      themeColors.base09
+      themeColors.base0A
+      themeColors.base0B
+      themeColors.base0C
+      themeColors.base0D
+      themeColors.base0E
+      themeColors.base0F
     ];
     #packages = [
     #  pkgs.terminus_font
@@ -146,7 +146,7 @@ in {
   #  };
   #};
 
-  environment.systemPackages = with pkgs; [
+  #environment.systemPackages = with pkgs; [
     #faba-icon-theme
-  ];
+  #];
 }

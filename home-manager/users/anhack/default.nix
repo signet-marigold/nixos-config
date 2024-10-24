@@ -3,7 +3,7 @@
 {
   home.username = "anhack";
   home.homeDirectory = "/home/anhack";
-  home.stateVersion = "24.11";
+  home.stateVersion = "24.05";
 
   #xresources.properties = {
   #  "Xcursor.size" = 24;
@@ -54,7 +54,7 @@
     picard # music tag editor
     shortwave # internet radio
     kdePackages.kasts # podcasts
-    calibre # ebook viewer
+    #calibre # ebook viewer
     freetube # free youtube frontend client
 
     # amature radio
@@ -81,7 +81,7 @@
     nnn # terminal file manager
     superfile # more complicated terminal file manager
     tutanota-desktop # mail client
-    bitwarden-desktop # password manager
+    #bitwarden-desktop # password manager
     deluge # torrent
     looking-glass-client # box emulator
     bottles # local software packager

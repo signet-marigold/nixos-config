@@ -2,14 +2,20 @@
   description = "Alex's System Flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    #nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    #nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     rust-overlay.url = "github:oxalica/rust-overlay";
 
-    stylix.url = "github:danth/stylix";
+    stylix = {
+      url = "github:danth/stylix";
+      #inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
 
     nvim.url = "git+https://codeberg.org/signet-marigold/neovim";
 
@@ -67,7 +73,7 @@
           ./modules/development/work.nix
           ./modules/development/utils.nix
           ./modules/development/rust.nix
-          ./modules/development/wasm.nix
+          #./modules/development/wasm.nix
 
           ./modules/virtualisation.nix
           ./modules/vpn.nix
@@ -85,7 +91,7 @@
 
           home-manager.nixosModules.home-manager {
             home-manager = {
-              backupFileExtension = "backup";
+              backupFileExtension = "backup1";
               useGlobalPkgs = true;
               useUserPackages = true;
               users.anhack = import ./home-manager/hosts/AT08-OBAMA;
@@ -117,7 +123,7 @@
           ./modules/development/work.nix
           ./modules/development/utils.nix
           ./modules/development/rust.nix
-          ./modules/development/wasm.nix
+          #./modules/development/wasm.nix
 
           ./modules/virtualisation.nix
           ./modules/vpn.nix

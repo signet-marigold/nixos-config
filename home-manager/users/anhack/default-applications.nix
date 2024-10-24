@@ -147,10 +147,10 @@
         name = "Tauon Music Player";
         exec = "${pkgs.tauon}/bin/tauon";
       }; # audio player
-      calibre = {
-        name = "Calibre";
-        exec = "${pkgs.calibre}/bin/calibre";
-      }; # ebook viewer
+      #calibre = {
+      #  name = "Calibre";
+      #  exec = "${pkgs.calibre}/bin/calibre";
+      #}; # ebook viewer
       gqrx = {
         name = "GQRX radio";
         exec = "${pkgs.gqrx}/bin/gqrx";
@@ -197,9 +197,9 @@
         "x-scheme-handler/unknown" = "librewolf.desktop"; # unknown://
 
         # Book, Document
-        "application/vnd.amazon.ebook" = "calibre.desktop"; # .azw (Amazon Kindle)
-        "application/epub+zip"     = "calibre.desktop"; # .epub (Electronic publication)
-        "application/book"         = "calibre.desktop"; # .book .boo
+        #"application/vnd.amazon.ebook" = "calibre.desktop"; # .azw (Amazon Kindle)
+        #"application/epub+zip"     = "calibre.desktop"; # .epub (Electronic publication)
+        #"application/book"         = "calibre.desktop"; # .book .boo
         "application/pdf"          = ["zathura.desktop" "librewolf.desktop"]; # .pdf (Adobe Portable Document Format)
 
         # Office

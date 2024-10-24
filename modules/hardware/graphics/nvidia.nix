@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 
 {
   # Extra options to try and fix no tty on desktop (prevents vertual console dm like tuigreet)
