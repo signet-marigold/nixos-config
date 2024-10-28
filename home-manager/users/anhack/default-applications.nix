@@ -31,10 +31,10 @@
         name = "PQIV";
         exec = "${pkgs.pqiv}/bin/pqiv";
       }; # image viewer
-      peazip = {
-        name = "Peazip";
-        exec = "${pkgs.peazip}/bin/peazip";
-      }; # archive manager
+      #peazip = {
+      #  name = "Peazip";
+      #  exec = "${pkgs.peazip}/bin/peazip";
+      #}; # archive manager
       ksnip = {
         name = "Ksnip";
         exec = "${pkgs.ksnip}/bin/ksnip";

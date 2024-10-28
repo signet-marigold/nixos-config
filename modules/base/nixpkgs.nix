@@ -1,4 +1,4 @@
-{ ... }:
+{ nixpkgs-unstable, ... }:
 
 {
   # Allow unfree packages
@@ -10,4 +10,15 @@
   #     inherit pkgs;
   #   };
   # };
+
+  # https://discourse.nixos.org/t/how-to-use-nixos-unstable-for-some-packages-only/36337
+  # when installing packages it’s then possible to use `pkgs.unstable.rustc`
+  nixpkgs.overlays = [
+    (final: prev: {
+      unstable = import nixpkgs-unstable {
+        system = prev.system;
+        config.allowUnfree = true;
+      };
+    })
+  ];
 }

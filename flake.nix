@@ -2,33 +2,37 @@
   description = "Alex's System Flake";
 
   inputs = {
-    #nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
-    #nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    #nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
 
     rust-overlay.url = "github:oxalica/rust-overlay";
 
     stylix = {
       url = "github:danth/stylix";
-      #inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
-    nvim.url = "git+https://codeberg.org/signet-marigold/neovim";
+    #nvim.url = "git+https://codeberg.org/signet-marigold/neovim";
 
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    pia.url = "github:Fuwn/pia.nix";
-    pia.inputs.nixpkgs.follows = "nixpkgs";
+    pia = {
+      url = "github:Fuwn/pia.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, stylix, sops-nix, pia, ... } @ inputs:
+  outputs = { nixpkgs, home-manager, stylix, sops-nix, pia, ... }@inputs:
   {
     nixosConfigurations = {
       AT20-CLEVELAND = nixpkgs.lib.nixosSystem {
@@ -37,8 +41,8 @@
         modules = [
           { _module.args = inputs; }
 
-          stylix.nixosModules.stylix
-          pia.nixosModules.${"x86_64-linux"}.default
+          #stylix.nixosModules.stylix
+          pia.nixosModules."x86_64-linux".default
 
           home-manager.nixosModules.home-manager {
             home-manager = {
@@ -86,12 +90,12 @@
         modules = [
           { _module.args = inputs; }
 
-          stylix.nixosModules.stylix
-          pia.nixosModules.${"x86_64-linux"}.default
+          #stylix.nixosModules.stylix
+          pia.nixosModules."x86_64-linux".default
 
           home-manager.nixosModules.home-manager {
             home-manager = {
-              backupFileExtension = "backup1";
+              backupFileExtension = "backup3";
               useGlobalPkgs = true;
               useUserPackages = true;
               users.anhack = import ./home-manager/hosts/AT08-OBAMA;

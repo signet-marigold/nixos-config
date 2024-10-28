@@ -35,7 +35,7 @@
     unzip
     gzip
     p7zip
-    peazip
+    #peazip
     gnutar
     zstd
 

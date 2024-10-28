@@ -1,9 +1,9 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 
 {
   home.username = "anhack";
   home.homeDirectory = "/home/anhack";
-  home.stateVersion = "24.05";
+  home.stateVersion = "24.11";
 
   #xresources.properties = {
   #  "Xcursor.size" = 24;
@@ -108,7 +108,7 @@
     ../../modules/shell.nix
     ../../modules/theme.nix
     ../../modules/git.nix
-    ../../modules/dunst.nix
+    #../../modules/dunst.nix
     ./default-applications.nix
   ];
 }

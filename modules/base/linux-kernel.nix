@@ -2,8 +2,9 @@
 
 {
   # Linux Kernel
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
-  boot.kernelParams = [ 
+  boot.kernelPackages = pkgs.unstable.linuxKernel.packages.linux_zen;
+  #boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  boot.kernelParams = [
     "quiet"
     "fbcon=nodefer"
     "vt.global_cursor_default=0"

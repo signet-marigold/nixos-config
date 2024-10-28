@@ -1,13 +1,13 @@
 { pkgs, ... }:
 let
-  #themeColors = "${pkgs.base16-schemes}/share/themes/horizon-dark.yaml";
-  #themeColors = "${pkgs.base16-schemes}/share/themes/tomorrow.yaml";
-  #themeColors = "${pkgs.base16-schemes}/share/themes/tomorrow-night.yaml";
-  #themeColors = "${pkgs.base16-schemes}/share/themes/tarot.yaml";
-  #themeColors = "${pkgs.base16-schemes}/share/themes/shapeshifter.yaml";
+  #colors = "${pkgs.base16-schemes}/share/themes/horizon-dark.yaml";
+  #colors = "${pkgs.base16-schemes}/share/themes/tomorrow.yaml";
+  #colors = "${pkgs.base16-schemes}/share/themes/tomorrow-night.yaml";
+  #colors = "${pkgs.base16-schemes}/share/themes/tarot.yaml";
+  #colors = "${pkgs.base16-schemes}/share/themes/shapeshifter.yaml";
 
   # Custom theme
-  themeColors = {
+  colors = {
     base00 = "191919"; # ----- Background
     base01 = "2c2e30"; # ----
     base02 = "424b54"; # ---
@@ -35,7 +35,7 @@ let
   #base0E = "d87db4";
   #base0F = "ad5b49";
 
-  #themeColors = {
+  #colors = {
   #  base00 = "222222";
   #  base01 = "333333";
   #  base02 = "444444";
@@ -61,7 +61,7 @@ in {
     enable = true;
     polarity = "dark";
     image = wallpaper;
-    base16Scheme = themeColors;
+    base16Scheme = colors;
     fonts = {
       serif = {
         package = pkgs.dejavu_fonts;
@@ -84,7 +84,7 @@ in {
       };
     };
     cursor = {
-      package = pkgs.adwaita-icon-theme;
+      package = pkgs.unstable.adwaita-icon-theme;
       name = "Adwaita";
       size = 24;
     };
@@ -97,22 +97,22 @@ in {
   console = {
     earlySetup = true;
     colors = [
-      themeColors.base00
-      themeColors.base01
-      themeColors.base02
-      themeColors.base03
-      themeColors.base04
-      themeColors.base05
-      themeColors.base06
-      themeColors.base07
-      themeColors.base08
-      themeColors.base09
-      themeColors.base0A
-      themeColors.base0B
-      themeColors.base0C
-      themeColors.base0D
-      themeColors.base0E
-      themeColors.base0F
+      colors.base00
+      colors.base01
+      colors.base02
+      colors.base03
+      colors.base04
+      colors.base05
+      colors.base06
+      colors.base07
+      colors.base08
+      colors.base09
+      colors.base0A
+      colors.base0B
+      colors.base0C
+      colors.base0D
+      colors.base0E
+      colors.base0F
     ];
     #packages = [
     #  pkgs.terminus_font

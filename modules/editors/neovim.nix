@@ -1,8 +1,9 @@
-{ config, pkgs, inputs, nvim, ... }:
+{ pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
-    nvim.defaultPackage.${pkgs.system}
+    #nvim.defaultPackage.${pkgs.system}
+    neovim
     ranger
   ];
 }

@@ -1,7 +1,7 @@
 { config, ... }:
 {
-  sops.secrets.pia-username = { };
   sops.secrets.pia-password = { };
+  sops.secrets.pia-username = { };
 
   # This Mumbo Jumbo with "buildins.pathExist" a workaround for the first time nixos install
   # See we are trying to read from a file that *Will* exist after the sops module has been loaded and setup
@@ -12,7 +12,7 @@
     enable = builtins.pathExists config.sops.secrets.pia-username.path;
     # Still waiting on a fix for 312283; https://github.com/NixOS/nixpkgs/issues/312283
     # Will probably through a warning about "pure eval mode" and have to be run with '--impure'
-    authUserPass.username = if builtins.pathExists (config.sops.secrets.pia-username.path) then (builtins.readFile config.sops.secrets.pia-username.path) else "";
     authUserPass.password = if builtins.pathExists (config.sops.secrets.pia-password.path) then (builtins.readFile config.sops.secrets.pia-password.path) else "";
+    authUserPass.username = if builtins.pathExists (config.sops.secrets.pia-username.path) then (builtins.readFile config.sops.secrets.pia-username.path) else "";
   };
 }
