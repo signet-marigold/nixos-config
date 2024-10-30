@@ -5,8 +5,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    #nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -63,11 +61,10 @@
           ./modules/hardware/graphics/opengl-with-intel.nix
           ./modules/hardware/bluetooth.nix
           #./modules/hardware/fingerprint-scanner.nix
-          # ./modules/hardware/power-management.nix
+          #./modules/hardware/power-management.nix
           ./modules/hardware/screen.nix
           ./modules/hardware/sound.nix
           ./modules/hardware/usb.nix
-          #./modules/hardware/yubikey.nix
 
           ./modules/editors/neovim.nix
           ./modules/editors/kate.nix
@@ -112,12 +109,9 @@
           ./modules/hardware/graphics/nvidia.nix
           ./modules/hardware/graphics/opengl.nix
           ./modules/hardware/bluetooth.nix
-          #./modules/hardware/fingerprint-scanner.nix
-          # ./modules/hardware/power-management.nix
           ./modules/hardware/screen.nix
           ./modules/hardware/sound.nix
           ./modules/hardware/usb.nix
-          #./modules/hardware/yubikey.nix
 
           ./modules/editors/neovim.nix
           ./modules/editors/kate.nix
