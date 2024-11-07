@@ -12,7 +12,8 @@
 
   home.packages = with pkgs; [
     # chat
-    discord
+    #discord
+    webcord-vencord
     hexchat # irc
     pidgin # multi protocol chat
     element-desktop # matrix
@@ -24,7 +25,7 @@
     # >in imports below
 
     # code editors
-    vscodium
+    #vscodium
     #kdePackages.kate
 
     # photo editors

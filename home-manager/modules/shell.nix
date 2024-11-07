@@ -66,7 +66,10 @@
       # system control shortcuts
       displays = "arandr";
       bluetooth = "blueman-manager";
-      sound   = "pavucontrol";
+      sound = "pavucontrol";
+
+      # folder shortcuts
+      bg3mods = "conte \"/home/anhack/.steam/steam/steamapps/compatdata/1086940/pfx/drive_c/users/steamuser/AppData/Local/Larian Studios/Baldur's Gate 3/Mods\"";
 
       # cargo abbreviations
       cb      = "cargo build";
