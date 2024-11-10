@@ -83,7 +83,7 @@
     # ---Misc.
     nnn                 # Terminal file manager
     superfile           # More complicated terminal file manager
-    tutanota-desktop    # Mail client
+    unstable.tutanota-desktop    # Mail client
     bitwarden-desktop   # Password manager
     deluge              # Torrent manager
     bottles             # Local software packager
@@ -97,6 +97,7 @@
     glow                # Markdown previewer in terminal
     qownnotes           # Markdown note editor
     nb                  # Markdown note editor
+    cherrytree          # A hierarchical note taking app
     libreoffice         # Full office suite
     wordgrinder         # CLI 'ms word'
   ];

@@ -44,19 +44,24 @@ static const Rule rules[] = {
 	 */
 	/* class           instance  title       tags mask     isfloating  isterminal  noswallow  monitor */
 
+    /* Terminal Emulator */
 	{ "st",            NULL,     NULL,       0,            False,      False,      False,    -1 },
+
 	/* Text Editors */
 	{ "kate",          NULL,     NULL,       1 << 1,       False,      False,      False,    -1 },
 	{ "vscodium",      NULL,     NULL,       1 << 1,       False,      False,      False,    -1 },
 	{ NULL,            NULL,     "nvim",     1 << 1,       False,      True,       False,    -1 },
+
 	/* Browsers */
 	{ "qutebrowser",   NULL,     NULL,       1 << 2,       False,      False,      False,    -1 },
 	{ "librewolf",     NULL,     NULL,       1 << 2,       False,      False,      False,    -1 },
 	{ "firefox",       NULL,     NULL,       1 << 2,       False,      False,      False,    -1 },
 	{ "mullvad-browser", NULL,   NULL,       1 << 2,       False,      False,      False,    -1 },
 	{ "tor-browser",   NULL,     NULL,       1 << 2,       False,      False,      False,    -1 },
+
 	/* Chat programs */
 /*	{ "discord",       NULL,     NULL,       1 << 3,       False,      False,      False,    -1 },
+	{ "webcord",       NULL,     NULL,       1 << 3,       False,      False,      False,    -1 },
 	{ "hexchat",       NULL,     NULL,       1 << 3,       False,      False,      False,    -1 },
 	{ "pidgin",        NULL,     NULL,       1 << 3,       False,      False,      False,    -1 },
 	{ "element",       NULL,     NULL,       1 << 3,       False,      False,      False,    -1 },
@@ -75,6 +80,9 @@ static const Rule rules[] = {
 	{ "modrinth",      NULL,     NULL,       1 << 8,       False,      False,      False,    -1 },
 	{ "r2modman",      NULL,     NULL,       1 << 8,       False,      False,      False,    -1 },
 	{ "prismlauncher", NULL,     NULL,       1 << 8,       False,      False,      False,    -1 },
+
+    /* Scratchpad */
+	{ "mini-text",     NULL,     NULL,       (1 << 8) - 1, True,       False,      False,    -1 },
 };
 
 /* layout(s) */

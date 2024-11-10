@@ -53,7 +53,7 @@
       };
       tutanota = {
         name = "TutaNota Mail";
-        exec = "${pkgs.tutanota-desktop}/bin/tutanota-desktop";
+        exec = "${pkgs.unstable.tutanota-desktop}/bin/tutanota-desktop";
       };
       java = {
         name = "Java";
@@ -195,6 +195,7 @@
         "x-scheme-handler/https"   = "librewolf.desktop"; # https://
         "x-scheme-handler/about"   = "librewolf.desktop"; # about://
         "x-scheme-handler/unknown" = "librewolf.desktop"; # unknown://
+        "x-scheme-handler/mailto"  = "tutanota.desktop";  # mailto://
 
         # Book, Document
         #"application/vnd.amazon.ebook" = "calibre.desktop"; # .azw (Amazon Kindle)

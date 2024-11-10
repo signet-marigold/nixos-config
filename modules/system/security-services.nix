@@ -83,7 +83,7 @@
         profile = "${pkgs.firejail}/etc/firejail/telegram-desktop.profile";
       };
       tutanota-desktop = {
-        executable = "${lib.getBin pkgs.tutanota-desktop}/bin/tutanota-desktop";
+        executable = "${lib.getBin pkgs.unstable.tutanota-desktop}/bin/tutanota-desktop";
         profile = "${pkgs.firejail}/etc/firejail/tutanota-desktop.profile";
       };
 

@@ -28,9 +28,11 @@
       url = "github:Fuwn/pia.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    flatpaks.url = "github:GermanBread/declarative-flatpak/stable-v3";
   };
 
-  outputs = { nixpkgs, home-manager, stylix, sops-nix, pia, ... }@inputs:
+  outputs = { nixpkgs, home-manager, stylix, sops-nix, pia, flatpaks, ... }@inputs:
   {
     nixosConfigurations = {
       AT20-CLEVELAND = nixpkgs.lib.nixosSystem {
@@ -79,6 +81,7 @@
           ./modules/virtualisation.nix
           ./modules/vpn.nix
           ./modules/steam.nix
+          ./modules/flatpaks.nix
         ];
       };
       AT08-OBAMA = nixpkgs.lib.nixosSystem {
@@ -92,7 +95,7 @@
 
           home-manager.nixosModules.home-manager {
             home-manager = {
-              backupFileExtension = "backup6";
+              backupFileExtension = "backup7";
               useGlobalPkgs = true;
               useUserPackages = true;
               users.anhack = import ./home-manager/hosts/AT08-OBAMA;
@@ -128,6 +131,7 @@
           ./modules/steam.nix
           ./modules/proxychains.nix
           ./modules/i2p.nix
+          ./modules/flatpaks.nix
         ];
       };
     };
