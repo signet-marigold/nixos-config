@@ -11,93 +11,94 @@
   #};
 
   home.packages = with pkgs; [
-    # chat
-    #discord
+    # ---Chat
+    #discord >swapped for webcord
     webcord-vencord
-    hexchat # irc
-    pidgin # multi protocol chat
-    element-desktop # matrix
+    hexchat            # IRC
+    pidgin             # Multi protocol chat
+    element-desktop    # Matrix
     signal-desktop
     telegram-desktop
     slack
 
-    # internet browsers
+    # ---Internet browsers
     # >in imports below
 
-    # code editors
+    # ---Code editors
     #vscodium
     #kdePackages.kate
+    # >moved to root/modules/editors
 
-    # photo editors
-    gimp # photoshop style editor
-    inkscape # vector graphics
-    darktable # lightroom style editor
+    # ---Photo editors
+    gimp                # Photoshop style editor
+    inkscape            # Vector graphics
+    darktable           # Lightroom style editor
 
-    # video editors
+    # ---Video editors
     kdePackages.kdenlive
-    # video record
+    # ---Video record
     obs-studio
 
-    # cad editors
+    # ---Cad editors
     qcad
     blender
 
-    # audio editors
+    # ---Audio editors
     ardour
     surge-XT
     muse
     audacity
 
-    # media consumption
-    mpv # media player
-    vlc # media player
-    tauon # audio player
-    picard # music tag editor
-    shortwave # internet radio
-    kdePackages.kasts # podcasts
-    #calibre # ebook viewer
-    freetube # free youtube frontend client
+    # ---Media consumption
+    mpv                 # Media player
+    vlc                 # Media player
+    tauon               # Audio player
+    picard              # Music tag editor
+    shortwave           # Internet radio
+    kdePackages.kasts   # Podcasts
+    #calibre             # Ebook viewer
+    freetube            # Free youtube frontend client
 
-    # amature radio
-    gnuradio # software defined radio server
-    gqrx # software defined radio host/server
-    tlf # ham radio logging and contest program
+    # ---Amature radio
+    gnuradio            # Software defined radio server
+    gqrx                # Software defined radio host/server
+    tlf                 # Ham radio logging and contest program
 
-    # gaming
-    heroic # epic games launcher
-    r2modman # mod loader with a wide support of games
-    #modrinth-app # minecraft launcher with mod support
-    prismlauncher # open source minecraft launcher with mod support
-    lutris # flexible game launcher
-    dolphin-emu # gamecube / wii emulator
+    # ---Gaming
+    heroic              # Epic games launcher
+    r2modman            # Mod loader with a wide support of games
+    #modrinth-app        # Minecraft launcher with mod support
+    prismlauncher       # Open source minecraft launcher with mod support
+    lutris              # Flexible game launcher
+    dolphin-emu         # Gamecube / Wii emulator
 
-    # data viewers
-    pspp # statistical analysis of sampled data
-    gretl # econometric analysis
-    sonic-visualiser # waveform analysis
-    mandelbulber # make your own fractals
-    stellarium # planetarium
+    # ---Data viewers
+    pspp                # Statistical analysis of sampled data
+    gretl               # Econometric analysis
+    sonic-visualiser    # Waveform analysis
+    mandelbulber        # Make your own fractals
+    stellarium          # Planetarium
+    gnome.gnome-weather # Weather
 
-    # misc
-    nnn # terminal file manager
-    superfile # more complicated terminal file manager
-    tutanota-desktop # mail client
-    bitwarden-desktop # password manager
-    deluge # torrent
-    looking-glass-client # box emulator
-    bottles # local software packager
-    qalculate-gtk # simple desktop calculator
-    scanmem # live system memory editor
-    jdk # java
-    solaar # logitech unifying driver and management
+    # ---Misc.
+    nnn                 # Terminal file manager
+    superfile           # More complicated terminal file manager
+    tutanota-desktop    # Mail client
+    bitwarden-desktop   # Password manager
+    deluge              # Torrent manager
+    bottles             # Local software packager
+    qalculate-gtk       # Simple GUI calculator app
+    scanmem             # Live system memory editor
+    jdk                 # Java
+    solaar              # Logitech unifying driver and management
 
-    # productivity
-    hugo # static website generator
-    glow # markdown previewer in terminal
-    qownnotes # markdown note editor
-    nb # markdown note editor
-    libreoffice # full office suite
-    wordgrinder # cli 'ms word'
+    # ---Productivity
+    hugo                # Static website generator
+    glow                # Markdown previewer in terminal
+    qownnotes           # Markdown note editor
+    nb                  # Markdown note editor
+    libreoffice         # Full office suite
+    wordgrinder         # CLI 'ms word'
   ];
 
   programs.home-manager.enable = true;
