@@ -126,6 +126,8 @@ static const char *lockcmd[] = { "slock", NULL };
 static const char *screenshotcmd[] = { "dhst-screenshot", NULL };
 /* text to speach */
 static const char *ttscmd[] = { "tts-selection", NULL };
+/* scratchpad */
+static const char *minitextcmd[] = { "io.github.nokse22.minitext", NULL };
 
 /* brightness */
 static const char *brightnesscmd[2][3] = {
@@ -184,6 +186,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_9,                         8)
 	{ MODKEY|ShiftMask,             XK_BackSpace, quitprompt,     {0} },
 	{ MODKEY,                       XK_Escape,    spawn,          {.v = lockcmd} },
+	{ MODKEY,                       XK_s,         spawn,          {.v = minitextcmd} },
 	{ MODKEY|ShiftMask,             XK_s,         spawn,          {.v = ttscmd} },
 	{ 0,                            XK_Print,     spawn,          {.v = screenshotcmd} },
 	{ 0,                XF86XK_MonBrightnessUp,   spawn,          {.v = brightnesscmd[0]} },
