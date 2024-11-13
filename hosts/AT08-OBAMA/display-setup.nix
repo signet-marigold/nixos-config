@@ -1,13 +1,13 @@
 { pkgs, ... }:
 
 {
-  #services.xserver.displayManager.setupCommands = ''
-  #  CENTER='HDMI-0'
-  #  RIGHT='DP-2'
-  #  ${pkgs.xorg.xrandr}/bin/xrandr \
-  #    --output $CENTER \
-  #    --output $RIGHT --right-of $CENTER
-  #'';
+  services.xserver.displayManager.setupCommands = ''
+    LEFT='HDMI-0'
+    CENTER='DP-2'
+    ${pkgs.xorg.xrandr}/bin/xrandr \
+      --output $CENTER \
+      --output $LEFT --left-of $CENTER
+  '';
     # LEFT='DVI-D-0'
     # CENTER='DVI-I-1'
     # RIGHT='HDMI-A-0'
