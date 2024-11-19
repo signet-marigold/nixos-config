@@ -10,6 +10,9 @@
       "flathub-beta" = "https://dl.flathub.org/beta-repo/flathub-beta.flatpakrepo";
     };
 
-    packages = [ "flathub:app/io.github.nokse22.minitext/x86_64/stable" ];
+    packages = [
+      "flathub:app/io.github.nokse22.minitext/x86_64/stable"
+      "flathub:app/hu.irl.cameractrls/x86_64/stable"
+    ];
   };
 }
