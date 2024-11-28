@@ -61,6 +61,7 @@
           ./modules/hardware/screen.nix
           ./modules/hardware/sound.nix
           ./modules/hardware/usb.nix
+          ./modules/hardware/touchpad.nix
 
           ./modules/editors/neovim.nix
           ./modules/editors/kate.nix
