@@ -70,7 +70,7 @@
 /* Adds buttons to the bar that can be used to launch applications.
  * https://dwm.suckless.org/patches/launcher/
  */
-#define BAR_LAUNCHER_PATCH 0
+#define BAR_LAUNCHER_PATCH 1
 
 /* This patch adds a context menu for layout switching.
  *   - xmenu needs to be installed.
@@ -542,7 +542,7 @@
  * adding wintype as a client rule filter, hence this no longer works out of the box. This
  * patch restores previous behaviour with the center patch.
  */
-#define CENTER_TRANSIENT_WINDOWS_PATCH 0
+#define CENTER_TRANSIENT_WINDOWS_PATCH 1
 
 /* As above, except that the transient window is centered within the position of the parent
  * window, rather than at the center of the screen. This takes precedence over the above patch.

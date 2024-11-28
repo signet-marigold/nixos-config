@@ -409,7 +409,9 @@ static const char *layoutmenu_cmd = "layoutmenu.sh";
 #if BAR_LAUNCHER_PATCH
 static const Launcher launchers[] = {
 	/* icon to display      command        */
-	{ "surf",               CMD("surf", "duckduckgo.com") },
+	{ "",                  CMD("io.github.nokse22.minitext") },
+	{ "󰖐",                  CMD("gnome-weather") },
+	{ "󰃬",                  CMD("qalculate-gtk") }
 };
 #endif // BAR_LAUNCHER_PATCH
 
