@@ -8,12 +8,26 @@
     windowManager.dwm.enable = true;
   };
 
-  # Custom dwm package
+  # Mod dwm package
   nixpkgs.overlays = [
     (self: super: {
       dwm = super.dwm.overrideAttrs (oldAttrs: rec {
-        src = "./dwm-flexipatch-8a3da06"
-        buildInputs = oldAttrs.buildInputs ++ [ pkgs.imlib2 ];
+        # Lock version
+        pname = "dwm";
+        version = "6.5";
+        src = pkgs.fetchurl {
+          url = "https://dl.suckless.org/dwm/${pname}-${version}.tar.gz";
+          hash = "sha256-Ideev6ny+5MUGDbCZmy4H0eExp1k5/GyNS+blwuglyk=";
+        };
+        # Dependencies
+        #buildInputs = oldAttrs.buildInputs ++ [  ];
+        # Apply patches
+        patches = [
+          ./patches/dwm-6.5-combinedpatch-20240801-anhack.diff
+        ];
+        # Inject custom config
+        configFile = super.writeText "config.h" (builtins.readFile ./dwm-config.h);
+        postPatch = oldAttrs.postPatch or "" + "\necho 'Using own config file...'\n cp ${configFile} config.def.h";
       });
     })
   ];
