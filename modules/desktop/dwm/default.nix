@@ -1,22 +1,23 @@
 { pkgs, ... }:
 
 {
+  # Custom dwm package
+  nixpkgs.overlays = [
+    (final: prev: {
+      dwm = prev.dwm.overrideAttrs (old: {
+        src = ./dwm-flexipatch-8a3da06;
+        # imlib2 used in icon patch
+        buildInputs = old.buildInputs ++ [ pkgs.imlib2 ];
+      });
+    })
+  ];
+
   # Enable dwm
   services.xserver = {
     enable = true;
     autorun = true;
     windowManager.dwm.enable = true;
   };
-
-  # Custom dwm package
-  nixpkgs.overlays = [
-    (self: super: {
-      dwm = super.dwm.overrideAttrs (oldAttrs: rec {
-        src = "./dwm-flexipatch-8a3da06"
-        buildInputs = oldAttrs.buildInputs ++ [ pkgs.imlib2 ];
-      });
-    })
-  ];
 
   # Enable autologin
   services.displayManager = {
@@ -35,7 +36,4 @@
 
     #paperview  # wallpaper setting
   ];
-
-  # Inject custom scripts for managing hardware controls (screen brightness, volume, etc.)
-  #import = [ ../packages/hhst.nix ];
 }

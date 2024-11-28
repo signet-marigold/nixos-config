@@ -9,26 +9,20 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
-
     rust-overlay.url = "github:oxalica/rust-overlay";
-
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
-
     #nvim.url = "git+https://codeberg.org/signet-marigold/neovim";
-
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     pia = {
       url = "github:Fuwn/pia.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     flatpaks.url = "github:GermanBread/declarative-flatpak/stable-v3";
   };
 
@@ -46,7 +40,7 @@
 
           home-manager.nixosModules.home-manager {
             home-manager = {
-              backupFileExtension = "backup9";
+              backupFileExtension = "backup10";
               useGlobalPkgs = true;
               useUserPackages = true;
               users.anhack = import ./home-manager/hosts/AT20-CLEVELAND;
@@ -95,7 +89,7 @@
 
           home-manager.nixosModules.home-manager {
             home-manager = {
-              backupFileExtension = "backup8";
+              backupFileExtension = "backup10";
               useGlobalPkgs = true;
               useUserPackages = true;
               users.anhack = import ./home-manager/hosts/AT08-OBAMA;
