@@ -12,6 +12,14 @@
     })
   ];
 
+  # src = pkgs.fetchFromGithub {
+  #  repo = "repo";
+  #  owner = "owner";
+  #  version = "...";
+  #  rev = "...";
+  #  hash = "";
+  #};
+
   # Enable dwm
   services.xserver = {
     enable = true;

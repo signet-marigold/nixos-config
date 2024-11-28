@@ -6,7 +6,7 @@
     ../../dmenu
     ../../st
     ../../login/lightgreet.nix
-    ../../slock.nix
+    ../../lock/lightlocker.nix
     ../../conky.nix
     ../../auto-cpufreq.nix
     ./packages/dhst
