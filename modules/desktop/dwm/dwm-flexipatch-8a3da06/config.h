@@ -918,7 +918,7 @@ static const char *dmenucmd[] = {
 	NULL
 };
 static const char *termcmd[] = { "st", NULL };
-static const char *lockcmd[] = { "slock", NULL };
+static const char *lockcmd[] = { "xsecurelock", NULL };
 /* selection screenshot */
 static const char *screenshotcmd[] = { "dhst-screenshot", NULL };
 /* text to speach */
