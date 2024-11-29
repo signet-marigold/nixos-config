@@ -5,7 +5,7 @@
     # Fading settings
     fade = true;
     # on 60hz displays it doesn't make sense to have this faster than 16ms
-    # hoping there's interpil
+    # i;m hoping there's interpolation otherwise animations would be demanding more than they'd need
     fadeDelta = 10; # time (in ms) between frames
     fadeSteps = [ (0.15) (0.17) ]; # in, out
     fadeExclude = [
