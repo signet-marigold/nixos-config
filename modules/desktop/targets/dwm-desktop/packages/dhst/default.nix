@@ -9,5 +9,12 @@ let
 in {
   environment.systemPackages = [
     dhst-screenshot
+    # Required packages for the above script(s)
+    pkgs.pulseaudio # Volume control (pactl)
+    pkgs.dunst      # Notification daemon
+    pkgs.ksnip      # Screenshot utility
+    pkgs.pqiv       # Simple image viewer
   ];
 }
+
+

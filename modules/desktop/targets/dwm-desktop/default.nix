@@ -3,7 +3,7 @@
   services.picom = {
     enable = true;
     backend = "glx";
-    vSync = "drm";
+    vSync = true;
     fade = true;
     fadeDelta = 2;
     fadeExclude = [

@@ -11,5 +11,11 @@ in {
   environment.systemPackages = [
     hhst-volume
     hhst-backlight
+    # Required packages for the above script(s)
+    pkgs.acpilight  # Backlight control (xbacklight)
+    pkgs.pulseaudio # Volume control (pactl)
+    pkgs.dunst      # Notification daemon
   ];
 }
+
+

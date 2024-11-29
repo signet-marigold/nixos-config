@@ -27,21 +27,9 @@
     windowManager.dwm.enable = true;
   };
 
-  # Enable autologin
-  services.displayManager = {
-    autoLogin.enable = false;
-    autoLogin.user = "anhack";
-  };
-
   environment.systemPackages = with pkgs; [
-    dwm
-
-    # Extra packages tied to dwm (or tiling desktops in general)
-    acpilight  # Backlight control (xbacklight)
-    pulseaudio # Volume control (pactl)
-
+    # Extra packages that are dwm specific or closely related
     arandr     # gui monitor settings
-
     #paperview  # wallpaper setting
   ];
 }
