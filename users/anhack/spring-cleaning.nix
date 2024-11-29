@@ -3,7 +3,7 @@
 #  files from the Downloads folder to a trash folder.
 #  Old files from the trash folder will be auto deleted after some time.
 #
-#  18 days after a new file is downloaded, if not moved, that file will be deleted
+#  20 days after a new file is downloaded, if not moved, that file will be deleted
 #
 
 { pkgs, ... }:
@@ -26,13 +26,13 @@
     };
   };
 
-  # Move files into trash if last modified date is more than 3 days ago
+  # Move files into trash if last modified date is more than 5 days ago
   systemd.services."clean-downloads" = {
     script = ''
       set -eu
       if [ -d "/home/anhack/Downloads/" ]; then
         ${pkgs.coreutils}/bin/mkdir -p /home/anhack/.trash/
-        ${pkgs.findutils}/bin/find /home/anhack/Downloads/* -mtime +3 -exec ${pkgs.coreutils}/bin/mv "{}" /home/anhack/.trash/ \;
+        ${pkgs.findutils}/bin/find /home/anhack/Downloads/* -mtime +5 -exec ${pkgs.coreutils}/bin/mv "{}" /home/anhack/.trash/ \;
       fi
     '';
     serviceConfig = {
