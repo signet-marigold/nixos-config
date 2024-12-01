@@ -1,4 +1,4 @@
-{ services, ... }:
+{ ... }:
 
 {
   # Intel CPUs only. prevents overheating

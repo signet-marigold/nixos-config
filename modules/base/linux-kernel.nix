@@ -2,7 +2,7 @@
 
 {
   # Linux Kernel
-  boot.kernelPackages = pkgs.unstable.linuxKernel.packages.linux_zen;
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
   #boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
   boot.kernelParams = [
     "quiet"

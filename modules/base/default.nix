@@ -1,6 +1,6 @@
 {
   imports = [
-    #./auto-upgrade.nix # Runs reload script starting in -> /etc/nixos
+    #./auto-upgrade.nix
     ./bootloader.nix
     ./garbage-collection.nix
     ./internationalisation.nix

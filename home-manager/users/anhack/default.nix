@@ -78,7 +78,7 @@
     sonic-visualiser    # Waveform analysis
     mandelbulber        # Make your own fractals
     stellarium          # Planetarium
-    gnome.gnome-weather # Weather
+    gnome-weather       # Weather
 
     # ---Misc.
     nnn                 # Terminal file manager

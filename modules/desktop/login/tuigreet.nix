@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }: let
+{ pkgs, ... }: let
   tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
   dwm-session = "${pkgs.dwm}/share/xsessions";
 in {

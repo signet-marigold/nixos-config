@@ -84,7 +84,7 @@ in {
       };
     };
     cursor = {
-      package = pkgs.unstable.adwaita-icon-theme;
+      package = pkgs.adwaita-icon-theme;
       name = "Adwaita";
       size = 24;
     };

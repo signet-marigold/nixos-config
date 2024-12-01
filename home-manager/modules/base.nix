@@ -35,7 +35,7 @@
     unzip
     gzip
     p7zip
-    #peazip
+    peazip
     gnutar
     zstd
 
@@ -64,7 +64,7 @@
     gotop # yet another top
     iotop # io monitoring
     iftop # network monitoring
-    nvtopPackages.full # nvidia, amd & intel gpus
+    nvtopPackages.full # top for nvidia, amd & intel gpus
     #radeontop # amd gpu utilization
 
     # system call monitoring
