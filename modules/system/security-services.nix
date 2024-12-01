@@ -1,5 +1,15 @@
 { pkgs, lib, ... }:
 {
+  security.sudo.enable = true; # sudo should be enabled by default
+  security.doas.enable = true; # and doas will escallate if a program requires
+  security.doas.extraRules = [{
+    users = ["anhack"];
+    # Optional, retains environment variables while running commands
+    # e.g. retains your NIX_PATH when applying your config
+    keepEnv = true;
+    persist = false;  # Optional, only require password verification a single time
+  }];
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   programs.mtr.enable = true;
