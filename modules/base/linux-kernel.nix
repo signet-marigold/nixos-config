@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
   # Linux Kernel
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;

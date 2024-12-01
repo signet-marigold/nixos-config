@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   # Enable Encrypted DNS
   networking = {

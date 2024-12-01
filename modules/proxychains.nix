@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
   programs.proxychains = {
     enable = true;

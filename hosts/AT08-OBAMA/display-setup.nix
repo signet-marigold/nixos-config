@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
   services.xserver.displayManager.setupCommands = ''
     LEFT='HDMI-0'

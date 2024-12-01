@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
   # Custom dwm package
   nixpkgs.overlays = [

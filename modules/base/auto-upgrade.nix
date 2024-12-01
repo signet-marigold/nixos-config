@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   # Scheduled auto upgrade system (this is only for system upgrades, 
   # if you want to upgrade cargo\npm\pip global packages, docker containers or different part of the system 

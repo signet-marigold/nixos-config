@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
 {
   imports = [
     # User general config

@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
   services.geoclue2.appConfig = {
     "gammastep" = {

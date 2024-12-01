@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-
+{ pkgs, ... }:
 {
   home.file = {
     ".models/piper/en_US-lessac-high.onnx.json" = {

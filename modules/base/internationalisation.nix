@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
   # Select internationalisation properties.
   services.xserver = {

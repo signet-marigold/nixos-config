@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   # Optimize storage and automatic scheduled GC running
   # If you want to run GC manually, use commands:

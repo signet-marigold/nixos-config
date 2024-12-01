@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
   # Enable fingerprint scanner
   services.fprintd = {

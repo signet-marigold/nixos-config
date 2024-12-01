@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-let
+{ pkgs, ... }: let
   #colors = "${pkgs.base16-schemes}/share/themes/horizon-dark.yaml";
   #colors = "${pkgs.base16-schemes}/share/themes/tomorrow.yaml";
   #colors = "${pkgs.base16-schemes}/share/themes/tomorrow-night.yaml";

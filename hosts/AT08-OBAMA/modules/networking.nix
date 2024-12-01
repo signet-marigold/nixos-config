@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   # Enable networking
   networking.hostName = "AT08-OBAMA"; # Define your hostname.

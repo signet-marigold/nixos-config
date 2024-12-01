@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   # Nix Configuration
   nix.settings = {

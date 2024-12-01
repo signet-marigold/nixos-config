@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   boot.extraModprobeConfig = ''
     blacklist nouveau

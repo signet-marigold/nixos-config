@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
   environment.systemPackages = [ pkgs.i2p ];
   services.i2p.enable = true;

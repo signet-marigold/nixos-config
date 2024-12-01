@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
   xdg = {
     desktopEntries = {
@@ -31,10 +30,10 @@
         name = "PQIV";
         exec = "${pkgs.pqiv}/bin/pqiv";
       }; # image viewer
-      #peazip = {
-      #  name = "Peazip";
-      #  exec = "${pkgs.peazip}/bin/peazip";
-      #}; # archive manager
+      peazip = {
+        name = "Peazip";
+        exec = "${pkgs.peazip}/bin/peazip";
+      }; # archive manager
       ksnip = {
         name = "Ksnip";
         exec = "${pkgs.ksnip}/bin/ksnip";
@@ -147,10 +146,10 @@
         name = "Tauon Music Player";
         exec = "${pkgs.tauon}/bin/tauon";
       }; # audio player
-      #calibre = {
-      #  name = "Calibre";
-      #  exec = "${pkgs.calibre}/bin/calibre";
-      #}; # ebook viewer
+      calibre = {
+        name = "Calibre";
+        exec = "${pkgs.calibre}/bin/calibre";
+      }; # ebook viewer
       gqrx = {
         name = "GQRX radio";
         exec = "${pkgs.gqrx}/bin/gqrx";
@@ -198,9 +197,9 @@
         "x-scheme-handler/mailto"  = "tutanota.desktop";  # mailto://
 
         # Book, Document
-        #"application/vnd.amazon.ebook" = "calibre.desktop"; # .azw (Amazon Kindle)
-        #"application/epub+zip"     = "calibre.desktop"; # .epub (Electronic publication)
-        #"application/book"         = "calibre.desktop"; # .book .boo
+        "application/vnd.amazon.ebook" = "calibre.desktop"; # .azw (Amazon Kindle)
+        "application/epub+zip"     = "calibre.desktop"; # .epub (Electronic publication)
+        "application/book"         = "calibre.desktop"; # .book .boo
         "application/pdf"          = ["zathura.desktop" "librewolf.desktop"]; # .pdf (Adobe Portable Document Format)
 
         # Office

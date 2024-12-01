@@ -1,5 +1,4 @@
-{ pkgs, lib, ... }:
-let
+{ pkgs, lib, ... }: let
   theme = {
     urgency_low = {
       background = "#222222e6"; # "#f7ca52"

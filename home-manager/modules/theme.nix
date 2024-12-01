@@ -1,5 +1,4 @@
 { pkgs, lib, ... }:
-
 {
   # Default icon pack for gtk
   gtk.enable = true;

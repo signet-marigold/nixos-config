@@ -1,5 +1,4 @@
 { pkgs, lib, ... }:
-
 {
   # Enable Gnome
   services.xserver.enable = true;

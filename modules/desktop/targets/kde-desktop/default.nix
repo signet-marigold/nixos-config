@@ -1,5 +1,4 @@
 { pkgs, lib, ... }:
-
 {
   # Enable KDE
   services.xserver.enable = true;

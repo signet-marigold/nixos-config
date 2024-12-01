@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
   # Mod slstatus package
   nixpkgs.overlays = [

@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
   # Systemd services setup
   #systemd.packages = with pkgs; [

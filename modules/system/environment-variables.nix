@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
   # Setup Env Variables
   #environment.variables.SPOTIFY_PATH = "${pkgs.spotify}/";

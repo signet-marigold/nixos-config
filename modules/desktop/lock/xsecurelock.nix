@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
   services.xserver.xautolock = {
     enable = false;

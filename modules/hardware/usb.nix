@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
   # USB Automounting
   services.gvfs.enable = true;

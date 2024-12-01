@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   services.clamav.scanner = {
     enable = true;

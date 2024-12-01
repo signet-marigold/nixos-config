@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   # Intel CPUs only. prevents overheating
   services.thermald.enable = true;

@@ -7,7 +7,6 @@
 #
 
 { pkgs, ... }:
-
 {
   systemd.timers."clean-downloads" = {
     wantedBy = [ "timers.target" ];
