@@ -1,6 +1,6 @@
 {
   imports = [
-    #./auto-upgrade.nix
+    ./auto-upgrade.nix
     ./bootloader.nix
     ./garbage-collection.nix
     ./internationalisation.nix
