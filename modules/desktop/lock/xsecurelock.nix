@@ -2,7 +2,7 @@
 
 {
   services.xserver.xautolock = {
-    enable = true;
+    enable = false;
 
     # Time idle to lock (in minutes)
     time = 15;
