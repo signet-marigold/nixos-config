@@ -31,7 +31,7 @@
   services.fwupd.enable = true;
   #services.auto-cpufreq.enable = true;
   # services.gnome.core-shell.enable = true;
-  # services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+  # services.udev.packages = with pkgs; [ gnome-settings-daemon ];
   xdg.portal.enable = true;
   xdg.portal.config.common.default = "1.18";
 

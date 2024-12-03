@@ -52,7 +52,7 @@
   };
 
   # Add a keyring
-  services.gnome.gnome-keyring.enable = true;
+  services.gnome-keyring.enable = true;
 
   programs.browserpass.enable = true;
   #services.clamav = {
