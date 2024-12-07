@@ -78,6 +78,8 @@
     mandelbulber        # Make your own fractals
     stellarium          # Planetarium
     gnome-weather       # Weather
+    ghex                # Hex editor
+    #imhex               # Hex editor
 
     # ---Misc.
     nnn                 # Terminal file manager
