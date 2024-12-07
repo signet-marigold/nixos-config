@@ -7,14 +7,14 @@
     shell = pkgs.fish;
     initialPassword = "hashbrownzebrastripes";
     extraGroups = [ "networkmanager" "input" "wheel" "video" "audio" "tss" "render" "libvirtd" ];
-    #packages = with pkgs; [];
+    #packages = with pkgs; [ ];
   };
 
   # Change runtime directory size
   services.logind.extraConfig = "RuntimeDirectorySize=8G";
 
   imports = [
-    #./sops.nix
+    #./sops.nix <- sops at the user level is disabled in favor of authenticating at the system level
     ./spring-cleaning.nix
   ];
 }

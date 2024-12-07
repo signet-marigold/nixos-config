@@ -9,7 +9,7 @@
     ./clamav-scanner.nix
     ./services.nix
     ./swap.nix
-    #./theme.nix
+    ./theme.nix
     ./terminal-utils.nix
     ./tmux.nix
     ./info-fetchers.nix

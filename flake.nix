@@ -35,12 +35,11 @@
         modules = [
           { _module.args = inputs; }
 
-          #stylix.nixosModules.stylix
           pia.nixosModules."x86_64-linux".default
 
           home-manager.nixosModules.home-manager {
             home-manager = {
-              backupFileExtension = "backup12";
+              backupFileExtension = "backup13";
               useGlobalPkgs = true;
               useUserPackages = true;
               users.anhack = import ./home-manager/hosts/AT20-CLEVELAND;
@@ -86,12 +85,11 @@
         modules = [
           { _module.args = inputs; }
 
-          #stylix.nixosModules.stylix
           pia.nixosModules."x86_64-linux".default
 
           home-manager.nixosModules.home-manager {
             home-manager = {
-              backupFileExtension = "backup12";
+              backupFileExtension = "backup13";
               useGlobalPkgs = true;
               useUserPackages = true;
               users.anhack = import ./home-manager/hosts/AT08-OBAMA;

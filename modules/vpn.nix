@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, inputs, ... }:
 {
   # Known issue with pia's certificates
   # Outlined here

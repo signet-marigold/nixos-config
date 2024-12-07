@@ -1,4 +1,4 @@
-{ pkgs, ... }: let
+{ pkgs, inputs, ... }: let
   #colors = "${pkgs.base16-schemes}/share/themes/horizon-dark.yaml";
   #colors = "${pkgs.base16-schemes}/share/themes/tomorrow.yaml";
   #colors = "${pkgs.base16-schemes}/share/themes/tomorrow-night.yaml";
@@ -56,6 +56,8 @@
   #wallpaper = config.lib.stylix.pixel "base00";
   wallpaper = ../../wallpapers/background_black.png;
 in {
+  imports = [ inputs.stylix.nixosModules.stylix ];
+
   stylix = {
     enable = true;
     polarity = "dark";
