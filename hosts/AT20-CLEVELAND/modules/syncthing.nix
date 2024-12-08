@@ -25,7 +25,7 @@
           #};
           "Share" = {
             path = "/home/anhack/Share";
-            devices = [ "lincoln" ];
+            devices = [ "lincoln" "obama" ];
           };
         };
       };

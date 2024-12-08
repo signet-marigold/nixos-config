@@ -11,7 +11,7 @@
       settings = {
         devices = {
           "lincoln" = { id = "VA4WEIQ-DSLHL6V-HAGESHS-3SBT4NV-6NBUM4V-QKU2JF7-IQQLFGI-YHEU5AJ"; };
-          #"cleveland" = { id = "DEVICE-ID-GOES-HERE"; };
+          "cleveland" = { id = "XYVOWYX-2YYUBJM-7JU5FON-3NXMVXR-Q6OH7GF-WUDFLNY-3C4OBQB-TB4HUAV"; };
         };
         folders = {
           #"Documents" = {         # Name of folder in Syncthing, also the folder ID
@@ -25,7 +25,7 @@
           #};
           "Share" = {
             path = "/home/anhack/Share";
-            devices = [ "lincoln" ];
+            devices = [ "lincoln" "cleveland" ];
           };
         };
       };
