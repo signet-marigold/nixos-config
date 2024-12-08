@@ -6,5 +6,6 @@
     ./modules/slstatus
     ./modules/networking.nix
     ./modules/open-ssh.nix
+    ./modules/syncthing.nix
   ];
 }

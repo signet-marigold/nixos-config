@@ -96,6 +96,7 @@ mkdir -p "${HOME_DIR}/Desktop"
 mkdir -p "${HOME_DIR}/Backups"
 mkdir -p "${HOME_DIR}/Meshes"
 mkdir -p "${HOME_DIR}/Repos"
+mkdir -p "${HOME_DIR}/Share"
 echo -e "\e[1;32mDone\e[0m"
 echo ""
 

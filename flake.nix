@@ -77,6 +77,7 @@
           ./modules/vpn.nix
           ./modules/steam.nix
           ./modules/flatpaks.nix
+          ./modules/syncthing-gui.nix
         ];
       };
       AT08-OBAMA = nixpkgs.lib.nixosSystem {
@@ -127,6 +128,7 @@
           ./modules/proxychains.nix
           ./modules/i2p.nix
           ./modules/flatpaks.nix
+          ./modules/syncthing-gui.nix
         ];
       };
     };
