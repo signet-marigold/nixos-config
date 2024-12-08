@@ -12,6 +12,7 @@
         devices = {
           "lincoln" = { id = "VA4WEIQ-DSLHL6V-HAGESHS-3SBT4NV-6NBUM4V-QKU2JF7-IQQLFGI-YHEU5AJ"; };
           "cleveland" = { id = "XYVOWYX-2YYUBJM-7JU5FON-3NXMVXR-Q6OH7GF-WUDFLNY-3C4OBQB-TB4HUAV"; };
+          "legion" = { id = "D2CEMRJ-G3EDV7K-A636OMT-FOEPC4D-VGVIBI3-H2MQJYU-LAGWSXZ-2KXZLQ3"; };
         };
         folders = {
           #"Documents" = {         # Name of folder in Syncthing, also the folder ID
@@ -25,7 +26,7 @@
           #};
           "Share" = {
             path = "/home/anhack/Share";
-            devices = [ "lincoln" "cleveland" ];
+            devices = [ "lincoln" "cleveland" "legion" ];
           };
         };
       };
