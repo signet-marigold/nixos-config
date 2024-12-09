@@ -33,6 +33,10 @@
             devices = [ "obama" ];
           };
         };
+        gui = { # Set login creds for web browser gui
+          user = "username";
+          password = "password";
+        };
       };
     };
   };

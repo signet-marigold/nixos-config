@@ -39,7 +39,7 @@
 
           home-manager.nixosModules.home-manager {
             home-manager = {
-              backupFileExtension = "backup13";
+              backupFileExtension = "backup14";
               useGlobalPkgs = true;
               useUserPackages = true;
               users.anhack = import ./home-manager/hosts/AT20-CLEVELAND;
@@ -77,7 +77,6 @@
           ./modules/vpn.nix
           ./modules/steam.nix
           ./modules/flatpaks.nix
-          ./modules/syncthing-gui.nix
         ];
       };
       AT08-OBAMA = nixpkgs.lib.nixosSystem {
@@ -90,7 +89,7 @@
 
           home-manager.nixosModules.home-manager {
             home-manager = {
-              backupFileExtension = "backup13";
+              backupFileExtension = "backup14";
               useGlobalPkgs = true;
               useUserPackages = true;
               users.anhack = import ./home-manager/hosts/AT08-OBAMA;
@@ -128,7 +127,6 @@
           ./modules/proxychains.nix
           ./modules/i2p.nix
           ./modules/flatpaks.nix
-          ./modules/syncthing-gui.nix
         ];
       };
     };
