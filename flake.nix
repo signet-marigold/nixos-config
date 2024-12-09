@@ -6,7 +6,7 @@
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     rust-overlay.url = "github:oxalica/rust-overlay";
@@ -70,8 +70,8 @@
           ./modules/development/programming-languages.nix
           ./modules/development/work.nix
           ./modules/development/utils.nix
-          ./modules/development/rust.nix
-          ./modules/development/wasm.nix
+          #./modules/development/rust.nix
+          #./modules/development/wasm.nix
 
           ./modules/virtualisation.nix
           ./modules/vpn.nix
@@ -119,8 +119,8 @@
           ./modules/development/programming-languages.nix
           ./modules/development/work.nix
           ./modules/development/utils.nix
-          ./modules/development/rust.nix
-          ./modules/development/wasm.nix
+          #./modules/development/rust.nix
+          #./modules/development/wasm.nix
 
           ./modules/virtualisation.nix
           ./modules/vpn.nix

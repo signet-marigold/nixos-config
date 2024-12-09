@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
   # Linux Kernel
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
-  #boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  #boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_stable;
   boot.kernelParams = [
     "quiet"
     "fbcon=nodefer"
@@ -15,15 +15,15 @@
     "security=selinux"
   ];
   # boot.kernelPatches = [ {
-  #      name = "selinux-config";
-  #      patch = null;
-  #      extraConfig = '' 
-  #              SECURITY_SELINUX y
-  #              SECURITY_SELINUX_BOOTPARAM n
-  #              SECURITY_SELINUX_DEVELOP y
-  #              SECURITY_SELINUX_AVC_STATS y
-  #              DEFAULT_SECURITY_SELINUX n
-  #            '';
+  #   name = "selinux-config";
+  #   patch = null;
+  #   extraConfig = ''
+  #     SECURITY_SELINUX y
+  #     SECURITY_SELINUX_BOOTPARAM n
+  #     SECURITY_SELINUX_DEVELOP y
+  #     SECURITY_SELINUX_AVC_STATS y
+  #     DEFAULT_SECURITY_SELINUX n
+  #   '';
   # } ];
 
   systemd.package = pkgs.systemd.override { withSelinux = true; };
