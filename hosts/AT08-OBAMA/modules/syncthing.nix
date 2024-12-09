@@ -28,6 +28,10 @@
             path = "/home/anhack/Share";
             devices = [ "lincoln" "cleveland" "legion" ];
           };
+          "Music" = {
+            path = "/home/anhack/Music";
+            devices = [ "cleveland" ];
+          };
         };
       };
     };
