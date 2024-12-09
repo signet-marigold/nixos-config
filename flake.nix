@@ -61,6 +61,7 @@
           ./modules/hardware/display.nix
           ./modules/hardware/sound.nix
           ./modules/hardware/usb.nix
+          ./modules/hardware/ios-devices.nix
           ./modules/hardware/touchpad.nix
 
           ./modules/editors/neovim.nix
@@ -110,6 +111,7 @@
           ./modules/hardware/display.nix
           ./modules/hardware/sound.nix
           ./modules/hardware/usb.nix
+          ./modules/hardware/ios-devices.nix
 
           ./modules/editors/neovim.nix
           ./modules/editors/kate.nix
