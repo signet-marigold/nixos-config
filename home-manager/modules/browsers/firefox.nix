@@ -114,6 +114,7 @@ in {
             #(extension "umatrix" "uMatrix@raymondhill.net")
             (extension "libredirect" "7esoorv3@alefvanoon.anonaddy.me")
             (extension "clearurls" "{74145f27-f039-47ce-a470-a662b129930a}")
+            (extension "foxyproxy-standard" "{c9916806-d8b8-4a3c-8c01-e56e03eb1bad}")
           ];
 
       /* ---- PREFERENCES ---- */
