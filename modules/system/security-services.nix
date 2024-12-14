@@ -53,6 +53,7 @@
 
   # Add a keyring
   services.gnome.gnome-keyring.enable = true;
+  services.passSecretService.enable = true;
 
   programs.browserpass.enable = true;
   #services.clamav = {
