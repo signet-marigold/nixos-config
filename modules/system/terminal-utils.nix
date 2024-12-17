@@ -55,5 +55,7 @@
 
     sops
     age
+
+    sshpass
   ];
 }
