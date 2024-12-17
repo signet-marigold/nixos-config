@@ -8,6 +8,7 @@
     license-generator
     git-ignore
     pass-git-helper
+    sshpass
     just
     xh
     tgpt
@@ -55,7 +56,5 @@
 
     sops
     age
-
-    sshpass
   ];
 }
