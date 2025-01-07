@@ -52,7 +52,7 @@
       };
       tutanota = {
         name = "TutaNota Mail";
-        exec = "${pkgs.unstable.tutanota-desktop}/bin/tutanota-desktop";
+        exec = "${pkgs.tutanota-desktop}/bin/tutanota-desktop";
       };
       java = {
         name = "Java";

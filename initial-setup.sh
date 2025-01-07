@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+# It is a flake based system so you do not need a default channel
+# because it is declared explicitly inside of our flake.
+# But... we still do need a channel if we want auto-completion on 'nix-shell'
+DEFAULT_CHANNEL="nixos-24.11"
+REBUILD_COMMAND="nixos-rebuild --use-remote-sudo switch --flake .#${TARGET_HOSTNAME} --upgrade"
+HOME_DIR="/home/anhack"
+
+
 # fiss ^* First install setup script for anhacks nixos deployment
 echo "=========================="
 echo -e "   \e[1;34mInitial Setup Script\e[0m"
@@ -7,7 +15,7 @@ echo "=========================="
 
 echo ""
 echo "hai !!"
-echo "Welcome to alex's init system helper script!"
+echo "Welcome to alex's init system bootstrapper script!"
 echo ""
 echo "First things first..."
 echo "What host is nixos being installed into?"
@@ -34,10 +42,6 @@ else
     exit 1
 fi
 
-# Rebuilding in impure mode because of that secrets workaround for openvpn
-# requires reading from absolute directory path which i guess is not alowed normally
-REBUILD_COMMAND="nixos-rebuild switch --flake .#${TARGET_HOSTNAME} --impure"
-
 # Copy hardware config
 echo -e "\e[1;34m1-\e[0m Moving this hosts hardware config to the git tree"
 echo "[copy /etc/nixos/hardware-configuration.nix -> ./hosts/${TARGET_HOSTNAME}]"
@@ -45,16 +49,26 @@ cp /etc/nixos/hardware-configuration.nix ./hosts/${TARGET_HOSTNAME}/
 echo -e "\e[1;32mDone\e[0m"
 echo ""
 
+# Remove default config and add symlink to flake
+if test -f ./hosts/${TARGET_HOSTNAME}/hardware-configuration.nix; then
+    echo -e "\e[1;34m1-\e[0m Removing old configuration"
+    sudo rm -r /etc/nixos/*
+    echo -e "\e[1;32mDone\e[0m"
+    echo ""
+else
+    echo -e "\n\e[30;44m*Failed to copy hardware config\e[0m"
+    exit 1
+fi
+
 echo "=========================="
 
 # NixOS rebuild
 echo -e "\e[1;34m1-\e[0m Rebuilding nixos (Requires elevated privileges)"
-nix-shell -p git --run "sudo ${REBUILD_COMMAND}"
+nix-shell -p git --run ${REBUILD_COMMAND}
 echo -e "\e[1;32mDone\e[0m"
 echo ""
 
 # Add default channel
-DEFAULT_CHANNEL="nixos-24.11"
 echo -e "\e[1;34m1-\e[0m Adding nix channel \"${DEFAULT_CHANNEL}\" as default"
 nix-channel --add https://nixos.org/channels/${DEFAULT_CHANNEL} nixos
 echo -e "\e[1;32mDone\e[0m"
@@ -68,7 +82,6 @@ echo -e "\e[1;32mDone\e[0m"
 echo ""
 
 # Build home directory structure
-HOME_DIR="/home/anhack"
 echo -e "\e[1;34m1-\e[0m Creating directory tree structure under \"${HOME_DIR}\""
 mkdir -p "${HOME_DIR}/Documents"
 mkdir -p "${HOME_DIR}/Documents/Notes"
@@ -116,4 +129,4 @@ echo "=========================="
 
 echo "Next step is to place the host's public ssh key into '.sops.yaml' and rebuild 'secrets.yaml' with the sops command"
 echo "and then run rebuild again"
-echo "( sudo ${REBUILD_COMMAND} )"
+echo "( ${REBUILD_COMMAND} )"

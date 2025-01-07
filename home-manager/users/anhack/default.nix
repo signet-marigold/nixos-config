@@ -84,7 +84,7 @@
     # ---Misc.
     nnn                 # Terminal file manager
     superfile           # More complicated terminal file manager
-    unstable.tutanota-desktop    # Mail client
+    tutanota-desktop    # Mail client
     bitwarden-desktop   # Password manager
     deluge              # Torrent manager
     bottles             # Local software packager
