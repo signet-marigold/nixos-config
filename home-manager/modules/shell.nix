@@ -98,8 +98,8 @@
 
       #nhb     = "home-manager switch --flake .#<DEFAULT>";
 
-      nr20    = "sudo nixos-rebuild switch --flake .#AT20-CLEVELAND";
-      nr08    = "sudo nixos-rebuild switch --flake .#AT08-OBAMA";
+      nr20    = "nixos-rebuild --use-remote-sudo switch --upgrade --flake /home/anhack/Repos/nixos-config#AT20-CLEVELAND";
+      nr08    = "nixos-rebuild --use-remote-sudo switch --upgrade --flake /home/anhack/Repos/nixos-config#AT08-OBAMA";
     };
 
     functions = {

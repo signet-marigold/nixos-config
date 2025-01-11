@@ -17,4 +17,9 @@
     #./sops.nix <- sops at the user level is disabled in favor of authenticating at the system level
     ./spring-cleaning.nix
   ];
+
+  # Set flake path for rebuilds without specifing path
+  nix.nixPath = [
+    "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos:nixos-config=/etc/nixos:/nix/var/nix/profiles/per-user/root/channels"
+  ];
 }
