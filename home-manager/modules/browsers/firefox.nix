@@ -198,5 +198,5 @@ in {
       end
     '';
   };
-  nixpkgs.config.firefox.enablePlasmaBrowserIntegration = true;
+  #nixpkgs.config.firefox.enablePlasmaBrowserIntegration = true;
 }
