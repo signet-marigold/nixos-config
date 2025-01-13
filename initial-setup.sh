@@ -42,6 +42,10 @@ else
     exit 1
 fi
 
+# Workaround for https://github.com/NixOS/nix/issues/10202
+sudo chown -R anhack:users /etc/nixos
+sudo git config --global --add safe.directory /etc/nixos
+
 # Copy hardware config
 echo -e "\e[1;34m1-\e[0m Moving this hosts hardware config to the git tree"
 echo "[copy /etc/nixos/hardware-configuration.nix -> ./hosts/${TARGET_HOSTNAME}]"
@@ -52,7 +56,8 @@ echo ""
 # Remove default config and add symlink to flake
 if test -f ./hosts/${TARGET_HOSTNAME}/hardware-configuration.nix; then
     echo -e "\e[1;34m1-\e[0m Removing old configuration"
-    sudo rm -r /etc/nixos/*
+    rm -rf /etc/nixos/hardware-configuration.nix
+    rm -rf /etc/nixos/configuration.nix
     echo -e "\e[1;32mDone\e[0m"
     echo ""
 else

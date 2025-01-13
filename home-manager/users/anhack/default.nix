@@ -26,7 +26,7 @@
     # ---Code editors
     #vscodium
     #kdePackages.kate
-    # >moved to root/modules/editors
+    # >moved to root:modules/editors
 
     # ---Photo editors
     gimp                # Photoshop style editor
@@ -51,7 +51,7 @@
     # ---Media consumption
     mpv                 # Media player
     vlc                 # Media player
-    tauon               # Audio player
+    tauon               # Music player
     picard              # Music tag editor
     shortwave           # Internet radio
     kdePackages.kasts   # Podcasts
@@ -82,8 +82,9 @@
     #imhex               # Hex editor
 
     # ---Misc.
-    nnn                 # Terminal file manager
-    superfile           # More complicated terminal file manager
+    #nnn                 # Terminal file manager
+    #superfile           # More complicated terminal file manager
+    broot               # Advanced terminal file manager
     tutanota-desktop    # Mail client
     bitwarden-desktop   # Password manager
     deluge              # Torrent manager
