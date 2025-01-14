@@ -4,7 +4,7 @@
 # because it is declared explicitly inside of our flake.
 # But... we still do need a channel if we want auto-completion on 'nix-shell'
 DEFAULT_CHANNEL="nixos-24.11"
-REBUILD_COMMAND="nixos-rebuild --use-remote-sudo switch --flake .#${TARGET_HOSTNAME} --upgrade"
+REBUILD_COMMAND="sudo nixos-rebuild switch --flake .#${TARGET_HOSTNAME} --upgrade"
 HOME_DIR="/home/anhack"
 
 
@@ -45,6 +45,10 @@ fi
 # Workaround for https://github.com/NixOS/nix/issues/10202
 sudo chown -R anhack:users /etc/nixos
 sudo git config --global --add safe.directory /etc/nixos
+
+if test -f /etc/nixos/${TARGET_HOSTNAME}/hardware-configuration.nix; then
+
+elif test -f /mnt/etc/nixos/${TARGET_HOSTNAME}/hardware-configuration.nix; then
 
 # Copy hardware config
 echo -e "\e[1;34m1-\e[0m Moving this hosts hardware config to the git tree"

@@ -13,6 +13,7 @@
           "lincoln" = { id = "VA4WEIQ-DSLHL6V-HAGESHS-3SBT4NV-6NBUM4V-QKU2JF7-IQQLFGI-YHEU5AJ"; };
           "obama" = { id = "GWEJU5Y-HT72MOQ-7YWVKXV-HEOERFH-WIJUQK7-I5TL7VS-FF3Y6RU-ABRDNAP"; };
           "legion" = { id = "D2CEMRJ-G3EDV7K-A636OMT-FOEPC4D-VGVIBI3-H2MQJYU-LAGWSXZ-2KXZLQ3"; };
+          "frankee" = { id = "G6NJ4VD-LHNF3D6-BH3HMZV-2OSZ624-W6AOGPN-QSLOJ34-HIIXKJJ-SKQFNQO"; };
         };
         folders = {
           #"Documents" = {         # Name of folder in Syncthing, also the folder ID
@@ -26,7 +27,7 @@
           #};
           "Share" = {
             path = "/home/anhack/Share";
-            devices = [ "lincoln" "obama" "legion" ];
+            devices = [ "lincoln" "obama" "legion" "frankee" ];
           };
           "Music" = {
             path = "/home/anhack/Music";
