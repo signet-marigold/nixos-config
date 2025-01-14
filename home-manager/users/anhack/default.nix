@@ -79,7 +79,6 @@
     stellarium          # Planetarium
     gnome-weather       # Weather
     ghex                # Hex editor
-    #imhex               # Hex editor
 
     # ---Misc.
     #nnn                 # Terminal file manager
@@ -102,6 +101,10 @@
     cherrytree          # A hierarchical note taking app
     libreoffice         # Full office suite
     wordgrinder         # CLI 'ms word'
+
+    # ---AI
+    ollama-cuda         # Model loader, originally designed as an open-source runner for llama2
+    kdePackages.alpaka  # Front end GUI for ollama
   ];
 
   programs.home-manager.enable = true;

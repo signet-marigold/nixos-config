@@ -5,5 +5,6 @@
     ./qutebrowser.nix
     ./mullvad-browser.nix
     ./tor-browser.nix
+    ./chrome.nix
   ];
 }
