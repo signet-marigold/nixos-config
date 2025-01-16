@@ -418,6 +418,7 @@ static const Launcher launchers[] = {
 #if COOL_AUTOSTART_PATCH
 static const char *const autostart[] = {
 	"st", NULL,
+	"ibus-daemon", "--daemonize", "--xim", NULL, // nixos IBUS starts using a .desktop file
 	NULL /* terminate */
 };
 #endif // COOL_AUTOSTART_PATCH
