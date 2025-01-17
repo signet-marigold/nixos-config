@@ -1,13 +1,11 @@
-{ config, pkgs, inputs, ... }:
+{ config, lib, pkgs, ... }:
 {
-  # Known issue with pia's certificates
-  # Outlined here
-  # https://forums.openvpn.net/viewtopic.php?t=33536
-  # Basically openvpn needs to be downgraded or support aes-128-cbc
+  networking.networkmanager.pia-vpn.enable = true;
+  networking.networkmanager.pia-vpn.usernameFile = config.sops.secrets."pia_vpn_username".path;
+  networking.networkmanager.pia-vpn.passwordFile = config.sops.secrets."pia_vpn_password".path;
+  networking.networkmanager.pia-vpn.serverList =
+    [ "denmark" "fi" "nl-amsterdam" "no" "sweden" "uk-london" "us-newyorkcity" ];
 
-  sops.secrets.pia = { };
-  services.pia = {
-    enable = true;
-    authUserPassFile = config.sops.secrets.pia.path;
-  };
+  sops.secrets."pia_vpn_username" = {};
+  sops.secrets."pia_vpn_password" = {};
 }

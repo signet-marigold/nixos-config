@@ -19,14 +19,14 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    pia = {
-      url = "github:Fuwn/pia.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #pia = {
+    #  url = "github:Fuwn/pia.nix";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
     flatpaks.url = "github:GermanBread/declarative-flatpak/stable-v3";
   };
 
-  outputs = { nixpkgs, home-manager, stylix, sops-nix, pia, flatpaks, ... }@inputs:
+  outputs = { nixpkgs, home-manager, stylix, sops-nix, flatpaks, ... }@inputs:
   {
     nixosConfigurations = {
       AT20-CLEVELAND = nixpkgs.lib.nixosSystem {
@@ -35,11 +35,11 @@
         modules = [
           { _module.args = inputs; }
 
-          pia.nixosModules."x86_64-linux".default
+          #pia.nixosModules."x86_64-linux".default
 
           home-manager.nixosModules.home-manager {
             home-manager = {
-              backupFileExtension = "backup20";
+              backupFileExtension = "backup21";
               useGlobalPkgs = true;
               useUserPackages = true;
               users.anhack = import ./home-manager/hosts/AT20-CLEVELAND;
@@ -76,9 +76,11 @@
           #./modules/development/wasm.nix
 
           ./modules/virtualisation.nix
-          ./modules/vpn.nix
           ./modules/steam.nix
           ./modules/flatpaks.nix
+
+          ./modules/pia/pia-nm.nix
+          ./modules/vpn.nix
         ];
       };
       AT08-OBAMA = nixpkgs.lib.nixosSystem {
@@ -87,11 +89,11 @@
         modules = [
           { _module.args = inputs; }
 
-          pia.nixosModules."x86_64-linux".default
+          #pia.nixosModules."x86_64-linux".default
 
           home-manager.nixosModules.home-manager {
             home-manager = {
-              backupFileExtension = "backup20";
+              backupFileExtension = "backup21";
               useGlobalPkgs = true;
               useUserPackages = true;
               users.anhack = import ./home-manager/hosts/AT08-OBAMA;
@@ -126,11 +128,13 @@
           #./modules/development/wasm.nix
 
           ./modules/virtualisation.nix
-          ./modules/vpn.nix
           ./modules/steam.nix
           ./modules/proxychains.nix
           ./modules/i2p.nix
           ./modules/flatpaks.nix
+
+          ./modules/pia/pia-nm.nix
+          ./modules/vpn.nix
         ];
       };
     };
