@@ -1114,7 +1114,7 @@
 /* This patch adds keybindings for left and right circular shift through tags.
  * https://github.com/chau-bao-long/dotfiles/blob/master/suckless/dwm/shiftview.diff
  */
-#define SHIFTVIEW_PATCH 0
+#define SHIFTVIEW_PATCH 1
 
 /* This variant of the shiftview patch adds left and right circular shift through tags,
  * but skips tags where there are no clients.
