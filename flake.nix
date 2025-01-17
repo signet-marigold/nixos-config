@@ -73,7 +73,7 @@
           ./modules/development/work.nix
           ./modules/development/utils.nix
           #./modules/development/rust.nix
-          #./modules/development/wasm.nix
+          ./modules/development/wasm.nix
 
           ./modules/virtualisation.nix
           ./modules/steam.nix
@@ -125,7 +125,7 @@
           ./modules/development/work.nix
           ./modules/development/utils.nix
           #./modules/development/rust.nix
-          #./modules/development/wasm.nix
+          ./modules/development/wasm.nix
 
           ./modules/virtualisation.nix
           ./modules/steam.nix
