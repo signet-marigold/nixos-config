@@ -78,8 +78,10 @@ echo -e "\e[1;32mDone\e[0m"
 echo ""
 
 # Add default channel
-echo -e "\e[1;34m1-\e[0m Adding nix channel \"${DEFAULT_CHANNEL}\" as default"
+echo -e "\e[1;34m1-\e[0m Adding nix channel \"${DEFAULT_CHANNEL}\" as default (since this is a flake based system, nix channel will only be used for nix shell auto-complete)"
 nix-channel --add https://nixos.org/channels/${DEFAULT_CHANNEL} nixos
+#sudo nix-channel --add https://nixos.org/channels/${DEFAULT_CHANNEL} nixos # add default root channel
+# https://discourse.nixos.org/t/solved-the-option-services-openssh-settings-does-not-exist/39403/4
 echo -e "\e[1;32mDone\e[0m"
 echo ""
 

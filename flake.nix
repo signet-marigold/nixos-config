@@ -12,7 +12,7 @@
     rust-overlay.url = "github:oxalica/rust-overlay";
     stylix = {
       url = "github:danth/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
+      #inputs.nixpkgs.follows = "nixpkgs";
     };
     #nvim.url = "git+https://codeberg.org/signet-marigold/neovim";
     sops-nix = {
