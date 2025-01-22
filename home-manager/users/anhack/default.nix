@@ -24,7 +24,7 @@
     # >in imports below
 
     # ---Code editors
-    #vscodium
+    vscodium
     #kdePackages.kate
     # >moved to root:modules/editors
 
