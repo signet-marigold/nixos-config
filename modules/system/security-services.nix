@@ -80,10 +80,10 @@
         profile = "${pkgs.firejail}/etc/firejail/zathura.profile";
       };
 
-      discord = {
-        executable = "${lib.getBin pkgs.discord}/bin/discord";
-        profile = "${pkgs.firejail}/etc/firejail/discord.profile";
-      };
+      #discord = {
+      #  executable = "${lib.getBin pkgs.discord}/bin/discord";
+      #  profile = "${pkgs.firejail}/etc/firejail/discord.profile";
+      #};
       slack = {
         executable = "${lib.getBin pkgs.slack}/bin/slack";
         profile = "${pkgs.firejail}/etc/firejail/slack.profile";
@@ -97,10 +97,10 @@
       #  profile = "${pkgs.firejail}/etc/firejail/tutanota-desktop.profile";
       #};
 
-      brave = {
-        executable = "${lib.getBin pkgs.brave}/bin/brave";
-        profile = "${pkgs.firejail}/etc/firejail/brave.profile";
-      };
+      #brave = {
+      #  executable = "${lib.getBin pkgs.brave}/bin/brave";
+      #  profile = "${pkgs.firejail}/etc/firejail/brave.profile";
+      #};
       qutebrowser = {
         executable = "${lib.getBin pkgs.qutebrowser}/bin/qutebrowser";
         profile = "${pkgs.firejail}/etc/firejail/qutebrowser.profile";
@@ -110,10 +110,10 @@
         executable = "${lib.getBin pkgs.xfce.thunar}/bin/thunar";
         profile = "${pkgs.firejail}/etc/firejail/thunar.profile";
       };
-      vscodium = {
-        executable = "${lib.getBin pkgs.vscodium}/bin/vscodium";
-        profile = "${pkgs.firejail}/etc/firejail/vscodium.profile";
-      };
+      #vscodium = {
+      #  executable = "${lib.getBin pkgs.vscodium}/bin/vscodium";
+      #  profile = "${pkgs.firejail}/etc/firejail/vscodium.profile";
+      #};
     };
   };
 

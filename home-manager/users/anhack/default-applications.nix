@@ -46,18 +46,18 @@
       #  name = "Neovim";
       #  exec = "${pkgs.st}/bin/st -e ${pkgs.neovim}/bin/nvim";
       #};
-      vscodium = {
-        name = "VSCodium";
-        exec = "${pkgs.vscodium}/bin/vscodium";
-      };
+      #vscodium = {
+      #  name = "VSCodium";
+      #  exec = "${pkgs.vscodium}/bin/vscodium";
+      #};
       tutanota = {
         name = "TutaNota Mail";
         exec = "${pkgs.tutanota-desktop}/bin/tutanota-desktop";
       };
-      java = {
-        name = "Java";
-        exec = "${pkgs.jdk}/bin/java -jar";
-      };
+      #java = {
+      #  name = "Java";
+      #  exec = "${pkgs.jdk}/bin/java -jar";
+      #};
       libreoffice-writer = {
         name = "LibreOffice Writer";
         exec = "${pkgs.libreoffice}/bin/swriter";

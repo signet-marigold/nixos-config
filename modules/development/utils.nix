@@ -3,7 +3,8 @@
   environment.systemPackages = with pkgs; [
     mold
     gcc13
-    jdk11
+    jdk21
+    unstable.gradle
     dioxus-cli
     #surrealdb
     #surrealdb-migrations

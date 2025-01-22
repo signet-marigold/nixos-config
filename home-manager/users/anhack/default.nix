@@ -25,8 +25,6 @@
     # >in imports below
 
     # ---Code editors
-    vscodium
-    #kdePackages.kate
     # >moved to root:modules/editors
 
     # ---Photo editors
@@ -91,7 +89,6 @@
     bottles             # Local software packager
     qalculate-gtk       # Simple GUI calculator app
     scanmem             # Live system memory editor
-    jdk                 # Java
     solaar              # Logitech unifying driver and management
 
     # ---Productivity
