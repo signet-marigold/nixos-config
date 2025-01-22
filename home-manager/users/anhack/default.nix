@@ -12,7 +12,8 @@
   home.packages = with pkgs; [
     # ---Chat
     #discord >swapped for webcord
-    webcord-vencord
+    webcord
+    #webcord-vencord
     hexchat            # IRC
     pidgin             # Multi protocol chat
     element-desktop    # Matrix

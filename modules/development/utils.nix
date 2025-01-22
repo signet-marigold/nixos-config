@@ -5,8 +5,8 @@
     gcc13
     jdk11
     dioxus-cli
-    surrealdb
-    surrealdb-migrations
-    surrealist
+    #surrealdb
+    #surrealdb-migrations
+    #surrealist
   ];
 }
