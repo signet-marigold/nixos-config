@@ -11,7 +11,7 @@
         redhat.java
         vscjava.vscode-java-pack
         vscodevim.vim
-        github.copilot
+        #github.copilot
         ibm.output-colorizer
       ];
     })

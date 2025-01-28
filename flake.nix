@@ -68,6 +68,7 @@
           ./modules/editors/kate.nix
           ./modules/editors/helix.nix
           ./modules/editors/vscodium.nix
+          ./modules/editors/idea.nix
 
           ./modules/development/lsp.nix
           ./modules/development/programming-languages.nix
@@ -121,6 +122,7 @@
           ./modules/editors/kate.nix
           ./modules/editors/helix.nix
           ./modules/editors/vscodium.nix
+          ./modules/editors/idea.nix
 
           ./modules/development/lsp.nix
           ./modules/development/programming-languages.nix

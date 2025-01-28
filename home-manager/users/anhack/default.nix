@@ -99,6 +99,7 @@
     cherrytree          # A hierarchical note taking app
     libreoffice         # Full office suite
     wordgrinder         # CLI 'ms word'
+    anki-bin            # Desktop flashcards
   ];
 
   programs.home-manager.enable = true;
