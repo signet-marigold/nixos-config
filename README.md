@@ -138,14 +138,7 @@ mkdir -p ~/.config/sops/age/ && nix --extra-experimental-features nix-command --
 
 ### TODO:
 
-- vpn on wifi passthrough dns has no resolve; temp change resolv.conf to cloudflare/google to fix
+Nothing rn
 
-    - could be related to custom dns solution on home network
-    
-- new version of openvpn on 24.11 breaks pia flake
-
-    - seems to be related to pia's poor encryption methods
-    
-    - seen solutions from forums of people downgrading openvpn or adjusting configs to explicitly enable aes-128-cbc
-    
-    - i'm not sure what's breaking right now
+pia vpn fixed due to bjornfor's work which ive used directly in `modules/pia`
+More info [here nixpkgs/issues/347539](https://github.com/NixOS/nixpkgs/issues/347539)

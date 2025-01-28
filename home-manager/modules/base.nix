@@ -13,7 +13,7 @@
     gawk
     gnupg
     #tree
-    erdtree # file-tree visualizer and disk usage analyzer
+    erdtree # file-tree visualizer and disk usage analyzer. replacement of tree
 
     qdirstat # visual disk usage analyzer
     gparted # visual disk partition manager
@@ -34,7 +34,7 @@
     unzip
     gzip
     p7zip
-    #peazip
+    unstable.peazip
     gnutar
     zstd
 
