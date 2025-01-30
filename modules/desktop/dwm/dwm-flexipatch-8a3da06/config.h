@@ -410,7 +410,7 @@ static const char *layoutmenu_cmd = "layoutmenu.sh";
 static const Launcher launchers[] = {
 	/* icon to display      command        */
 	{ "",                  CMD("io.github.nokse22.minitext") },
-	{ "󰖐",                  CMD("gnome-weather") },
+	{ "󰖐",                  CMD("mousam") },
 	{ "󰃬",                  CMD("qalculate-gtk") }
 };
 #endif // BAR_LAUNCHER_PATCH

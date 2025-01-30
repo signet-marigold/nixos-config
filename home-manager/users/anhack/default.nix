@@ -76,7 +76,7 @@
     sonic-visualiser    # Waveform analysis
     mandelbulber        # Make your own fractals
     stellarium          # Planetarium
-    gnome-weather       # Weather
+    mousam              # Weather
     ghex                # Hex editor
 
     # ---Misc.
@@ -89,7 +89,7 @@
     bottles             # Local software packager
     qalculate-gtk       # Simple GUI calculator app
     scanmem             # Live system memory editor
-    solaar              # Logitech unifying driver and management
+    solaar              # Logitech unifying reciever management
 
     # ---Productivity
     hugo                # Static website generator
