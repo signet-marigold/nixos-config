@@ -410,8 +410,8 @@ static const char *layoutmenu_cmd = "layoutmenu.sh";
 static const Launcher launchers[] = {
 	/* icon to display      command        */
 	{ "",                  CMD("io.github.nokse22.minitext") },
-	{ "󰖐",                  CMD("mousam") },
-	{ "󰃬",                  CMD("qalculate-gtk") }
+	{ "󰃬",                  CMD("qalculate-gtk") },
+	{ "󰖐",                  CMD("mousam") }
 };
 #endif // BAR_LAUNCHER_PATCH
 
@@ -506,6 +506,16 @@ static const int tagrows = 2;
  * Refer to the Rule struct definition for the list of available fields depending on
  * the patches you enable.
  */
+#define RC_TEXTEDITORS       1
+#define RC_SYSMAN            1
+#define RC_DATAMAN           1
+#define RC_CHAT              1 << 1
+#define RC_MEDIA             1 << 2
+#define RC_BROWSERS          1 << 3
+#define RC_CREATIVE          1 << 4
+#define RC_IDES              1 << 5
+#define RC_OFFICE            1 << 6
+#define RC_GAMES             1 << 7
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
@@ -513,43 +523,108 @@ static const Rule rules[] = {
 	 *	WM_WINDOW_ROLE(STRING) = role
 	 *	_NET_WM_WINDOW_TYPE(ATOM) = wintype
 	 */
-	RULE(.wintype = WTYPE "DIALOG",  .isfloating = 1)
-	RULE(.wintype = WTYPE "UTILITY", .isfloating = 1)
-	RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
-	RULE(.wintype = WTYPE "SPLASH",  .isfloating = 1)
-	/* Terminal Emulator */
-	RULE(.class = "st", .isterminal = 1)
-	/* Steam context menus */
-	RULE(.class = "Web Content",     .isfloating = 1)
-	/* Text Editors */
-	RULE(.class = "kate",            .tags = 1 << 1)
-	RULE(.class = "vscodium",        .tags = 1 << 1)
-	RULE(.title = "nvim",            .tags = 1 << 1, .isterminal = 1)
-	/* Browsers */
-	RULE(.class = "qutebrowser",     .tags = 1 << 2)
-	RULE(.class = "librewolf",       .tags = 1 << 2)
-	RULE(.class = "firefox",         .tags = 1 << 2)
-	RULE(.class = "mullvad-browser", .tags = 1 << 2)
-	RULE(.class = "tor-browser",     .tags = 1 << 2)
-	/* Chat programs */
-/*	RULE(.class = "discord",         .tags = 1 << 3)
-	RULE(.class = "webcord",         .tags = 1 << 3)
-	RULE(.class = "hexchat",         .tags = 1 << 3)
-	RULE(.class = "pidgin",          .tags = 1 << 3)
-	RULE(.class = "element",         .tags = 1 << 3)
-	RULE(.class = "signal",          .tags = 1 << 3)
-	RULE(.class = "telegram",        .tags = 1 << 3)
-	RULE(.class = "slack",           .tags = 1 << 3)*/
-	/* Gaming */
-	RULE(.class = "heroic",          .tags = 1 << 8)
-	RULE(.class = "steam",           .tags = 1 << 8)
-	RULE(.class = "dolphin-emu",     .tags = 1 << 8)
-	RULE(.class = "lutris",          .tags = 1 << 8)
-	RULE(.class = "modrinth",        .tags = 1 << 8)
-	RULE(.class = "r2modman",        .tags = 1 << 8)
-	RULE(.class = "prismlauncher",   .tags = 1 << 8)
-	/* Scratchpad */
-	RULE(.class = "mini-text",       .tags = (1 << 8) - 1, .isfloating = 1)
+	/* here is an example dtd setup on one screen desktop
+	 * tag 1: st & kate
+	 * tag 2: discord
+	 * tag 3: tauon
+	 * tag 4: librewolf
+	 * tag 5: blender
+	 * tag 6: idea
+	 * tag 7: tuta
+	 * tag 8: steam
+	 * tag 9:
+	 */
+	RULE(.wintype = WTYPE "DIALOG",      .isfloating = 1)
+	RULE(.wintype = WTYPE "UTILITY",     .isfloating = 1)
+	RULE(.wintype = WTYPE "TOOLBAR",     .isfloating = 1)
+	RULE(.wintype = WTYPE "SPLASH",      .isfloating = 1)
+	/*    ----- | Steam context menus */
+	RULE(.class = "Web Content",         .isfloating = 1)
+	/*    ----- | Terminal Emulators */
+	RULE(.class = "st",                  .isterminal = 1)
+	RULE(.class = "xterm",               .isterminal = 1)
+	/*    ----- | Text Editors */
+	RULE(.class = "kate",                .tags = RC_TEXTEDITORS)
+	RULE(.class = "VSCodium",            .tags = RC_IDES)
+	RULE(.class = "idea",                .tags = RC_IDES)
+	/*    ----- | Scratchpads */
+	RULE(.class = "mini-text",           .isfloating = 1,
+		 .tags = RC_TEXTEDITORS | RC_CHAT | RC_BROWSERS | RC_IDES | RC_OFFICE)
+	/*    ----- | Browsers */
+	RULE(.class = "qutebrowser",         .tags = RC_BROWSERS)
+	RULE(.class = "librewolf",           .tags = RC_BROWSERS)
+	RULE(.class = "firefox",             .tags = RC_BROWSERS)
+	RULE(.class = "Mullvad Browser",     .tags = RC_BROWSERS)
+	RULE(.class = "Tor Browser",         .tags = RC_BROWSERS)
+	RULE(.class = "Chromium-browser",    .tags = RC_BROWSERS)
+	/*    ----- | Chat programs */
+	RULE(.class = "WebCord",             .tags = RC_CHAT)
+	RULE(.class = "HexChat",             .tags = RC_CHAT)
+	RULE(.class = "Pidgin",              .tags = RC_CHAT)
+	RULE(.class = "Element",             .tags = RC_CHAT)
+	RULE(.class = "Signal",              .tags = RC_CHAT)
+	RULE(.class = "Telegram",            .tags = RC_CHAT)
+	RULE(.class = "Slack",               .tags = RC_CHAT)
+	/*    ----- | Gaming */
+	RULE(.class = "heroic",              .tags = RC_GAMES)
+	RULE(.class = "steam",               .tags = RC_GAMES)
+	RULE(.class = "dolphin-emu",
+	  .instance = "dolphin-emu",         .tags = RC_GAMES)
+	RULE(.class = "lutris",              .tags = RC_GAMES)
+	RULE(.class = "r2modman",            .tags = RC_GAMES)
+	RULE(.class = "PrismLauncher",       .tags = RC_GAMES)
+	/* while not quite a "game" i feel
+	 * it fits better here than anywhere else */
+	RULE(.class = "stellarium",          .tags = RC_GAMES)
+	/*    ----- | Management */
+	RULE(.class = "Solaar",              .tags = RC_SYSMAN)
+	RULE(.class = "blueman-manager",     .tags = RC_SYSMAN)
+	RULE(.class = "pavucontrol",         .tags = RC_SYSMAN)
+	RULE(.class = "bottles",             .tags = RC_SYSMAN)
+			/* data */
+	RULE(.class = "Deluge",              .tags = RC_DATAMAN)
+	RULE(.class = "PeaZip",              .tags = RC_DATAMAN)
+	RULE(.class = "dolphin",             .tags = RC_DATAMAN)
+	RULE(.class = "Thunar",              .tags = RC_DATAMAN)
+	RULE(.class = "GParted",             .tags = RC_DATAMAN)
+	RULE(.class = "ghex",                .tags = RC_DATAMAN)
+	RULE(.class = "Pqiv",                .tags = RC_DATAMAN | RC_MEDIA)
+	/*    ----- | Creative */
+			/* picture */
+	RULE(.class = "Gimp",                .tags = RC_CREATIVE)
+	RULE(.class = "Inkscape",            .tags = RC_CREATIVE)
+	RULE(.class = "Darktable",           .tags = RC_CREATIVE)
+			/* cad & animation */
+	RULE(.class = "QCAD",                .tags = RC_CREATIVE)
+	RULE(.class = "Blender",             .tags = RC_CREATIVE)
+			/* video */
+	RULE(.class = "kdenlive",            .tags = RC_CREATIVE)
+	RULE(.class = "obs",                 .tags = RC_CREATIVE)
+			/* music */
+	RULE(.class = "Ardour",              .tags = RC_CREATIVE)
+	RULE(.class = "Surge XT",            .tags = RC_CREATIVE)
+	RULE(.class = "MusE",                .tags = RC_CREATIVE)
+	RULE(.class = "Audacity",            .tags = RC_CREATIVE)
+	/*    ----- | Consumption */
+	RULE(.class = "mpv",                 .tags = RC_MEDIA)
+	RULE(.class = "vlc",                 .tags = RC_MEDIA)
+	RULE(.class = "tauonmb",             .tags = RC_MEDIA)
+	RULE(.class = "FreeTube",            .tags = RC_MEDIA)
+	RULE(.class = "shortwave",           .tags = RC_MEDIA)
+	RULE(.class = "kasts",               .tags = RC_MEDIA)
+	RULE(.class = "calibre",             .tags = RC_MEDIA)
+	RULE(.class = "Zathura",             .tags = RC_MEDIA)
+	/*    ----- | Office Apps */
+	RULE(.class = "tutanota-desktop",    .tags = RC_OFFICE)
+	RULE(.class = "Bitwarden",           .tags = RC_OFFICE)
+	RULE(.class = "QOwnNotes",           .tags = RC_OFFICE)
+	/*    ----- | LibreOffice */
+	RULE(.class = "libreoffice-writer",  .tags = RC_OFFICE)
+	RULE(.class = "libreoffice-calc",    .tags = RC_OFFICE)
+	RULE(.class = "libreoffice-impress", .tags = RC_OFFICE)
+	RULE(.class = "libreoffice-draw",    .tags = RC_OFFICE)
+	RULE(.class = "libreoffice-math",    .tags = RC_OFFICE)
+	RULE(.class = "libreoffice-base",    .tags = RC_OFFICE)
 	#if RENAMED_SCRATCHPADS_PATCH
 	RULE(.instance = "spterm", .scratchkey = 's', .isfloating = 1)
 	#elif SCRATCHPADS_PATCH

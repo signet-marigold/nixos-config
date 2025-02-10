@@ -65,7 +65,7 @@
     # ---Gaming
     heroic              # Epic games launcher
     r2modman            # Mod loader with a wide support of games
-    # modrinth-app        # Minecraft launcher with mod support
+    #modrinth-app        # Minecraft launcher with mod support
     prismlauncher       # Open source minecraft launcher with mod support
     lutris              # Flexible game launcher
     dolphin-emu         # Gamecube / Wii emulator
