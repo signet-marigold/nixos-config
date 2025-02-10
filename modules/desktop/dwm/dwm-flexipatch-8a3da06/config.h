@@ -568,8 +568,7 @@ static const Rule rules[] = {
 	/*    ----- | Gaming */
 	RULE(.class = "heroic",              .tags = RC_GAMES)
 	RULE(.class = "steam",               .tags = RC_GAMES)
-	RULE(.class = "dolphin-emu",
-	  .instance = "dolphin-emu",         .tags = RC_GAMES)
+	/*RULE(.class = "dolphin-emu",         .tags = RC_GAMES)*/ // Conflicts with dolphin file browser
 	RULE(.class = "lutris",              .tags = RC_GAMES)
 	RULE(.class = "r2modman",            .tags = RC_GAMES)
 	RULE(.class = "PrismLauncher",       .tags = RC_GAMES)
