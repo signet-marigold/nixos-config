@@ -31,10 +31,10 @@ static const int scalepreview            = 4;        /* Tag preview scaling */
 static int nomodbuttons                  = 1;   /* allow client mouse button bindings that have no modifier */
 #endif // NO_MOD_BUTTONS_PATCH
 #if VANITYGAPS_PATCH
-static const unsigned int gappih         = 10;  /* horiz inner gap between windows */
-static const unsigned int gappiv         = 10;  /* vert inner gap between windows */
-static const unsigned int gappoh         = 14;  /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov         = 14;  /* vert outer gap between windows and screen edge */
+static const unsigned int gappih         = 14;  /* horiz inner gap between windows */
+static const unsigned int gappiv         = 14;  /* vert inner gap between windows */
+static const unsigned int gappoh         = 0;   /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov         = 0;   /* vert outer gap between windows and screen edge */
 static const int smartgaps_fact          = 1;   /* gap factor when there is only one client; 0 = no gaps, 3 = 3x outer gaps */
 #endif // VANITYGAPS_PATCH
 #if AUTOSTART_PATCH
