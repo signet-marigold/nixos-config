@@ -55,7 +55,7 @@
 
   #wallpaper = config.lib.stylix.pixel "base00";
   #wallpaper = ../../wallpapers/background_black.png;
-  wallpaper = ../../wallpapers/digital_noise.png;
+  wallpaper = ../../wallpapers/digital_noise_x.png;
 in {
   imports = [ inputs.stylix.nixosModules.stylix ];
 
