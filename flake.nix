@@ -11,7 +11,7 @@
     };
     rust-overlay.url = "github:oxalica/rust-overlay";
     stylix = {
-      url = "github:danth/stylix";
+      url = "github:danth/stylix/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     #nvim.url = "git+https://codeberg.org/signet-marigold/neovim";
@@ -39,7 +39,7 @@
 
           home-manager.nixosModules.home-manager {
             home-manager = {
-              backupFileExtension = "backup23";
+              backupFileExtension = "backup25";
               useGlobalPkgs = true;
               useUserPackages = true;
               users.anhack = import ./home-manager/hosts/AT20-CLEVELAND;
@@ -95,7 +95,7 @@
 
           home-manager.nixosModules.home-manager {
             home-manager = {
-              backupFileExtension = "backup23";
+              backupFileExtension = "backup25";
               useGlobalPkgs = true;
               useUserPackages = true;
               users.anhack = import ./home-manager/hosts/AT08-OBAMA;

@@ -10,6 +10,11 @@
       echo -s (set_color yellow; echo "$USER"; set_color normal) @ (set_color white; echo "$hostname"; set_color normal)
       echo " "
     end
+    if type -q tmux
+      if not test -n "$TMUX"
+        tmux attach-session -t default; or tmux new-session -s default
+      end
+    end
     '';
 
     plugins = [
