@@ -14,6 +14,7 @@
 
     plugins = with pkgs; [
       tmuxPlugins.better-mouse-mode
+      tmuxPlugins.yank
     ];
 
     extraConfig = ''
@@ -84,6 +85,9 @@
 
       # messages
       set -g message-style 'fg=colour2 bg=colour0 bold'
+
+      # Yank
+      set -g @yank_selection 'clipboard' # 'primary' or 'secondary' or 'clipboard'
     '';
   };
 }

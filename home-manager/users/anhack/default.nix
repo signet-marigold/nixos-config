@@ -111,7 +111,6 @@
     ../../modules/shell.nix
     ../../modules/theme.nix
     ../../modules/git.nix
-    #../../modules/tmux.nix
     #../../modules/dunst.nix
     ./default-applications.nix
   ];

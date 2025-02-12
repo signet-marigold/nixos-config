@@ -1,26 +1,18 @@
 { pkgs, ... }:
 {
+  # Custom st package
+  nixpkgs.overlays = [
+    (final: prev: {
+      st = prev.st.overrideAttrs (old: {
+        src = ./st-flexipatch-b77fb11;
+        buildInputs = old.buildInputs ++ [ pkgs.harfbuzz ];
+      });
+    })
+  ];
   environment.systemPackages = with pkgs; [
-    # Build package override
-    (st.overrideAttrs (oldAttrs: rec {
-      # Lock version
-      pname = "st";
-      version = "0.9.2";
-      src = pkgs.fetchurl {
-        url = "https://dl.suckless.org/st/${pname}-${version}.tar.gz";
-        hash = "sha256-ayFdT0crIdYjLzDyIRF6d34kvP7miVXd77dCZGf5SUs=";
-      };
-      # Dependencies
-      buildInputs = oldAttrs.buildInputs ++ [ harfbuzz ];
-      # Apply patches
-      patches = [
-        ./patches/st-0.9.2-combinedpatch-20240801-anhack.diff
-      ];
-      # Inject custom config
-      configFile = writeText "config.def.h" (builtins.readFile ./st-config.h);
-      postPatch = "${oldAttrs.postPatch}\n cp ${configFile} config.def.h";
-    }))
-
     st
   ];
+  environment.etc = {
+    "st-background.ff".source = ./background.ff;
+  };
 }
