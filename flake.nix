@@ -20,7 +20,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flatpaks.url = "github:GermanBread/declarative-flatpak/stable-v3";
-    zen-browser.url = "github:MarceColl/zen-browser-flake";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
   outputs = { nixpkgs, home-manager, stylix, sops-nix, flatpaks, ... }@inputs:
@@ -37,8 +37,8 @@
               backupFileExtension = "backup27";
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.anhack = import ./home-manager/hosts/AT20-CLEVELAND;
-              extraSpecialArgs = {};
+              users.anhack.imports = [ ./home-manager/hosts/AT20-CLEVELAND ];
+              extraSpecialArgs = { inherit inputs; };
             };
           }
 
@@ -78,8 +78,6 @@
 
           ./modules/pia/pia-nm.nix
           ./modules/vpn.nix
-
-          ./modules/zen-browser.nix
         ];
       };
       AT08-OBAMA = nixpkgs.lib.nixosSystem {
@@ -93,8 +91,8 @@
               backupFileExtension = "backup27";
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.anhack = import ./home-manager/hosts/AT08-OBAMA;
-              extraSpecialArgs = {};
+              users.anhack.imports = [ ./home-manager/hosts/AT08-OBAMA ];
+              extraSpecialArgs = { inherit inputs; };
             };
           }
 
@@ -134,8 +132,6 @@
 
           ./modules/pia/pia-nm.nix
           ./modules/vpn.nix
-
-          ./modules/zen-browser.nix
         ];
       };
     };

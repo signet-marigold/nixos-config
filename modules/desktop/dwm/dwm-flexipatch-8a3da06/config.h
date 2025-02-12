@@ -561,6 +561,7 @@ static const Rule rules[] = {
 	RULE(.class = "Mullvad Browser",     .tags = RC_BROWSERS)
 	RULE(.class = "Tor Browser",         .tags = RC_BROWSERS)
 	RULE(.class = "Chromium-browser",    .tags = RC_BROWSERS)
+	RULE(.class = "zen",                 .tags = RC_BROWSERS)
 	/*    ----- | Chat programs */
 	RULE(.class = "WebCord",             .tags = RC_CHAT)
 	RULE(.class = "HexChat",             .tags = RC_CHAT)
