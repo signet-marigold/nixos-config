@@ -7,9 +7,11 @@ originally based on [xnm1's config](https://github.com/XNM1/linux-nixos-hyprland
 
 ## Screenshots
 
-![everything](.github/assets/screenshot3.png)
+![minimal](.github/assets/screenshot5.png)
 
-![minimal](.github/assets/screenshot4.png)
+![code](.github/assets/screenshot6.png)
+
+![browsing](.github/assets/screenshot7.png)
 
 | | |
 | - | - |
