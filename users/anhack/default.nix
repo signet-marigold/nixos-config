@@ -19,6 +19,7 @@
   ];
 
   # Set flake path for rebuilds without specifing path
+  # Doesnt do anything?? --><
   nix.nixPath = [
     "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos:nixos-config=/etc/nixos:/nix/var/nix/profiles/per-user/root/channels"
   ];

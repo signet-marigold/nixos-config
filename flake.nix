@@ -19,11 +19,8 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    #pia = {
-    #  url = "github:Fuwn/pia.nix";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
     flatpaks.url = "github:GermanBread/declarative-flatpak/stable-v3";
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
   };
 
   outputs = { nixpkgs, home-manager, stylix, sops-nix, flatpaks, ... }@inputs:
@@ -34,8 +31,6 @@
         specialArgs = { inherit inputs; };
         modules = [
           { _module.args = inputs; }
-
-          #pia.nixosModules."x86_64-linux".default
 
           home-manager.nixosModules.home-manager {
             home-manager = {
@@ -83,6 +78,8 @@
 
           ./modules/pia/pia-nm.nix
           ./modules/vpn.nix
+
+          ./modules/zen-browser.nix
         ];
       };
       AT08-OBAMA = nixpkgs.lib.nixosSystem {
@@ -90,8 +87,6 @@
         specialArgs = { inherit inputs; };
         modules = [
           { _module.args = inputs; }
-
-          #pia.nixosModules."x86_64-linux".default
 
           home-manager.nixosModules.home-manager {
             home-manager = {
@@ -139,6 +134,8 @@
 
           ./modules/pia/pia-nm.nix
           ./modules/vpn.nix
+
+          ./modules/zen-browser.nix
         ];
       };
     };
