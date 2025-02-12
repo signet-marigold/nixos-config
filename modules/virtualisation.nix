@@ -31,7 +31,7 @@
     # firectl
     # flintlock
 
-    distrobox
+    #distrobox
     qemu
 
     podman-compose
@@ -43,17 +43,14 @@
     # virtualbox
   ];
 
-  virtualisation.libvirtd.enable = true;
+  # libvirtd & Virt-manager
   programs.virt-manager.enable = true;
-
-  # Enable USB redirection
+  virtualisation.libvirtd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
 
-  # VirtualBox
-  #virtualisation.virtualbox.host.enable = true;
-  #virtualisation.virtualbox.host.enableExtensionPack = true;
+  # Authorized users
+  users.groups.libvirtd.members = [ "anhack" ];
 
-  # Settings if this host is running as a guest inside virtualbox
-  #virtualisation.virtualbox.guest.enable = true;
-  #virtualisation.virtualbox.guest.draganddrop = true;
+  services.qemuGuest.enable = true;
+  services.spice-vdagentd.enable = true;
 }

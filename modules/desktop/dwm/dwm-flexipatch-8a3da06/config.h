@@ -417,10 +417,14 @@ static const Launcher launchers[] = {
 
 #if COOL_AUTOSTART_PATCH
 static const char *const autostart[] = {
-	// Init commands
-	"ibus-daemon", "--daemonize", "--xim", NULL, // nixos IBUS starts using a .desktop file, which dwm doesn't run. have to start manually
-	"dbus-update-activation-environment", "--all", NULL, // DBUS is also not starting for some reason, oh well
-	// Other startup apps
+// Init commands
+// nixos IBUS starts using a .desktop file, which dwm doesn't run. have to start manually
+	"ibus-daemon", "--daemonize", "--xim", NULL,
+// DBUS is also not starting for some reason, oh well
+	"dbus-update-activation-environment", "--all", NULL,
+// enable virbr0 virtual network bridge
+	"virsh", "net-start", "default", NULL,
+// Other startup apps
 	"st", NULL,
 	NULL /* terminate */
 };
