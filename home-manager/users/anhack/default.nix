@@ -112,7 +112,7 @@
     ../../modules/theme.nix
     ../../modules/git.nix
     #../../modules/dunst.nix
-    ../../modules/virtualisation.nix
+    ../../modules/virtualization.nix
     ./default-applications.nix
   ];
 }

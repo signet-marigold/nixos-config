@@ -41,16 +41,31 @@
     # docker-credential-helpers
 
     # virtualbox
+
+    spice
+    spice-gtk
+    spice-protocol
+    win-virtio
+    win-spice
+    gnome.adwaita-icon-theme
   ];
 
   # libvirtd & Virt-manager
   programs.virt-manager.enable = true;
-  virtualisation.libvirtd.enable = true;
-  virtualisation.spiceUSBRedirection.enable = true;
+  virtualisation = {
+    libvirtd = {
+      enable = true;
+      qemu = {
+        swtpm.enable = true;
+        ovmf.enable = true;
+        ovmf.packages = [ pkgs.OVMFFull.fd ];
+      };
+    };
+    spiceUSBRedirection.enable = true;
+  };
 
   # Authorized users
   users.groups.libvirtd.members = [ "anhack" ];
 
-  services.qemuGuest.enable = true;
   services.spice-vdagentd.enable = true;
 }

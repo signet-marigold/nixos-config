@@ -72,7 +72,7 @@
           #./modules/development/rust.nix
           ./modules/development/wasm.nix
 
-          ./modules/virtualisation.nix
+          ./modules/virtualization.nix
           ./modules/steam.nix
           ./modules/flatpaks.nix
 
@@ -124,7 +124,7 @@
           #./modules/development/rust.nix
           ./modules/development/wasm.nix
 
-          ./modules/virtualisation.nix
+          ./modules/virtualization.nix
           ./modules/steam.nix
           ./modules/proxychains.nix
           ./modules/i2p.nix

@@ -13,7 +13,27 @@
 
     if type -q tmux
       if not test -n "$TMUX"
-        tmux attach-session -t default; or tmux new-session -s default
+        if tmux has-session -t default 2>/dev/null; then
+          tmux attach-session -t default
+        else
+          tmux new-session -s default  -d -n home
+          tmux new-window  -t default:2   -n test
+          tmux new-window  -t default:3   -n sys
+          tmux new-window  -t default:4   -n dev
+
+          tmux select-window -t default:3
+          tmux send-keys 'btop' C-m
+
+          tmux select-window -t default:4
+          tmux send-keys 'cd ~/Repos; hx' C-m
+          tmux split-window -v -l 20%
+          tmux send-keys 'cd ~/Repos; broot' C-m
+          tmux split-window -h -l 70%
+          tmux send-keys 'cd ~/Repos; clear' C-m
+
+          tmux select-window -t default:1
+          tmux -2 attach-session -t default
+        end
       end
     end
     '';
