@@ -23,7 +23,6 @@
       set-option -g prefix C-a
       bind-key C-a send-prefix
 
-      # https://old.reddit.com/r/tmux/comments/mesrci/tmux_2_doesnt_seem_to_use_256_colors/
       set -g default-terminal "xterm-256color"
       set -ga terminal-overrides ",*256col*:Tc"
       set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
@@ -57,34 +56,34 @@
       set -g bell-action none
 
       # clock mode
-      setw -g clock-mode-colour colour1
+      setw -g clock-mode-colour colour3
 
       # copy mode
-      setw -g mode-style 'fg=colour1 bg=colour18 bold'
+      setw -g mode-style 'fg=colour3 bg=colour18 bold'
 
       # pane borders
-      set -g pane-border-style 'fg=colour1'
-      set -g pane-active-border-style 'fg=colour3'
+      set -g pane-border-style 'fg=colour3'
+      set -g pane-active-border-style 'fg=colour4'
 
       # statusbar
       set -g status-position bottom
       set -g status-justify left
-      set -g status-style 'fg=colour1'
+      set -g status-style 'fg=colour3'
       set -g status-left '\'
       set -g status-right '%Y-%m-%d %H:%M '
       set -g status-right-length 50
       set -g status-left-length 10
 
-      setw -g window-status-current-style 'fg=colour0 bg=colour1 bold'
+      setw -g window-status-current-style 'fg=colour232 bg=colour3 bold'
       setw -g window-status-current-format ' #I #W #F '
 
-      setw -g window-status-style 'fg=colour1 dim'
-      setw -g window-status-format ' #I #[fg=colour7]#W #[fg=colour1]#F '
+      setw -g window-status-style 'fg=colour3'
+      setw -g window-status-format ' #I #[fg=colour3]#W #[fg=colour3]#F '
 
-      setw -g window-status-bell-style 'fg=colour2 bg=colour1 bold'
+      setw -g window-status-bell-style 'fg=colour4 bg=colour3 bold'
 
       # messages
-      set -g message-style 'fg=colour2 bg=colour0 bold'
+      set -g message-style 'fg=colour4 bg=colour232 bold'
 
       # Yank
       set -g @yank_selection 'clipboard' # 'primary' or 'secondary' or 'clipboard'
