@@ -31,7 +31,9 @@
     # firectl
     # flintlock
 
-    #distrobox
+    virtualbox
+    distrobox
+
     qemu
 
     podman-compose
@@ -39,8 +41,6 @@
 
     # lazydocker
     # docker-credential-helpers
-
-    # virtualbox
 
     spice
     spice-gtk

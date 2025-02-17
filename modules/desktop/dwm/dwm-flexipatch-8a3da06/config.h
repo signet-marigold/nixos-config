@@ -587,6 +587,7 @@ static const Rule rules[] = {
 	RULE(.class = "bottles",             .tags = RC_SYSMAN)
 			/* data */
 	RULE(.class = "Deluge",              .tags = RC_DATAMAN)
+	RULE(.class = ".deluge-wrapped",     .tags = RC_DATAMAN)
 	RULE(.class = "PeaZip",              .tags = RC_DATAMAN)
 	RULE(.class = "dolphin",             .tags = RC_DATAMAN)
 	RULE(.class = "Thunar",              .tags = RC_DATAMAN)
