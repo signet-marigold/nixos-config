@@ -6,5 +6,6 @@
     cargo-lambda
     gnumake
     cmake
+    blockbench
   ];
 }

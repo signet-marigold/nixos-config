@@ -69,7 +69,7 @@
           ./modules/development/programming-languages.nix
           ./modules/development/work.nix
           ./modules/development/utils.nix
-          #./modules/development/rust.nix
+          ./modules/development/rust.nix
           ./modules/development/wasm.nix
 
           ./modules/virtualization.nix
@@ -121,7 +121,7 @@
           ./modules/development/programming-languages.nix
           ./modules/development/work.nix
           ./modules/development/utils.nix
-          #./modules/development/rust.nix
+          ./modules/development/rust.nix
           ./modules/development/wasm.nix
 
           ./modules/virtualization.nix

@@ -9,6 +9,5 @@
     #surrealdb
     #surrealdb-migrations
     #surrealist
-    blockbench
   ];
 }
