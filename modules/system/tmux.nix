@@ -78,9 +78,9 @@
       setw -g window-status-current-format ' #I #W #F '
 
       setw -g window-status-style 'fg=colour3'
-      setw -g window-status-format ' #I #[fg=colour3]#W #[fg=colour3]#F '
+      setw -g window-status-format ' #I #W #F '
 
-      setw -g window-status-bell-style 'fg=colour4 bg=colour3 bold'
+      setw -g window-status-bell-style 'fg=colour232 bg=colour4 bold'
 
       # messages
       set -g message-style 'fg=colour4 bg=colour232 bold'

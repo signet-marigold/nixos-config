@@ -16,10 +16,11 @@
         if tmux has-session -t default 2>/dev/null; then
           tmux attach-session -t default
         else
-          tmux new-session -s default  -d -n home
-          tmux new-window  -t default:2   -n test
-          tmux new-window  -t default:3   -n sys
-          tmux new-window  -t default:4   -n dev
+          tmux new-session -s default -d -n home
+          tmux new-window  -t default:2  -n test
+          tmux new-window  -t default:3  -n sys
+          tmux new-window  -t default:4  -n dev
+          tmux new-window  -t default:5  -n bash 'bash'
 
           tmux select-window -t default:3
           tmux send-keys 'btop' C-m

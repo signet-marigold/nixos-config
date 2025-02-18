@@ -34,7 +34,7 @@
 
           home-manager.nixosModules.home-manager {
             home-manager = {
-              backupFileExtension = "backup27";
+              backupFileExtension = "backup28";
               useGlobalPkgs = true;
               useUserPackages = true;
               users.anhack.imports = [ ./home-manager/hosts/AT20-CLEVELAND ];
@@ -88,7 +88,7 @@
 
           home-manager.nixosModules.home-manager {
             home-manager = {
-              backupFileExtension = "backup27";
+              backupFileExtension = "backup28";
               useGlobalPkgs = true;
               useUserPackages = true;
               users.anhack.imports = [ ./home-manager/hosts/AT08-OBAMA ];
