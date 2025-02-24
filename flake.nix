@@ -72,7 +72,7 @@
           ./modules/development/rust.nix
           ./modules/development/wasm.nix
 
-          ./modules/virtualization.nix
+          ./modules/virtualisation.nix
           ./modules/steam.nix
           ./modules/flatpaks.nix
 
