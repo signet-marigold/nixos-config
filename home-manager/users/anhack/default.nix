@@ -69,6 +69,7 @@
     prismlauncher       # Open source minecraft launcher with mod support
     lutris              # Flexible game launcher
     dolphin-emu         # Gamecube / Wii emulator
+    wargus              # Warcraft 2 mod
 
     # ---Data viewers
     pspp                # Statistical analysis of sampled data
