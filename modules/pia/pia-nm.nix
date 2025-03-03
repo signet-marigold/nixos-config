@@ -1,6 +1,5 @@
 # Taken from https://github.com/NixOS/nixpkgs/issues/347539
 # Props to github:bjornfor for making this work
-# I take no credit
 
 # NixOS Module for Private Internet Access (VPN) support in NetworkManager.
 

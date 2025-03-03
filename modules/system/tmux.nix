@@ -80,7 +80,7 @@
       setw -g window-status-style 'fg=colour3'
       setw -g window-status-format ' #I #W #F '
 
-      setw -g window-status-bell-style 'fg=colour232 bg=colour4 bold'
+      setw -g window-status-bell-style 'fg=colour232 bg=colour1 bold'
 
       # messages
       set -g message-style 'fg=colour4 bg=colour232 bold'
