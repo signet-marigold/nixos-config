@@ -12,7 +12,7 @@
   environment.systemPackages = with pkgs; [
     st
   ];
-  environment.etc = {
-    "st-background.ff".source = ./background.ff;
-  };
+  #environment.etc = {
+  #  "st-background.ff".source = ./background.ff;
+  #};
 }
