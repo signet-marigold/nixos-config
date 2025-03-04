@@ -101,7 +101,7 @@ static const int horizpadbar             = 2;   /* horizontal padding for status
 static const int vertpadbar              = 0;   /* vertical padding for statusbar */
 #endif // BAR_STATUSPADDING_PATCH
 #if BAR_STATUSBUTTON_PATCH
-static const char buttonbar[]            = "<O>";
+static const char buttonbar[]            = "<DMENU>";
 #endif // BAR_STATUSBUTTON_PATCH
 #if BAR_SYSTRAY_PATCH
 static const unsigned int systrayspacing = 2;   /* systray spacing */
@@ -410,8 +410,9 @@ static const char *layoutmenu_cmd = "layoutmenu.sh";
 static const Launcher launchers[] = {
 	/* icon to display      command        */
 	{ "",                  CMD("io.github.nokse22.minitext") },
+	{ "󰩫",                  CMD("dhst-screenshot") },
 	{ "󰃬",                  CMD("qalculate-gtk") },
-	{ "󰖐",                  CMD("mousam") }
+	{ "󰙾",                  CMD("mousam") }
 };
 #endif // BAR_LAUNCHER_PATCH
 
@@ -677,7 +678,7 @@ static const Inset default_inset = {
 static const BarRule barrules[] = {
 	/* monitor   bar    alignment         widthfunc                 drawfunc                clickfunc                hoverfunc                name */
 	#if BAR_STATUSBUTTON_PATCH
-	{ -1,        0,     BAR_ALIGN_LEFT,   width_stbutton,           draw_stbutton,          click_stbutton,          NULL,                    "statusbutton" },
+	{ -1,        0,     BAR_ALIGN_RIGHT,   width_stbutton,           draw_stbutton,          click_stbutton,          NULL,                    "statusbutton" },
 	#endif // BAR_STATUSBUTTON_PATCH
 	#if BAR_LAUNCHER_PATCH
 	{ -1,        0,     BAR_ALIGN_LEFT,   width_launcher,           draw_launcher,          click_launcher,          NULL,                    "launcher" },
