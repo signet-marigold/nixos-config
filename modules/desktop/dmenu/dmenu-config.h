@@ -13,10 +13,10 @@ static const char *fonts[] = {
 static const char *prompt = NULL;           /* -p  option; prompt to the left of input field */
 static const char *colors[SchemeLast][2] = {
 	/*                        fg         bg       */
-	[SchemeNorm]          = { "#bbbbbb", "#222222" },
+	[SchemeNorm]          = { "#bbbbbb", "#1b1e20" },
 	[SchemeSel]           = { "#eeeeee", "#005577" },
 	[SchemeSelHighlight]  = { "#ffc978", "#005577" },
-	[SchemeNormHighlight] = { "#ffc978", "#222222" },
+	[SchemeNormHighlight] = { "#ffc978", "#1b1e20" },
 	[SchemeOut]           = { "#000000", "#00ffff" },
 };
 static const unsigned int alphas[SchemeLast][2] = {
