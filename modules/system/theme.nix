@@ -7,23 +7,25 @@
 
   # Custom theme
   colors = {
-    base00 = "191919"; # ----- Background
+    base00 = "111317"; # ----- Background
     base01 = "2c2e30"; # ----
     base02 = "424b54"; # ---
     base03 = "646d75"; # --
     base04 = "919aa3"; # ++
     base05 = "b2bcc4"; # +++
-    base06 = "cdccce"; # ++++
-    base07 = "e9e8e8"; # +++++ Foreground
+    base06 = "cdccca"; # ++++
+    base07 = "eae8dc"; # +++++ Foreground
     base08 = "c85b56"; # Red
     base09 = "f59a66"; # Orange
     base0A = "f5ca66"; # Yellow
-    base0B = "22c95c"; # Green
+    base0B = "28bd5c"; # Green
     base0C = "49a796"; # Cyan
     base0D = "3c80b4"; # Blue
     base0E = "ca65cd"; # Magenta
     base0F = "a3572e"; # Brown
   };
+
+
 
   #base08 = "d85052";
   #base09 = "ff8c35";
