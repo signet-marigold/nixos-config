@@ -60,6 +60,7 @@
   wallpaper = ../../wallpapers/digital_noise_x.png;
 in {
   imports = [ inputs.stylix.nixosModules.stylix ];
+  #disabledModules = [ "${inputs.stylix}/modules/<some-module>/nixos.nix" ];
 
   stylix = {
     enable = true;
