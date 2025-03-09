@@ -20,6 +20,7 @@
     signal-desktop
     telegram-desktop
     slack
+    unstable.teamspeak6-client
 
     # ---Internet browsers
     # >in imports below
