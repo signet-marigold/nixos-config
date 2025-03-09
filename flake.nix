@@ -21,6 +21,7 @@
     };
     flatpaks.url = "github:GermanBread/declarative-flatpak/stable-v3";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    pluvio.url = "github:signet-marigold/pluvio-flake";
   };
 
   outputs = { nixpkgs, home-manager, stylix, sops-nix, flatpaks, ... }@inputs:

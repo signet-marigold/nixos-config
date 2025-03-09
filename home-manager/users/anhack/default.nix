@@ -114,6 +114,7 @@
     ../../modules/git.nix
     #../../modules/dunst.nix
     ../../modules/virtualisation.nix
+    ../../modules/pluvio.nix
     ./default-applications.nix
   ];
 }
