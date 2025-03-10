@@ -409,10 +409,11 @@ static const char *layoutmenu_cmd = "layoutmenu.sh";
 #if BAR_LAUNCHER_PATCH
 static const Launcher launchers[] = {
 	/* icon to display      command        */
+	{ "󰃬",                  CMD("qalculate-gtk") },
 	{ "",                  CMD("io.github.nokse22.minitext") },
 	{ "󰩫",                  CMD("dhst-screenshot") },
-	{ "󰃬",                  CMD("qalculate-gtk") },
-	{ "󰙾",                  CMD("mousam") }
+	{ "",                  CMD("mousam") },
+	{ " ",                 CMD("Pluvio") },
 };
 #endif // BAR_LAUNCHER_PATCH
 
