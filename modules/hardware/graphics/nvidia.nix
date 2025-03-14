@@ -42,7 +42,17 @@
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.latest;
+    #package = config.boot.kernelPackages.nvidiaPackages.latest;
+
+    # Pin nvidia module version
+    # https://discourse.nixos.org/t/nvidia-565-77-wont-work-in-kernel-6-13/59234/10
+    package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
+      version = "570.86.16"; # use new 570 drivers
+      sha256_64bit = "sha256-RWPqS7ZUJH9JEAWlfHLGdqrNlavhaR1xMyzs8lJhy9U=";
+      openSha256 = "sha256-DuVNA63+pJ8IB7Tw2gM4HbwlOh1bcDg2AN2mbEU9VPE=";
+      settingsSha256 = "sha256-9rtqh64TyhDF5fFAYiWl3oDHzKJqyOW3abpcf2iNRT8=";
+      usePersistenced = false;
+    };
 
     # Nvidia Optimus PRIME. It is a technology developed by Nvidia to optimize
     # the power consumption and performance of laptops equipped with their GPUs.
