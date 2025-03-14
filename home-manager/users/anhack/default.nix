@@ -21,6 +21,7 @@
     telegram-desktop
     slack
     unstable.teamspeak6-client
+    teamspeak3
 
     # ---Internet browsers
     # >in imports below
