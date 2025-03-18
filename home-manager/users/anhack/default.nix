@@ -72,6 +72,7 @@
     lutris              # Flexible game launcher
     dolphin-emu         # Gamecube / Wii emulator
     wargus              # Warcraft 2 mod
+    retroarch           # Retro game hardware emulator suite
 
     # ---Data viewers
     pspp                # Statistical analysis of sampled data
