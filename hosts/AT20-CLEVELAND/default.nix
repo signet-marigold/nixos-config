@@ -7,6 +7,6 @@
     #./modules/mac-randomize.nix dont know why but its failing now
     ./modules/networking.nix
     ./modules/open-ssh.nix
-    ./modules/syncthing.nix
+    #./modules/syncthing.nix
   ];
 }
