@@ -47,7 +47,7 @@
           ./hosts/AT20-CLEVELAND
           ./modules/base
           ./modules/system
-          ./modules/desktop/targets/dwm-desktop
+          ./modules/desktop/targets/kde-desktop
 
           ./modules/hardware/graphics/opengl-with-intel.nix
           ./modules/hardware/bluetooth.nix
