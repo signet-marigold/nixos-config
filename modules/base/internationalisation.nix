@@ -3,7 +3,6 @@
   # Select internationalisation properties.
   services.xserver = {
     xkb.layout = "us";
-    xkb.options = "altwin:swap_alt_win,caps:escape_shifted_capslock";
   };
 
   console.useXkbConfig = true; # Extend X keyboard keymap to console, which affects virtual consoles such as `tty`

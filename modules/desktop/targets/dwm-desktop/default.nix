@@ -34,6 +34,12 @@
     };
   };
 
+  services.xserver = {
+    # Swap windows key and alt key
+    # Capslock is escape key unless pressed with shift then it has default behavoir
+    xkb.options = "altwin:swap_alt_win,caps:escape_shifted_capslock";
+  };
+
   imports = [
     ../../dwm
     ../../dmenu
