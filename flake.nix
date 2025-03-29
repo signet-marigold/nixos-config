@@ -35,7 +35,7 @@
 
           home-manager.nixosModules.home-manager {
             home-manager = {
-              backupFileExtension = "backup29";
+              backupFileExtension = "backup30";
               useGlobalPkgs = true;
               useUserPackages = true;
               users.anhack.imports = [ ./home-manager/hosts/AT20-CLEVELAND ];
@@ -47,7 +47,7 @@
           ./hosts/AT20-CLEVELAND
           ./modules/base
           ./modules/system
-          ./modules/desktop/targets/kde-desktop
+          ./modules/desktop/targets/gnome-desktop
 
           ./modules/hardware/graphics/opengl-with-intel.nix
           ./modules/hardware/bluetooth.nix
@@ -89,7 +89,7 @@
 
           home-manager.nixosModules.home-manager {
             home-manager = {
-              backupFileExtension = "backup29";
+              backupFileExtension = "backup30";
               useGlobalPkgs = true;
               useUserPackages = true;
               users.anhack.imports = [ ./home-manager/hosts/AT08-OBAMA ];

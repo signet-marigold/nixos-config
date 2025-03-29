@@ -5,17 +5,26 @@
   services.xserver.displayManager.gdm.enable = lib.mkForce true;
   services.xserver.desktopManager.gnome.enable = true;
 
-  # Gnome Exclude Packages
-  # environment.gnome.excludePackages = (with pkgs; [
-  #   gnome-tour
-  # ]) ++ (with pkgs.gnome; [
-  #       gnome-terminal
-  #       gedit # text editor
-  #       epiphany # web browser
-  #       geary # email reader
-  #       tali # poker game
-  #       iagno # go game
-  #       hitori # sudoku game
-  #       atomix # puzzle game
-  # ]);
+  environment.gnome.excludePackages = (with pkgs; [
+    gnome-connections
+    gnome-characters
+    gnome-contacts
+    gnome-music
+    gnome-terminal
+    gnome-tour
+    atomix # puzzle game
+    cheese # webcam tool
+    epiphany # web browser
+    evince # document viewer
+    geary # email reader
+    gedit # text editor
+    hitori # sudoku game
+    iagno # go game
+    tali # poker game
+    totem # video player
+  ]);
+
+  imports = [
+    ../../st
+  ];
 }

@@ -5,9 +5,9 @@
   services.displayManager.sddm.enable = lib.mkForce true;
   services.desktopManager.plasma6.enable = true;
 
-  #environment.plasma6.excludePackages = with pkgs.kdePackages; [
-  #  plasma-browser-integration
-  #  konsole
-  #  oxygen
-  #];
+  # Run everything in wayland
+  services.displayManager.defaultSession = "plasma";
+
+  # Launch SDDM in Wayland too
+  services.displayManager.sddm.wayland.enable = true;
 }
