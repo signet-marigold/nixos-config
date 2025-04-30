@@ -101,7 +101,7 @@
           ./hosts/AT08-OBAMA
           ./modules/base
           ./modules/system
-          ./modules/desktop/targets/dwm-desktop
+          ./modules/desktop/targets/gnome-desktop
 
           ./modules/hardware/graphics/nvidia.nix
           ./modules/hardware/graphics/opengl.nix
@@ -111,6 +111,7 @@
           ./modules/hardware/sound.nix
           ./modules/hardware/usb.nix
           ./modules/hardware/ios-devices.nix
+          ./modules/hardware/bcm-wireless.nix
 
           ./modules/editors/neovim.nix
           ./modules/editors/kate.nix
