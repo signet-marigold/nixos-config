@@ -102,6 +102,7 @@
     nb                  # Markdown note editor
     cherrytree          # A hierarchical note taking app
     libreoffice         # Full office suite
+    dia                 # Gnome diagram drawing
     wordgrinder         # CLI 'ms word'
     anki-bin            # Desktop flashcards
   ];
