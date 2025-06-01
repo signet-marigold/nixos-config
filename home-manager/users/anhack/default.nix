@@ -11,7 +11,7 @@
 
   home.packages = with pkgs; [
     # ---Chat
-    #discord >swapped for webcord
+    discord #>swapped for webcord
     #webcord
     webcord-vencord
     hexchat            # IRC
